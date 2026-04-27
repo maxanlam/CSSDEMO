@@ -308,6 +308,8 @@ Für unterschiedliche Bildschirmgrößen.
 
 ### @media Print
 
+#### vorschau:
+
 Wird verwendet, wenn eine Seite gedruckt wird (oder Druckvorschau geöffnet ist). Um zu checken wie es aussieht kann man `cmd`+ `p` drücken. Um diesen Abgleichungsprozess aber etwas zu beschleunigen gebt foögendes in euren browser ein:
 
 **chrome:**
