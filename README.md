@@ -70,8 +70,6 @@ Das, was Nutzer tatsächlich lesen.
 
 ### Medien
 
-da diese Tags ja kein Texthinalt "tragen" müssen, müssen sie folglich nicht mit `</img>` oder `</video>` geschlossen werden
-
 - `<img>` – Bilder
 - `<video>` / `<audio>` – Medienplayer für inhalte die du selber bei dir hostest
 
