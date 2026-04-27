@@ -126,16 +126,21 @@ Diese Attribute sind hilfreich für weitere Katoegoriserung im **Styling und Int
 
 ### ID
 
-- `id="..."` - einzigartiger Identifikator für ein Bestimmtese Element
-  - Name der ID kann nur einmal und nur auf ein Element angewendet werden.
+- `id="..."` – eindeutiger Identifikator für ein bestimmtes Element
+  - Eine ID darf **nur einmal pro HTML-Dokument vorkommen**
+  - Sie darf nur **einem einzigen Element** zugewiesen werden
+  - Wird im CSS mit `#` angesprochen (z. B. `#beispiel`)
+  - Wird im JavaScript über `document.getElementById()` angesprochen
+  - Hat im Vergleich zu `class` eine **höhere Priorität (Spezifität)** im CSS
 
 #### Klasse
 
 - `class="..."` – wiederverwendbare CSS-Gruppen die bei Kategorisierungen helfen
-  - ein Element kann mehrere Klassen haben
-  - mehre Elemente können die gleiche Klasse haben
-    → wichtig wenn man Elemente geich bzw. nach einem Schema stylen will oder aber statements / modi im Javascript bestimmen will (via ClassList Toggle/Add/Remove/Contain/Replace)
-    im html mit class einfügen:
+- ein Element kann mehrere Klassen haben
+- mehre Elemente können die gleiche Klasse haben
+  - wichtig wenn man Elemente geich bzw. nach einem Schema stylen will oder aber statements / modi im Javascript bestimmen will (via ClassList Toggle/Add/Remove/Contain/Replace)
+- werden im CSS mit `.` angesprochen (bsp. `.beisiel`)
+- können im JS über `document.querySelector` (bei nur einem Element) oder aber für meher elemente `document.querySelectorAll` angesprochen (bsp. `document.queryselecotrAll(".BeistpienlKlasse"`));
 
 ```html
 <div class="beispiel"></div>
@@ -153,7 +158,7 @@ ich habe mir hier z.B. die klasse `active` ausgedacht um sie später im CSS styl
 
 # CSS Grundlagen – Zusammenfassung
 
-CSS bestimmt das Aussehen deiner HTML-Struktur. Damit Browser deine Styles erkennen, müssen diese Dateien immer die Endung .css haben. Es wird entweder im `<head>` via `<link rel="stylesheet" href="style.css">` eingebunden. Statt einer seperaten CSS-Dateikann aber auch (seltener) direkt in der html in den `<style>`-Tag geschrieben, oder innerhalb eines html-elements mit `style="..."`;
+CSS bestimmt das Aussehen deiner HTML-Struktur. Damit Browser deine Styles erkennen, müssen diese Dateien immer die Endung `.css` haben. Traditionell wird die erste Hauptdatei `style.css` gennant. Es wird in der HTML im `<head>` verlkinkt, z.B. als `<link rel="stylesheet" href="style.css">`. Statt einer seperaten CSS-Dateikann aber auch (seltener) direkt in der html in den `<style>`-Tag geschrieben, oder innerhalb eines html-elements mit `style="..."`;
 
 ## Aufbau einer CSS-Regel
 
@@ -207,18 +212,18 @@ Jedes Element im Web wird als rechteckige Box betrachtet. Das Box-Modell ist ent
 
 Definiert, wie ein Element dargestellt wird.
 
-- `display: block;` → Nimmt die gesamte Breite ein
-- `display: inline;` → Nur notwendige Breite, keine feste Höhe/Breite
-- `display: inline-block;` → Inline, aber mit Höhe/Breite steuerbar
-- `display: none;` → Element wird (visuell) aus dem Flow entfernt
+- `display: block;` - Nimmt die gesamte Breite ein
+- `display: inline;` - Nur notwendige Breite, keine feste Höhe/Breite
+- `display: inline-block;` - Inline, aber mit Höhe/Breite steuerbar
+- `display: none;` - Element wird (visuell) aus dem Flow entfernt
 
 ### Positionierung
 
-- `position: static;` → Standard
-- `position: relative;` → Relativ zur normalen Position
-- `position: absolute;` → Relativ zum nächsten positionierten Elternteil
-- `position: fixed;` → Relativ zum Viewport
-- `position: sticky;` → Wechsel zwischen relative und fixed beim Scrollen
+- `position: static;` - Standard
+- `position: relative;` - Relativ zur normalen Position
+- `position: absolute;` - Relativ zum nächsten positionierten Elternteil
+- `position: fixed;` - Relativ zum Viewport
+- `position: sticky;` - Wechsel zwischen relative und fixed beim Scrollen
 
 ---
 
@@ -249,25 +254,25 @@ gap: 10px; /* Abstand zwischen Elementen */
 
 ## Typografie & Text
 
-- `font-family:` Schriftart (z. B. Arial, sans-serif)
-- `font-size:` Schriftgröße (px, em, rem)
-- `font-weight:` Dicke (bold, 400, 700)
-- `text-align:` Ausrichtung (left, center, right, justify)
-- `line-height:` Zeilenabstand
-- `color:` Textfarbe
-- `webkit-text-stroke:` Textkontur
-  - `paint-order: stroke;`
-  - `paint-order: markers;`
+- `font-family:` - Schriftart (z. B. Arial, sans-serif)
+- `font-size:` - Schriftgröße (px, em, rem)
+- `font-weight:` - Dicke (bold, 400, 700)
+- `text-align:` - Ausrichtung (left, center, right, justify)
+- `line-height:` - Zeilenabstand
+- `color:` - Textfarbe
+- `webkit-text-stroke:` - Textkontur
+  - `paint-order: stroke;` - draw the stroke first, then fill and markers
+  - `paint-order: markers;` - draw the markers first, then fill and stroke
 
 ---
 
 ## Einheiten
 
-- `px` → Pixel (absolut)
-- `%` → Prozent relativ zum Eltern-Element
-- `em` → relativ zur Schriftgröße des Elements
-- `rem` → relativ zur Schriftgröße des Root-Elements (`<html>`)
-- `vw / vh` → Prozent der Viewport-Breite/-Höhe
+- `px` - Pixel (absolut)
+- `%` - Prozent relativ zum Eltern-Element
+- `em` - relativ zur Schriftgröße des Elements
+- `rem` - relativ zur Schriftgröße des Root-Elements (`<html>`)
+- `vw / vh` - Prozent der Viewport-Breite/-Höhe
 
 ---
 
@@ -275,14 +280,16 @@ gap: 10px; /* Abstand zwischen Elementen */
 
 Für spezielle Zustände von Elementen.
 
-- `:hover` → Beim Darüberfahren mit der Maus
-- `:active` → Beim Klicken
-- `:nth-child(n)` → Wählt das n-te Kind-Element
-- `::before / ::after` → Fügt Inhalt vor oder nach einem Element ein
+- `:hover` - Beim Darüberfahren mit der Maus
+- `:active` - Beim Klicken
+- `:nth-child(n)` - Wählt das n-te Kind-Element
+- `::before / ::after` - Fügt Inhalt vor oder nach einem Element ein
 
 ---
 
 ## Media Queries (Responsives Design)
+
+### @media Screen
 
 Für unterschiedliche Bildschirmgrößen.
 
@@ -295,4 +302,47 @@ Für unterschiedliche Bildschirmgrößen.
 }
 ```
 
-## Javascript-Beispiele für CSS-Styling
+### @media Print
+
+Wird verwendet, wenn eine Seite gedruckt wird (oder Druckvorschau geöffnet ist). Um zu checken wie es aussieht kann man `cmd`+ `p
+
+```css
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+}
+```
+
+---
+
+#### Seitenlayout
+
+- `@page` - Seitenformat steuern (Rand, Größe)
+
+z.B.
+
+```css
+@page {
+  margin: 20mm;
+  size: A4 landscape;
+}
+```
+
+oder
+
+```css
+@page {
+  margin: 20mm;
+  size: 210mm 297mm;
+}
+```
+
+#### Seitenumbrüche
+
+- `break-before: always;` - Neue Seite vorher
+- `break-after: always;` - Neue Seite danach
+- `break-inside: avoid;` - Element nicht trennen
+
+---
