@@ -15,6 +15,8 @@ Try Use your “Steckbrief” as a starting point, but reinterpret it creatively
 
 ---
 
+**Software-Anforderungen:** Visual Studio Code mit Live-Server Extension, Firefox oder Google Chrome
+
 ## HTML
 
 Damit Seiten in HTML gerendered werden benötigen sie immer die Endung `.html`,
@@ -65,12 +67,16 @@ Das, was Nutzer tatsächlich lesen.
 
 ### Links
 
-- `<a>` – Hyperlinks (quasi das Herz des Webs)
-  - innerhalb es tags kann der link in `src=""` geschrieben werden, du kannst hier auf eine andere Seite verlinken, aber sogar auch auf eine bestimmte [id](#id) bspb. `src="#beispiel"`
+- `<a>` – Hyperlinks
+  - innerhalb es tags kann der link in `src=""` geschrieben werden. Du kannst hier auf eine andere Seite/Url verlinken die auf klick geöffnet/aktiviert wird, mit `target="_blank"` wird diese in einem neuen tab geöffnet. Man kann aber auch auf eine bestimmte [id] (#id) innerhalb der eigenen Seite verlinken, z.B: `src="#beispiel"`.
 
 ### Medien
 
 - `<img>` – Bilder
+  - hier kannst du auch einfach mit `src=""` auf ein bild verlinken. Entweder auf eins in deinen eigenen ordnern oder mit einer externen url auf irgend ein anderes im internet
+  - mit `alt=""` kannst du auch einen alt text hinzufügen, was hilft das bild zu umschreiben sollte es mal nicht irchtig laden aber auch vorallem für menschen mit Sehbehinderung, die oft screenreader benutzen.
+  - mit `loading="lazy` werden bilder erst reingeladen, wenn sie sichtbar werden, statt direkt auf einmal beim Seitenladen. was bei perfomance helfen kann
+
 - `<video>` / `<audio>` – Medienplayer für inhalte die du selber bei dir hostest
 
   bsp:
@@ -285,7 +291,7 @@ Für spezielle Zustände von Elementen.
 
 ---
 
-## Media Queries (Responsives Design)
+## Media Queries
 
 ### @media Screen
 
@@ -302,7 +308,40 @@ Für unterschiedliche Bildschirmgrößen.
 
 ### @media Print
 
-Wird verwendet, wenn eine Seite gedruckt wird (oder Druckvorschau geöffnet ist). Um zu checken wie es aussieht kann man `cmd`+ `p
+Wird verwendet, wenn eine Seite gedruckt wird (oder Druckvorschau geöffnet ist). Um zu checken wie es aussieht kann man `cmd`+ `p` drücken. Um diesen Abgleichungsprozess aber etwas zu beschleunigen gebt foögendes in euren browser ein:
+
+**chrome:**
+DevTools öffnen (F12 oder option+ command + i),
+Ctrl + Shift + P (Command Menu)
+„Rendering“ eingeben → Rendering Panel öffnen
+Dort bei Emulate CSS media type → print auswählen
+
+im DevTools-Menü: „Druckmedien simulieren“ (print) auswählen
+
+![image](/screenshots/firefox1.png)
+
+responsive mode einschalten
+
+![image](/screenshots/firefox2.png)
+
+Liste der Geräte ansehen und bearbeiten
+
+![image](/screenshots/firefox3.png)
+
+einen neues "Gerät" eingeben
+
+![image](/screenshots/firefox4.png)
+
+maße in pixel eingeben (a4 = 595 x 842)
+
+![image](/screenshots/firefox5.png)
+
+nach dem speichern ist unser custom format in der Liste und kann für die Vorschau benutzt werden
+
+![image](/screenshots/firefox6.png)
+
+Firefox
+DevTools öffnen (F12 oder option + command + i)
 
 ```css
 @media print {
@@ -339,8 +378,8 @@ oder
 
 #### Seitenumbrüche
 
-- `break-before: always;` - Neue Seite vorher
-- `break-after: always;` - Neue Seite danach
-- `break-inside: avoid;` - Element nicht trennen
+- `break-before: always;` - Neue Seite vor Element
+- `break-after: always;` - Neue Seite nach Element
+- `break-inside: avoid;` - Bruch eines Elements über mehrere Seiten verhindern
 
 ---
