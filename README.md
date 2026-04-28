@@ -314,64 +314,16 @@ Wird verwendet, wenn eine Seite gedruckt wird (oder Druckvorschau geöffnet ist)
 
 Um zu checken wie es aussieht kann man `command`+ `P` drücken. Um diesen visuellen Abgleichungsprozess aber etwas zu beschleunigen gibt es folgenden Workaround:
 
-**Chrome:**
-DevTools öffnen (`F12` oder option + `command` + `I`)
-
-Command Menu für direkte suche öffnen (`control` + `shift` + `P`),
-„Rendering“ eingeben → Rendering Panel öffnen
-
-![image](/screenshots/chrome1.png)
-
-Dort bei Emulate CSS media type → print auswählen
-
-![image](/screenshots/chrome2.png)
-
-responsive mode einschalten
-
-![image](/screenshots/chrome3.png)
-
-Liste der Geräte ansehen und bearbeiten
-
-![image](/screenshots/chrome4.png)
-
-einen neues "Gerät" eingeben
-
-![image](/screenshots/chrome5.png)
-
-maße in pixel eingeben (z.B. a4 = 595 x 842)
-
-![image](/screenshots/chrome6.png)
-
-nach dem speichern ist unser custom format in der Liste und kann für die Vorschau benutzt werden
-
-![image](/screenshots/chrome7.png)
-
-**Firefox**
-DevTools öffnen (`F12` oder option + `command` + `i`)
-
-im DevTools-Menü: „Druckmedien simulieren“ (print) auswählen
-
-![image](/screenshots/firefox1.png)
-
-responsive mode einschalten
-
-![image](/screenshots/firefox2.png)
-
-Liste der Geräte ansehen und bearbeiten
-
-![image](/screenshots/firefox3.png)
-
-einen neues "Gerät" eingeben
-
-![image](/screenshots/firefox4.png)
-
-maße in pixel eingeben (z.B. a4 = 595 x 842)
-
-![image](/screenshots/firefox5.png)
-
-nach dem speichern ist unser custom format in der Liste und kann für die Vorschau benutzt werden
-
-![image](/screenshots/firefox6.png)
+| **Chrome**                                                                                                                       | **Firefox**                                                                                           |
+| -------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| DevTools öffnen (`F12` oder `option + command + I`)                                                                              | DevTools öffnen (`F12` oder `option + command + I`)                                                   |
+| Command Menu öffnen (`control + shift + P`), „Rendering“ eingeben → Rendering Panel öffnen<br>![image](/screenshots/chrome1.png) | Im DevTools-Menü „Druckmedien simulieren“ (print) auswählen<br>![image](/screenshots/firefox1.png)    |
+| Bei _Emulate CSS media type_ → **print** auswählen<br>![image](/screenshots/chrome2.png)                                         | Responsive Mode einschalten<br>![image](/screenshots/firefox2.png)                                    |
+| Responsive Mode einschalten<br>![image](/screenshots/chrome3.png)                                                                | Liste der Geräte ansehen und bearbeiten<br>![image](/screenshots/firefox3.png)                        |
+| Liste der Geräte ansehen und bearbeiten<br>![image](/screenshots/chrome4.png)                                                    | Neues Gerät hinzufügen<br>![image](/screenshots/firefox4.png)                                         |
+| Neues Gerät hinzufügen<br>![image](/screenshots/chrome5.png)                                                                     | Maße in Pixel eingeben (z. B. A4 = 595 × 842)<br>![image](/screenshots/firefox5.png)                  |
+| Maße in Pixel eingeben (z. B. A4 = 595 × 842)<br>![image](/screenshots/chrome6.png)                                              | Custom Format erscheint in der Liste und kann verwendet werden<br>![image](/screenshots/firefox6.png) |
+| Custom Format erscheint in der Liste und kann verwendet werden<br>![image](/screenshots/chrome7.png)                             |                                                                                                       |
 
 ```css
 @media print {
