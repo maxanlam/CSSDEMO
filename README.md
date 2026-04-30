@@ -160,7 +160,7 @@ ich habe mir hier z.B. die klasse `active` ausgedacht um sie später im CSS styl
 
 ---
 
-# CSS Grundlagen – Zusammenfassung
+# CSS
 
 CSS bestimmt das Aussehen deiner HTML-Struktur. Damit Browser deine Styles erkennen, müssen diese Dateien immer die Endung `.css` haben. Traditionell wird die erste Hauptdatei `style.css` gennant. Es wird in der HTML im `<head>` verlkinkt, z.B. als `<link rel="stylesheet" href="style.css">`. Statt einer seperaten CSS-Dateikann aber auch (seltener) direkt in der html in den `<style>`-Tag geschrieben, oder innerhalb eines html-elements mit `style="..."`;
 
