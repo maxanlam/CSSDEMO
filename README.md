@@ -1,5 +1,9 @@
 # @media screen meets print Steckbrief {}
 
+**Software-Anforderungen:** Visual Studio Code mit Live-Server Extension, Firefox oder Google Chrome
+
+---
+
 #### Based on the info of and Imagery from the software you have gathered:
 
 ## Design a hybrid page that communicates and reflects your personal experience
@@ -14,8 +18,6 @@ Try Use your “Steckbrief” as a starting point, but reinterpret it creatively
 - This interaction can also affect or influence the printed outcome/appearance in some way.
 
 ---
-
-**Software-Anforderungen:** Visual Studio Code mit Live-Server Extension, Firefox oder Google Chrome
 
 ## HTML
 
@@ -119,7 +121,6 @@ Werden ständig für Navigation, Menüs usw. verwendet.
   - `<tr>` - eine Zeile (table row)
   - `<td>` - eine normale Zelle (table data)
   - `<th>` - eine Kopfzelle (table header)
-
 - `<hr>` - horizontale Linie
 
 ---
@@ -166,10 +167,12 @@ CSS bestimmt das Aussehen deiner HTML-Struktur. Damit Browser deine Styles erken
 
 ## Aufbau einer CSS-Regel
 
-- **Selektor (Selector):** Zeigt auf das HTML-Element, das du stylen möchtest.
-- **Deklarationsblock (Declaration Block):** Enthält eine oder mehrere Deklarationen, getrennt durch Semikolons.
-- **Eigenschaft (Property):** Das Stil-Attribut, das du ändern möchtest (z. B. `color`).
+- **Selektor (Selector):** Zeigt auf das HTML-Element, das du stylen möchtest, du kannst auch unterschiedliche Elemente zusammen auswählen, wenn du mit `,` trennst.
+- **Deklarationsblock (Declaration Block):** - folgt nach dem Selektor immer hinnerhab der `{}` . Enthält eine oder mehrere Deklarationen, getrennt durch `;`.
+- **Eigenschaft (Property):** Das Stil-Attribut, das du ändern möchtest (z. B. `color:`).
 - **Wert (Value):** Der Wert für diese Eigenschaft (z. B. `red`).
+
+![](/screenshots/8240b8b44c51e10c7baef0329a8837073774854c84505a8303cff20a589fa96709bfff22de4986c35ff635e2e9e0510d1f5f07cd1fcac0c72ffcd784d358046b.png)
 
 ---
 
@@ -177,15 +180,25 @@ CSS bestimmt das Aussehen deiner HTML-Struktur. Damit Browser deine Styles erken
 
 Selektoren werden verwendet, um HTML-Elemente zu „finden“.
 
-| Selektor      | Beispiel             | Beschreibung                                     |
-| ------------- | -------------------- | ------------------------------------------------ |
-| Element       | `p { ... }`          | Wählt alle `<p>`-Elemente aus                    |
-| ID            | `#header { ... }`    | Wählt das eindeutige Element mit `id="header"`   |
-| Klasse        | `.btn { ... }`       | Wählt alle Elemente mit der Klasse `btn`         |
-| Universal     | `* { ... }`          | Wählt alle Elemente auf der Seite                |
-| Attribut      | `input[type="text"]` | Wählt Elemente anhand eines bestimmten Attributs |
-| Nachfahre     | `div p`              | Wählt alle `<p>` innerhalb eines `<div>`         |
-| Direktes Kind | `ul > li`            | Wählt `<li>`, die direkte Kinder von `<ul>` sind |
+| Selektor      | Beispiel             | Beschreibung                                                                       |
+| ------------- | -------------------- | ---------------------------------------------------------------------------------- |
+| Element       | `p { ... }`          | Wählt alle `<p>`-Elemente aus                                                      |
+| ID            | `#logo { ... }`      | Wählt das eindeutige Element mit `id="logo"`                                       |
+| Klasse        | `.btn { ... }`       | Wählt alle Elemente mit der Klasse `btn`                                           |
+| Universal     | `* { ... }`          | Wählt alle Elemente auf der Seite                                                  |
+| Attribut      | `input[type="text"]` | Wählt Elemente dem ein bestimmtes Attribut gegeben wurde wie `<input type="text">` |
+| Nachfahre     | `div p`              | Wählt alle `<p>` innerhalb eines `<div>`                                           |
+| Direktes Kind | `ul > li`            | Wählt `<li>`, die direkte Kinder von `<ul>` sind                                   |
+
+---
+
+## Einheiten
+
+- `px` - Pixel (absolut)
+- `%` - Prozent relativ zum Eltern-Element
+- `em` - relativ zur Schriftgröße des Elements
+- `rem` - relativ zur Schriftgröße des Root-Elements (`<html>`)
+- `vw / vh` - Prozent der Viewport-Breite/-Höhe
 
 ---
 
@@ -193,18 +206,29 @@ Selektoren werden verwendet, um HTML-Elemente zu „finden“.
 
 Jedes Element im Web wird als rechteckige Box betrachtet. Das Box-Modell ist entscheidend für Layouts.
 
-- **Content (Inhalt):** Text oder Bilder im Inneren
-- **Padding:** Transparenter Bereich um den Inhalt (innerhalb des Rahmens)
-- **Border (Rahmen):** Linie um Padding und Inhalt
-- **Margin (Außenabstand):** Transparenter Bereich außerhalb des Rahmens
+![](/screenshots/CSS-Box-Modell.png)
+
+- `Padding:`- Transparenter Bereich um den Inhalt (innerhalb des Rahmens)
+- `Border (Rahmen):` - Linie um Padding und Inhalt
+- `Margin (Außenabstand):` - Transparenter Bereich außerhalb des
+  Rahmens
+- `width:` - bestimmt die Breite eines Elements
+- `height:` - bestimmt die Höhe eines Elements
+- `border-radius:` - ermöglicht Kurven an den Ecken der Boxen zu erzeugen.
+  - kleinere fixen werte wie z.B. `border-radius: 2rem` erzeugt runde Ecken
+  - `border-radius: 100%` macht die Box zum Kreis
+  - `border-radius: 3rem 2rem 0rem 1rem` erzeugt unterschiedliche Rundungen für jede Ecke.
+    Einzelne Ecken können auch direkt angesprochen werden, z. B. mit `border-top-right-radius: 1rem`
 
 ```css
-.box {
+div {
   width: 300px;
+  height: 250px;
   padding: 20px;
-  border: 5px solid black;
+  border: 5px solid black; /* schwarze border */
   margin: 10px;
   box-sizing: border-box; /* Padding und Border erhöhen die Breite nicht */
+  border-radius: 2rem; /* runde ecken */
 }
 ```
 
@@ -223,15 +247,120 @@ Definiert, wie ein Element dargestellt wird.
 
 ### Positionierung
 
-- `position: static;` - Standard
-- `position: relative;` - Relativ zur normalen Position
-- `position: absolute;` - Relativ zum nächsten positionierten Elternteil
-- `position: fixed;` - Relativ zum Viewport
-- `position: sticky;` - Wechsel zwischen relative und fixed beim Scrollen
+- `position: static;` - Standard (keine spezielle Positionierung)
+
+- `position: relative;` - Verschiebung relativ zur ursprünglichen Position
+
+- `position: absolute;` - Positioniert relativ zum nächsten **positionierten** Eltern-Element (nicht `static`)
+
+- `position: fixed;` - Fixiert relativ zum **Viewport** (bleibt beim Scrollen stehen)
+
+- `position: sticky;` - Mischung aus `relative` und `fixed` (bleibt beim Scrollen „kleben“)
+
+#### Positionswerte (`top`, `right`, `bottom`, `left`)
+
+Diese Eigenschaften funktionieren nur bei:
+`relative`, `absolute`, `fixed`, `sticky`
+
+Sie bestimmen den Abstand zu einer Kante.
+
+- `top:` - Abstand **von oben**
+- `bottom:` - Abstand **von unten**
+
+- `left:` - Abstand **von links**
+
+- `right:` - Abstand **von rechts**
 
 ---
 
+## Breite & Höhe (`width` & `height`)
+
+Diese Eigenschaften definieren die Dimensionen eines HTML-Elements.  
+Standardmäßig beziehen sie sich auf den **Inhaltsbereich** der Box.
+
+### Basiseigenschaften
+
+- `width:` – legt die Breite des Elements fest
+- `height:` – legt die Höhe des Elements fest
+
+- `max-width:` / `max-height:` - verhindern, dass ein Element größer als ein bestimmter Wert wird
+
+- `min-width:` / `min-height:` - garantieren eine Mindestgröße, auch bei wenig Inhalt
+
+### Wichtige Einheiten
+
+| Einheit     | Typ         | Beschreibung                                                    |
+| ----------- | ----------- | --------------------------------------------------------------- |
+| `px`        | Absolut     | Feste Größe (z. B. `300px`)                                     |
+| `%`         | Relativ     | Anteil an der Größe des Eltern-Elements                         |
+| `vw` / `vh` | Relativ     | Prozent der Viewport-Breite bzw. -Höhe vom Browser-Fenster      |
+| `auto`      | Automatisch | Browser berechnet die Größe basierend auf dem Inhalt (Standard) |
+
+---
+
+## Farbe
+
+man kann farbe des textinhalts sowie des hintergrunds
+
+- `background:` - Hintergrund bzw. `background-color:` um hier lediglich
+- `color:` - Textfarbe
+
+## Opacity & Transform
+
+## Typografie & Text
+
+- `font-family:` - Schriftart (z. B. Arial, sans-serif)
+  - **fonts verlinken**:
+    1. Schriftdateien (z. B. `.woff2`, `.woff`) in dein Projekt legen (z. B. `/fonts/` Ordner).
+    2. In deiner CSS-Datei `@font-face` definieren:
+
+    ```css
+    @font-face {
+      font-family: "MeineFont"; /* ausgedachter name mit dem du dann arbeitest*/
+      src:
+        url("/fonts/meinefont.woff2") format("woff2"),
+        url("/fonts/meinefont.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+    }
+    ```
+
+    3. Schrift in deinem CSS verwenden:
+
+    ```css
+    p {
+      font-family:
+        "MeineFont", sans-serif; /* ausgedachter Name dann für bestimmte elemente via css "font-family:" zuschreiben um sie zu benutzen */
+    }
+    ```
+
+- `font-size:` - Schriftgröße (px, em, rem oder seltener vw für große, skalierende Headlines, die sich an die Fenstergröße anpassen)
+- `font-weight:` - Dicke (bold, 400, 700)
+- `text-align:` - Ausrichtung (left, center, right, justify)
+- `line-height:` - Zeilenabstand
+- `webkit-text-stroke:` - Textkontur
+  - `paint-order: stroke;` - die Kontur (stroke) wird zuerst gezeichnet (liegt “unten”) = Kontur außen
+  - `paint-order: markers;` - Marker (z. B. Pfeile an Linienenden) werden zuerst gezeichnet = Kontur zentriert
+
+---
+
+## columns
+
+Eher geeignet für Fließtext, der automatisch in mehrere Spalten aufgeteilt werden soll.
+
+```css
+column-count: 3; /* Anzahl der Spalten */
+column-gap: 20px; /* Abstand zwischen Spalten */
+```
+
 ## Flexbox & Grid (Moderne Layouts)
+
+### Grid (Zweidimensional) Für Reihen UND Spalten.
+
+css
+display: grid;
+grid-template-columns: 1fr 1fr 1fr; /_ drei gleich große Spalten _/
+gap: 10px; /_ Abstand zwischen Elementen _/
 
 ### Flexbox (Eindimensional)
 
@@ -256,38 +385,39 @@ gap: 10px; /* Abstand zwischen Elementen */
 
 ---
 
-## Typografie & Text
-
-- `font-family:` - Schriftart (z. B. Arial, sans-serif)
-- `font-size:` - Schriftgröße (px, em, rem)
-- `font-weight:` - Dicke (bold, 400, 700)
-- `text-align:` - Ausrichtung (left, center, right, justify)
-- `line-height:` - Zeilenabstand
-- `color:` - Textfarbe
-- `webkit-text-stroke:` - Textkontur
-  - `paint-order: stroke;` - draw the stroke first, then fill and markers
-  - `paint-order: markers;` - draw the markers first, then fill and stroke
-
----
-
-## Einheiten
-
-- `px` - Pixel (absolut)
-- `%` - Prozent relativ zum Eltern-Element
-- `em` - relativ zur Schriftgröße des Elements
-- `rem` - relativ zur Schriftgröße des Root-Elements (`<html>`)
-- `vw / vh` - Prozent der Viewport-Breite/-Höhe
-
----
-
 ## Pseudo-Klassen & Pseudo-Elemente
 
 Für spezielle Zustände von Elementen.
 
 - `:hover` - Beim Darüberfahren mit der Maus
 - `:active` - Beim Klicken
+- `:not()` - um bestimmte elemente vom Selektor auszuschließen
 - `:nth-child(n)` - Wählt das n-te Kind-Element
+  - (zahl)
+  - (odd)
+  - (even)
+- `:nth-of-type(n)` -
+  - (zahl)
+  - (odd)
+  - (even)
 - `::before / ::after` - Fügt Inhalt vor oder nach einem Element ein
+- :open
+
+- :is – neue im Css um mehrere elemente auszuwählen, traditionell würde man hier durch komma trennen (bsp: `h1,h2.h3 {}`) statdessen ist es hier: `:is(h1,h2,h3) {}`
+
+## Interaktionen
+
+## Hover & Active mit transitions
+
+- wie bereits kruz aufgelisted bieten `:hover` (beim Hovern) und `:active` (während man geklickt hält) an das styling für diesen Moment zu verändern. Mit `transition` kann man hierbei noch weiter übergänge hinzufügen bei der veränderung bestimmter visueller parameter:
+  bsp :
+
+- es gibt aber auch ein paar einzigartige klcik möglichkeiten um elemene zu toggeln / längerfristig zu veräabdern
+  bsp :
+
+- :open
+
+## animation
 
 ---
 
@@ -365,3 +495,30 @@ oder
 - `break-inside: avoid;` - Bruch eines Elements über mehrere Seiten verhindern
 
 ---
+
+## Nachschlage-Werke:
+
+**Glossare/Docs:**
+
+- **[MDN Web Docs](https://developer.mozilla.org/)** – Beste Referenz: verständlich, aktuell & mit Beispielen
+
+- **[W3C](https://www.w3.org/)** – Offizielle Standards
+
+**Kurse:**
+
+- **[freeCodeCamp](https://www.freecodecamp.org/)**
+
+**Beilspiele:**
+
+- **[CodePen](https://codepen.io/)** – Direkt im Browser ausprobieren
+
+- **[CSS-Tricks](https://css-tricks.com/)** – Praxisnahe Erklärungen & Guides
+
+**Foren:**
+
+- **[Stack Overflow](https://stackoverflow.com/)** – Hilfe bei konkreten Problemen
+
+**Spiele/Übungen**
+
+- **[CSS Battle](https://cssbattle.dev/)**
+  Daily challenges aber auch CSS-Kurse
