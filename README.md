@@ -19,7 +19,7 @@ Try Use your “Steckbrief” as a starting point, but reinterpret it creatively
 
 ---
 
-## HTML
+# HTML
 
 Damit Seiten in HTML gerendered werden benötigen sie immer die Endung `.html`,
 die erste Startseite nennt man i.d.R. `index.html`;
@@ -41,7 +41,7 @@ die einzigen Ausnahmen sind:
 
 ---
 
-### Struktur (das Grundgerüst jeder Webseite)
+## Struktur (das Grundgerüst jeder Webseite)
 
 Diese definieren den Aufbau und die Bedeutung deines Dokuments.
 
@@ -55,7 +55,7 @@ Diese definieren den Aufbau und die Bedeutung deines Dokuments.
 
 ---
 
-### Text & Inhalt
+## Text & Inhalt
 
 Das, was Nutzer tatsächlich lesen.
 
@@ -67,12 +67,12 @@ Das, was Nutzer tatsächlich lesen.
 
 ---
 
-### Links
+## Links
 
 - `<a>` – Hyperlinks
   - innerhalb es tags kann der link in `src=""` geschrieben werden. Du kannst hier auf eine andere Seite/Url verlinken die auf klick geöffnet/aktiviert wird, mit `target="_blank"` wird diese in einem neuen tab geöffnet. Man kann aber auch auf eine bestimmte [id] (#id) innerhalb der eigenen Seite verlinken, z.B: `src="#beispiel"`.
 
-### Medien
+## Medien
 
 - `<img>` – Bilder
   - hier kannst du auch einfach mit `src=""` auf ein bild verlinken. Entweder auf eins in deinen eigenen ordnern oder mit einer externen url auf irgend ein anderes im internet
@@ -95,7 +95,7 @@ Das, was Nutzer tatsächlich lesen.
 
 ---
 
-### Listen
+## Listen
 
 Werden ständig für Navigation, Menüs usw. verwendet.
 
@@ -105,7 +105,7 @@ Werden ständig für Navigation, Menüs usw. verwendet.
 
 ---
 
-### Formulare (Benutzereingaben)
+## Formulare (Benutzereingaben)
 
 - `<form>` – umschließt Eingabefelder
 - `<input>` – Textfelder, Checkboxen usw.
@@ -115,7 +115,7 @@ Werden ständig für Navigation, Menüs usw. verwendet.
 
 ---
 
-### vielleicht weniger modern, aber immer noch nützlich :))
+## vielleicht weniger modern, aber immer noch nützlich :))
 
 - `<table>`- Tabelle, mit:
   - `<tr>` - eine Zeile (table row)
@@ -125,11 +125,11 @@ Werden ständig für Navigation, Menüs usw. verwendet.
 
 ---
 
-### Klassen & IDs
+## Klassen & IDs
 
 Diese Attribute sind hilfreich für weitere Katoegoriserung im **Styling und Interakton**.
 
-### ID
+## ID
 
 - `id="..."` – eindeutiger Identifikator für ein bestimmtes Element
   - Eine ID darf **nur einmal pro HTML-Dokument vorkommen**
@@ -138,7 +138,7 @@ Diese Attribute sind hilfreich für weitere Katoegoriserung im **Styling und Int
   - Wird im JavaScript über `document.getElementById()` angesprochen
   - Hat im Vergleich zu `class` eine **höhere Priorität (Spezifität)** im CSS
 
-#### Klasse
+## Klassen
 
 - `class="..."` – wiederverwendbare CSS-Gruppen die bei Kategorisierungen helfen
 - ein Element kann mehrere Klassen haben
@@ -202,33 +202,104 @@ Selektoren werden verwendet, um HTML-Elemente zu „finden“.
 
 ---
 
+## Farbe
+
+man kann farbe des textinhalts sowie des hintergrunds
+
+- `background:` - Hintergrund bzw. `background-color:` um hier lediglich
+- `color:` - Textfarbe
+
+---
+
 ## Das CSS-Box-Modell
 
 Jedes Element im Web wird als rechteckige Box betrachtet. Das Box-Modell ist entscheidend für Layouts.
 
 ![](/screenshots/CSS-Box-Modell.png)
 
-- `Padding:`- Transparenter Bereich um den Inhalt (innerhalb des Rahmens)
-- `Border (Rahmen):` - Linie um Padding und Inhalt
-- `Margin (Außenabstand):` - Transparenter Bereich außerhalb des
-  Rahmens
+- `padding:` Transparenter Bereich um den Inhalt (innerhalb des Rahmens)
+- `border`: Linie um Padding und Inhalt
+- `margin`: Transparenter Bereich außerhalb des
 - `width:` - bestimmt die Breite eines Elements
 - `height:` - bestimmt die Höhe eines Elements
-- `border-radius:` - ermöglicht Kurven an den Ecken der Boxen zu erzeugen.
-  - kleinere fixen werte wie z.B. `border-radius: 2rem` erzeugt runde Ecken
-  - `border-radius: 100%` macht die Box zum Kreis
-  - `border-radius: 3rem 2rem 0rem 1rem` erzeugt unterschiedliche Rundungen für jede Ecke.
-    Einzelne Ecken können auch direkt angesprochen werden, z. B. mit `border-top-right-radius: 1rem`
+- `border-radius` - Rundung der Box-Ecken
+
+### Padding (Innenabstand)
+
+Padding ist der **transparente Bereich innerhalb des Rahmens**, der den Inhalt umgibt.
+
+- `padding-top:` – Abstand oben innerhalb des Elements
+- `padding-right:` – Abstand rechts innerhalb des Elements
+- `padding-bottom:` – Abstand unten innerhalb des Elements
+- `padding-left:` – Abstand links innerhalb des Elements
+
+---
+
+### Border (Rahmen/Kontur)
+
+Der Border ist die **Kontur um Padding und Inhalt**. Hierbei nennt man erstmal die dicke, den Border Stil und dann die Farbe.
+
+**Beispiele für Border-Stile:**
+
+- `solid` - durchgezogene Linie
+- `dashed` - gestrichelte Linie
+- `dotted` - gepunktete Linie
+- `double` - doppelte Linie
+
+z.B. für eine durchgezogene Linie:
+
+```css
+div {
+  border: 2rem solid black;
+}
+```
+
+oder für eine gestrichelte
+
+```css
+div {
+  border: 2rem dashed black;
+}
+```
+
+- `border-top:` – oberer Rahmen
+- `border-right:` – rechter Rahmen
+- `border-bottom:` – unterer Rahmen
+- `border-left:` – linker Rahmen
+
+---
+
+### Margin (Außenabstand)
+
+Margin ist der **transparente Bereich außerhalb des Rahmens**, also der Abstand zu anderen Elementen.
+
+- `margin-top:` – Abstand nach oben
+- `margin-right:` – Abstand nach rechts
+- `margin-bottom:` – Abstand nach unten
+- `margin-left:` – Abstand nach links
+
+### Border-Radius
+
+Border-Radius ermöglicht Kurven an den Ecken der Boxen zu erzeugen.
+
+- kleinere fixen werte wie z.B. `border-radius: 2rem` erzeugt runde Ecken
+- `border-radius: 100%` macht die Box zum Kreis
+- `border-radius: 3rem 2rem 0rem 1rem` erzeugt unterschiedliche Rundungen für jede Ecke.
+  Einzelne Ecken können auch direkt angesprochen werden, z. B. mit `border-top-right-radius: 1rem`
+
+---
+
+man könnte also eine Box z.B. so stylen:
 
 ```css
 div {
   width: 300px;
   height: 250px;
   padding: 20px;
-  border: 5px solid black; /* schwarze border */
+  border: 5px solid black; /* schwarze Kontur */
   margin: 10px;
   box-sizing: border-box; /* Padding und Border erhöhen die Breite nicht */
-  border-radius: 2rem; /* runde ecken */
+  border-radius: 2rem; /* runde Ecken */
 }
 ```
 
@@ -298,14 +369,38 @@ Standardmäßig beziehen sie sich auf den **Inhaltsbereich** der Box.
 
 ---
 
-## Farbe
-
-man kann farbe des textinhalts sowie des hintergrunds
-
-- `background:` - Hintergrund bzw. `background-color:` um hier lediglich
-- `color:` - Textfarbe
-
 ## Opacity & Transform
+
+### Opacity
+
+`opacity` steuert die **Durchsichtigkeit eines Elements**.
+
+- `opacity: 1;` → komplett sichtbar
+- `opacity: 0;` → komplett unsichtbar
+- `opacity: 0.5;` → halb transparent
+
+Wird oft für Hover-Effekte, Overlays oder Fade-Animationen verwendet.
+
+---
+
+### Transform (Verformung / Bewegung)
+
+`transform` verändert die **Darstellung eines Elements**, ohne den Layout-Fluss zu beeinflussen.
+
+**Häufige Werte:**
+
+- `translate(x, y)` - verschiebt das Element
+- `scale(n)` - vergrößert/verkleinert das Element
+- `rotate(angle)` - dreht das Element
+- `skew(x, y)` - kippt das Element
+
+**Beispiele:**
+
+- `transform: translate(20px, 10px);`
+- `transform: scale(1.2);`
+- `transform: rotate(45deg);`
+
+TRansform gerne mal für Animationen, Hover-Effekte und UI-Interaktionen genutzt.
 
 ## Typografie & Text
 
@@ -344,7 +439,7 @@ man kann farbe des textinhalts sowie des hintergrunds
 
 ---
 
-## columns
+## Columns
 
 Eher geeignet für Fließtext, der automatisch in mehrere Spalten aufgeteilt werden soll.
 
@@ -407,7 +502,7 @@ Für spezielle Zustände von Elementen.
 
 ## Interaktionen
 
-## Hover & Active mit transitions
+### Hover & Active mit Transitions
 
 - wie bereits kruz aufgelisted bieten `:hover` (beim Hovern) und `:active` (während man geklickt hält) an das styling für diesen Moment zu verändern. Mit `transition` kann man hierbei noch weiter übergänge hinzufügen bei der veränderung bestimmter visueller parameter:
   bsp :
@@ -417,7 +512,7 @@ Für spezielle Zustände von Elementen.
 
 - :open
 
-## animation
+## Animation
 
 ---
 
