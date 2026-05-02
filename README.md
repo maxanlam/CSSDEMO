@@ -200,14 +200,67 @@ Selektoren werden verwendet, um HTML-Elemente zu „finden“.
 - `rem` - relativ zur Schriftgröße des Root-Elements (`<html>`)
 - `vw / vh` - Prozent der Viewport-Breite/-Höhe
 
+### calc()
+
+- Berechnungen mit `calc()` kombinieren verschiedene Einheiten (z. B. px, %, vh)
+- hilft bei flexiblen Layouts
+
+**Beispiel:**
+
+```css
+width: calc(100% - 40px);
+```
+
 ---
 
 ## Farbe
 
-man kann farbe des textinhalts sowie des hintergrunds
+Farben bestimmen Text- und Hintergrundgestaltung.
 
-- `background:` - Hintergrund bzw. `background-color:` um hier lediglich
-- `color:` - Textfarbe
+- `background-color:` – Hintergrundfarbe
+- `color:` – Textfarbe
+
+---
+
+### Farbwerte in CSS
+
+#### Hex
+
+```css id="c1"
+color: #ff0000;
+```
+
+→ Rot
+
+#### RGB
+
+```css id="c2"
+color: rgb(255, 0, 0);
+```
+
+→ Rot (Rot, Grün, Blau Werte 0–255)
+
+#### RGBA (mit Transparenz)
+
+```css id="c3"
+color: rgba(255, 0, 0, 0.5);
+```
+
+→ halbtransparent
+
+#### HSL
+
+```css id="c4"
+color: hsl(0, 100%, 50%);
+```
+
+→ Farbe über Farbton, Sättigung, Helligkeit
+
+#### Farbnamen
+
+```css id="c5"
+color: red;
+```
 
 ---
 
@@ -262,10 +315,10 @@ div {
 }
 ```
 
-- `border-top:` – oberer Rahmen
-- `border-right:` – rechter Rahmen
-- `border-bottom:` – unterer Rahmen
-- `border-left:` – linker Rahmen
+- `border-top:` – Kontur oben
+- `border-right:` – Kontur rechts
+- `border-bottom:` – Kontur unten
+- `border-left:` – Kontur links
 
 ---
 
@@ -371,21 +424,21 @@ Standardmäßig beziehen sie sich auf den **Inhaltsbereich** der Box.
 
 ## Opacity & Transform
 
+Die ?roperties Opacity und Transfrom werden gerne mal für Animationen, Hover-Effekte, Overlays, Fade-Animationen und andere UI-Interaktionen genutzt.
+
 ### Opacity
 
 `opacity` steuert die **Durchsichtigkeit eines Elements**.
 
-- `opacity: 1;` → komplett sichtbar
-- `opacity: 0;` → komplett unsichtbar
-- `opacity: 0.5;` → halb transparent
-
-Wird oft für Hover-Effekte, Overlays oder Fade-Animationen verwendet.
+- `opacity: 1;` - komplett sichtbar
+- `opacity: 0;` - komplett unsichtbar
+- `opacity: 0.5;` - halb transparent
 
 ---
 
 ### Transform (Verformung / Bewegung)
 
-`transform` verändert die **Darstellung eines Elements**, ohne den Layout-Fluss zu beeinflussen.
+`transform` verändert die **Darstellung eines Elements**, ohne dabei den Layout-Fluss zu beeinflussen.
 
 **Häufige Werte:**
 
@@ -399,8 +452,6 @@ Wird oft für Hover-Effekte, Overlays oder Fade-Animationen verwendet.
 - `transform: translate(20px, 10px);`
 - `transform: scale(1.2);`
 - `transform: rotate(45deg);`
-
-TRansform gerne mal für Animationen, Hover-Effekte und UI-Interaktionen genutzt.
 
 ## Typografie & Text
 
@@ -478,43 +529,121 @@ grid-template-columns: 1fr 1fr 1fr; /* drei gleich große Spalten */
 gap: 10px; /* Abstand zwischen Elementen */
 ```
 
----
+# Pseudo-Klassen & Pseudo-Elemente
 
-## Pseudo-Klassen & Pseudo-Elemente
+Pseudo-Klassen und Pseudo-Elemente werden genutzt, um **Zustände von Elementen** oder **bestimmte Teile eines Elements** direkt in CSS anzusprechen – ohne zusätzliche Klassen im HTML.
 
-Für spezielle Zustände von Elementen.
+## Pseudo-Klassen
 
-- `:hover` - Beim Darüberfahren mit der Maus
-- `:active` - Beim Klicken
-- `:not()` - um bestimmte elemente vom Selektor auszuschließen
-- `:nth-child(n)` - Wählt das n-te Kind-Element
-  - (zahl)
-  - (odd)
-  - (even)
-- `:nth-of-type(n)` -
-  - (zahl)
-  - (odd)
-  - (even)
-- `::before / ::after` - Fügt Inhalt vor oder nach einem Element ein
-- :open
+Pseudo-Klassen beschreiben den **Zustand eines Elements**.
 
-- :is – neue im Css um mehrere elemente auszuwählen, traditionell würde man hier durch komma trennen (bsp: `h1,h2.h3 {}`) statdessen ist es hier: `:is(h1,h2,h3) {}`
+- `:hover` – aktiv, wenn die Maus über einem Element ist, z. B. für visuelle Effekte beim Darüberfahren
+- `:active` – aktiv, während ein Element gedrückt wird, z. B. beim Klicken eines Buttons
+- `:not(selector)` – schließt bestimmte Elemente aus, `selector` beschreibt, was ausgeschlossen werden soll
+- `:nth-child(n)` – wählt ein Element nach seiner Position im Eltern-Element  
+  der wert `n` kann z.B. sein:
+  - Zahl (`1`, `2`, `3` …)
+  - `odd` (ungerade Positionen)
+  - `even` (gerade Positionen)
+- `:nth-of-type(n)` – wie `nth-child`, aber nur für denselben Elementtyp, ignoriert andere HTML-Tags im gleichen Container
+- `:has(selector)` – wählt ein Element, das ein bestimmtes Kind enthäl, `selector` beschreibt das Kind-Element
+- `:is(selector, selector, ...)` – fasst mehrere Selektoren zusammen, statt `h1, h2, h3` kann man `:is(h1, h2, h3)` schreiben
+
+## Pseudo-Elemente
+
+Pseudo-Elemente sprechen Teile eines Elements an.
+
+- `::before` – erzeugt Inhalt **vor dem eigentlichen Inhalt** eines Elements
+- `::after` – erzeugt Inhalt **nach dem eigentlichen Inhalt**
 
 ## Interaktionen
 
-### Hover & Active mit Transitions
+### Hover & Ative
 
-- wie bereits kruz aufgelisted bieten `:hover` (beim Hovern) und `:active` (während man geklickt hält) an das styling für diesen Moment zu verändern. Mit `transition` kann man hierbei noch weiter übergänge hinzufügen bei der veränderung bestimmter visueller parameter:
-  bsp :
+für gewisse Interaktionen Kann man den zustand des Elements verändern:
 
-- es gibt aber auch ein paar einzigartige klcik möglichkeiten um elemene zu toggeln / längerfristig zu veräabdern
-  bsp :
+- `:hover` – Zustand beim Überfahren mit der Maus
+- `:active` – Zustand solange man klickt bzw. das klicken hält
 
-- :open
+Auch diese Zustände können gestylt werden und dadurch visuell vom Normalzustand abweichen.
+
+Mit `transition:` lassen sich solche Änderungen weich animieren.
+Die Dauer wird in Sekunden (`s`) angegeben – z. B. bewirkt `transition: 1s`, dass alle Stiländerungen innerhalb von 1 Sekunde übergehen.
+Gibt man zusätzlich eine CSS-Property an, etwa `transition: opacity 1s`, gilt die Animation nur für diese Eigenschaft.
+
+Mehrere Eigenschaften können mit Kommas getrennt werden.
+
+### Easing
+
+Nach der Sekundenangabe kann man auch noch `easeing` Hinzufügen. Es beschreibt die zeitliche Veränderung einer Animation – also wie schnell oder langsam ein Übergang beginnt, verläuft und endet.
+
+Nach der Dauer kann ein Easing-Wert angegeben werden, z. B. `transition: opacity 1s ease`.
+
+Gängige Easing-Arten:
+
+- `linear` – gleichmäßige Geschwindigkeit
+- `ease` – langsam starten und enden (Standard)
+- `ease-in` – langsam starten, dann schneller werden
+- `ease-out` – schnell starten, dann langsamer werden
+- `ease-in-out` – langsam starten und enden, schnell in der Mitte
+- `cubic-bezier(...)` – individuelle Kurve definieren
+
+hier mal ein finales Beispiel wenn ich ein Element hover bzw. klicken würde bsp.:
+
+```css
+/* originaler Zustand*/
+a {
+  color: blue;
+  background-color: grey;
+}
+
+/* Hover-State & Active-State */
+a:hover,
+a:active {
+  color: red;
+  background-color: black;
+color 1s ease-in-out, /* startet langsam, wird schneller, endet wieder langsam */
+background-color 1s ease-in; /* startet langsam und beschleunigt dann */
+}
+```
+
+### Open
+
+- `:open` – beschreibt Elemente im geöffneten Zustand
+- wird bei `<details>` verwendet
+  - `<details>` ist ein HTML-Element für ausklappbare Inhalte
+    es ist standardmäßig geschlossen
+    mit einem Klick auf <summary> wird es geöffnet oder geschlossen
+  - greift, wenn das Element das `open`-Attribut hat
+
+**Beispiel:**
+
+```html
+<details>
+  <summary>Mehr anzeigen</summary>
+  <p>Das ist der ausgeklappte Inhalt.</p>
+</details>
+```
+
+```css
+details:open {
+  background-color: lightgrey;
+}
+```
+
+Beim Klick auf „Mehr anzeigen“ wird das Element geöffnet und `:open` greift.
 
 ## Animation
 
----
+CSS Animationen arbeiten mit `@keyframes`:
+
+- `@keyframes name {}` – definiert den Verlauf der Animation  
+  → `from` / `to` oder Prozentwerte (`0%`, `100%`)
+
+- `animation: name duration timing;`  
+  → verbindet ein Element mit einer Animation  
+  → `duration` = Dauer  
+  → `timing` = Verlauf (z. B. linear, ease)
 
 ## Media Queries
 
