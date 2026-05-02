@@ -608,9 +608,12 @@ Schatten erzeugen visuelle Tiefe - Elemente wirken „über dem Layout“.
 
 #### Box Shadow
 
-Zuerst kommen die X- und Y-Werte, die die Position des Schattens bestimmen (rechts/links und oben/unten). Danach folgt `blur` für die Weichheit (höher = verschwommener). Optional kommt `spread`, der die Größe des Schattens verändert. Am Ende steht die Farbe, meist mit `rgba`.
-Grundstruktur:
-`box-shadow: x y blur spread color`
+- Zuerst kommen die `x`- und `y`- Werte, die die Position des Schattens bestimmen (rechts/links und oben/unten).
+- Danach folgt `blur` für die Weichheit (höher = verschwommener).
+- Optional kommt `spread`, der die Größe des Schattens verändert.
+- Am Ende steht die Farbe, meist mit `rgba`.
+  Grundstruktur:
+  `box-shadow: x y blur spread color`
 
 z.B.:
 
@@ -618,9 +621,9 @@ z.B.:
 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 ```
 
-Nimmt man allerdings eine hellere Farbe kann er auch als **Glow**-Effekt Angewendet werden.
+Nimmt man logischer Weise eine hellere Farbe kann er auch als **Glow**-Effekt angewendet werden.
 
-mit `inset` kann aber auch den schatten umdrehen:
+mit `inset` kann aber auch den Schatten umdrehen:
 
 ```css id="s2"
 box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -881,6 +884,22 @@ oder
 - **[CodePen](https://codepen.io/)** – Direkt im Browser ausprobieren
 
 - **[CSS-Tricks](https://css-tricks.com/)** – Praxisnahe Erklärungen & Guides
+
+---
+
+### Clip-Path
+
+`clip-path:` schneidet Elemente in beliebige Formen (z. B. Kreis, Dreieck, organische Shapes).  
+Wird oft für moderne UI-Designs, Bilder oder Buttons genutzt.
+
+Statt Werte selbst zu schreiben, verwendet man häufig Generatoren:
+
+- **[Clip-Path-Generator](https://unused-css.com/tools/clip-path-generator)** -
+  ein Clip-Path-Editor um vorgefertigte geometrische Formen als Clip-Paths zu benutzen oder um selber welche vorzuzeichen und sie dann per copy paste im CSS auf ein Element einzufügen
+
+---
+
+**Editoren**
 
 **Foren:**
 
