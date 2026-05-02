@@ -226,37 +226,39 @@ Farben bestimmen Text- und Hintergrundgestaltung.
 
 #### Hex
 
+Rot als 6-stelliger Code:
+
 ```css id="c1"
 color: #ff0000;
 ```
 
-→ Rot
-
 #### RGB
+
+Rot (Rot, Grün, Blau Werte 0–255):
 
 ```css id="c2"
 color: rgb(255, 0, 0);
 ```
 
-→ Rot (Rot, Grün, Blau Werte 0–255)
-
 #### RGBA (mit Transparenz)
+
+halbtransparent:
 
 ```css id="c3"
 color: rgba(255, 0, 0, 0.5);
 ```
 
-→ halbtransparent
-
 #### HSL
+
+Farbe über Farbton, Sättigung, Helligkeit:
 
 ```css id="c4"
 color: hsl(0, 100%, 50%);
 ```
 
-→ Farbe über Farbton, Sättigung, Helligkeit
-
 #### Farbnamen
+
+Rot, ausgeschrieben;
 
 ```css id="c5"
 color: red;
@@ -285,8 +287,6 @@ Padding ist der **transparente Bereich innerhalb des Rahmens**, der den Inhalt u
 - `padding-right:` – Abstand rechts innerhalb des Elements
 - `padding-bottom:` – Abstand unten innerhalb des Elements
 - `padding-left:` – Abstand links innerhalb des Elements
-
----
 
 ### Border (Rahmen/Kontur)
 
@@ -319,8 +319,6 @@ div {
 - `border-right:` – Kontur rechts
 - `border-bottom:` – Kontur unten
 - `border-left:` – Kontur links
-
----
 
 ### Margin (Außenabstand)
 
@@ -424,7 +422,7 @@ Standardmäßig beziehen sie sich auf den **Inhaltsbereich** der Box.
 
 ## Opacity & Transform
 
-Die ?roperties Opacity und Transfrom werden gerne mal für Animationen, Hover-Effekte, Overlays, Fade-Animationen und andere UI-Interaktionen genutzt.
+Die Properties Opacity und Transfrom werden gerne mal für Animationen, Hover-Effekte, Overlays, Fade-Animationen und andere UI-Interaktionen genutzt.
 
 ### Opacity
 
@@ -433,8 +431,6 @@ Die ?roperties Opacity und Transfrom werden gerne mal für Animationen, Hover-Ef
 - `opacity: 1;` - komplett sichtbar
 - `opacity: 0;` - komplett unsichtbar
 - `opacity: 0.5;` - halb transparent
-
----
 
 ### Transform (Verformung / Bewegung)
 
@@ -452,6 +448,8 @@ Die ?roperties Opacity und Transfrom werden gerne mal für Animationen, Hover-Ef
 - `transform: translate(20px, 10px);`
 - `transform: scale(1.2);`
 - `transform: rotate(45deg);`
+
+---
 
 ## Typografie & Text
 
@@ -529,18 +527,152 @@ grid-template-columns: 1fr 1fr 1fr; /* drei gleich große Spalten */
 gap: 10px; /* Abstand zwischen Elementen */
 ```
 
-# Pseudo-Klassen & Pseudo-Elemente
+---
+
+## Filter, Backdrop-Filter, Schatten & Blend-Modes
+
+Diese CSS-Funktionen verändern das visuelle Erscheinungsbild von Elementen, ohne den eigentlichen Inhalt zu verändern. Sie werden häufig für moderne UI-Effekte, Hover-States und visuelle Tiefe genutzt.
+
+### Filter
+
+Die Property `filter:` wird direkt auf ein Element angewendet, egal ob Bild, Text oder Container. Es verändert Darstellung wie Farbe, Schärfe oder Kontrast.
+
+macht das Element unscharf:
+
+```css id="f1"
+filter: blur(5px);
+```
+
+macht ein Element heller oder dunkler:
+
+```css id="f2"
+filter: brightness(150%);
+```
+
+erhöht den Unterschied zwischen hell und dunkel:
+
+```css id="f3"
+filter: contrast(200%);
+```
+
+schwarz-weiß Effekt:
+
+```css id="f4"
+filter: grayscale(100%);
+```
+
+Vintage-Foto Look:
+
+```css id="f5"
+filter: sepia(80%);
+```
+
+Farben werden umgedreht/negativ Effekt:
+
+```css id="f6"
+filter: invert(100%);
+```
+
+Farben werden stärker/knalliger oder weniger:
+
+```css id="f7"
+filter: saturate(200%);
+```
+
+verschiebt alle Farben im Farbspektrum/Hue:
+
+```css id="f8"
+filter: hue-rotate(90deg);
+```
+
+### Backdrop-Filter
+
+- wirkt **nur auf den Hintergrund hinter dem Element**
+- z.B. `backdrop-filter: blur(12px)` erzeugt oft „Glas“- oder „Frosted Glass“-Effekte
+- braucht meist Transparenz im Element
+
+z.B.
+
+```css id="b2"
+nav {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+}
+```
+
+Hintergrund wird verschwommen - typischer Glass-UI Effekt
+
+### Schatten
+
+Schatten erzeugen visuelle Tiefe - Elemente wirken „über dem Layout“.
+
+#### Box Shadow
+
+Zuerst kommen die X- und Y-Werte, die die Position des Schattens bestimmen (rechts/links und oben/unten). Danach folgt `blur` für die Weichheit (höher = verschwommener). Optional kommt `spread`, der die Größe des Schattens verändert. Am Ende steht die Farbe, meist mit `rgba`.
+Grundstruktur:
+`box-shadow: x y blur spread color`
+
+z.B.:
+
+```css id="s1"
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+```
+
+Nimmt man allerdings eine hellere Farbe kann er auch als **Glow**-Effekt Angewendet werden.
+
+mit `inset` kann aber auch den schatten umdrehen:
+
+```css id="s2"
+box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.2);
+```
+
+#### Text Shadow
+
+Schatten kann aber auch nur auf die Form des Textes projiiziert werden:
+
+```css id="s3"
+text-shadow: 2px 2px 5px black;
+```
+
+### Blend Modes (`mix-blend-mode`, `background-blend-mode`)
+
+- steuern, wie Farben zwischen Ebenen interagieren
+- ähnlich wie Photoshop-Ebenenmodi
+
+z.B.
+
+Farben werden dunkler gemischt (z. B. Text über Bild):
+
+```css id="bm1"
+mix-blend-mode: multiply;
+```
+
+starke Kontrast-Invertierung:
+
+```css id="bm3"
+mix-blend-mode: difference;
+```
+
+Mischung aus Kontrast + Farbe:
+
+```css id="bm4"
+mix-blend-mode: overlay;
+```
+
+---
+
+## Pseudo-Klassen & Pseudo-Elemente
 
 Pseudo-Klassen und Pseudo-Elemente werden genutzt, um **Zustände von Elementen** oder **bestimmte Teile eines Elements** direkt in CSS anzusprechen – ohne zusätzliche Klassen im HTML.
 
-## Pseudo-Klassen
+### Pseudo-Klassen
 
 Pseudo-Klassen beschreiben den **Zustand eines Elements**.
 
 - `:hover` – aktiv, wenn die Maus über einem Element ist, z. B. für visuelle Effekte beim Darüberfahren
 - `:active` – aktiv, während ein Element gedrückt wird, z. B. beim Klicken eines Buttons
 - `:not(selector)` – schließt bestimmte Elemente aus, `selector` beschreibt, was ausgeschlossen werden soll
-- `:nth-child(n)` – wählt ein Element nach seiner Position im Eltern-Element  
+- `:nth-child(n)` – wählt ein Element nach seiner Position im Eltern-Element
   der wert `n` kann z.B. sein:
   - Zahl (`1`, `2`, `3` …)
   - `odd` (ungerade Positionen)
@@ -549,7 +681,7 @@ Pseudo-Klassen beschreiben den **Zustand eines Elements**.
 - `:has(selector)` – wählt ein Element, das ein bestimmtes Kind enthäl, `selector` beschreibt das Kind-Element
 - `:is(selector, selector, ...)` – fasst mehrere Selektoren zusammen, statt `h1, h2, h3` kann man `:is(h1, h2, h3)` schreiben
 
-## Pseudo-Elemente
+### Pseudo-Elemente
 
 Pseudo-Elemente sprechen Teile eines Elements an.
 
@@ -558,7 +690,7 @@ Pseudo-Elemente sprechen Teile eines Elements an.
 
 ## Interaktionen
 
-### Hover & Ative
+### Hover & Active
 
 für gewisse Interaktionen Kann man den zustand des Elements verändern:
 
@@ -573,7 +705,7 @@ Gibt man zusätzlich eine CSS-Property an, etwa `transition: opacity 1s`, gilt d
 
 Mehrere Eigenschaften können mit Kommas getrennt werden.
 
-### Easing
+#### Easing
 
 Nach der Sekundenangabe kann man auch noch `easeing` Hinzufügen. Es beschreibt die zeitliche Veränderung einer Animation – also wie schnell oder langsam ein Übergang beginnt, verläuft und endet.
 
@@ -635,15 +767,27 @@ Beim Klick auf „Mehr anzeigen“ wird das Element geöffnet und `:open` greift
 
 ## Animation
 
-CSS Animationen arbeiten mit `@keyframes`:
+CSS Animationen werden mit `@keyframes` erstellt. Damit kann ein Ablauf Schritt für Schritt definiert werden.
 
-- `@keyframes name {}` – definiert den Verlauf der Animation  
-  → `from` / `to` oder Prozentwerte (`0%`, `100%`)
+- `@keyframes name {}` – definiert den Verlauf der Animation
+  → kann mit `from / to` oder Prozentwerten (`0%`, `100%`, dazwischen z. B. `50%`) arbeiten
 
-- `animation: name duration timing;`  
-  → verbindet ein Element mit einer Animation  
-  → `duration` = Dauer  
-  → `timing` = Verlauf (z. B. linear, ease)
+- `animation:` – aktiviert die Animation auf einem Element
+  → verbindet Name, Dauer und Verhalten
+
+```css id="k1"
+animation: name 2s ease;
+```
+
+- `duration` = wie lange die Animation läuft
+- `timing-function` = Verlauf der Geschwindigkeit (z. B. `linear`, `ease`)
+
+---
+
+### 🧠 Kurz gesagt:
+
+- `@keyframes` = baut die Animation
+- `animation` = spielt sie am Element ab
 
 ## Media Queries
 
