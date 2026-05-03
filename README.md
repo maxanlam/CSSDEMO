@@ -13,8 +13,6 @@
 
 2.  Include at least one interaction on the website.
 
-- This interaction can also affect or influence the printed outcome/appearance in some way.
-
 ---
 
 # HTML
