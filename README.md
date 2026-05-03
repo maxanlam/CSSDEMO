@@ -1,4 +1,4 @@
-# styling in dual format {}
+# Styling for Dual Formats {}
 
 **Software-Anforderungen:** Visual Studio Code mit Live-Server Extension, Firefox oder Google Chrome
 
