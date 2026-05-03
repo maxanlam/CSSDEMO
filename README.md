@@ -307,7 +307,7 @@ div {
 }
 ```
 
-oder für eine gestrichelte
+oder für eine gestrichelte:
 
 ```css
 div {
@@ -333,10 +333,10 @@ Margin ist der **transparente Bereich außerhalb des Rahmens**, also der Abstand
 
 Border-Radius ermöglicht Kurven an den Ecken der Boxen zu erzeugen.
 
-- kleinere fixen werte wie z.B. `border-radius: 2rem` erzeugt runde Ecken
-- `border-radius: 100%` macht die Box zum Kreis
-- `border-radius: 3rem 2rem 0rem 1rem` erzeugt unterschiedliche Rundungen für jede Ecke.
-  Einzelne Ecken können auch direkt angesprochen werden, z. B. mit `border-top-right-radius: 1rem`
+- kleinere fixen werte wie z.B. `border-radius: 2rem;` erzeugt runde Ecken
+- `border-radius: 100%;` macht die Box zum Kreis
+- `border-radius: 3rem 2rem 0rem 1rem;` erzeugt unterschiedliche Rundungen für jede Ecke.
+  Einzelne Ecken können auch direkt angesprochen werden, z. B. mit `border-top-right-radius: 1rem;`
 
 ---
 
@@ -803,8 +803,8 @@ Auch diese Zustände können gestylt werden und dadurch visuell vom Normalzustan
 #### Transition
 
 Mit `transition:` lassen sich solche Änderungen weich animieren.
-Die Dauer wird in Sekunden (`s`) angegeben – z. B. bewirkt `transition: 1s`, dass alle Stiländerungen innerhalb von 1 Sekunde übergehen.
-Gibt man zusätzlich eine CSS-Property an, etwa `transition: opacity 1s`, gilt die Animation nur für diese Eigenschaft.
+Die Dauer wird in Sekunden (`s`) angegeben – z. B. bewirkt `transition: 1s;`, dass alle Stiländerungen innerhalb von 1 Sekunde übergehen.
+Gibt man zusätzlich eine CSS-Property an, etwa `transition: opacity 1s;`, gilt die Animation nur für diese Eigenschaft.
 
 Mehrere Eigenschaften können mit Kommas getrennt werden.
 
