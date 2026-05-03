@@ -4,11 +4,9 @@
 
 ---
 
-#### Based on the info of and Imagery from the software you have gathered:
+# Gather Texts and Visual Assets
 
-## Design a hybrid page that communicates and reflects your personal experience
-
-Try Use your “Steckbrief” as a starting point, but reinterpret it creatively rather than solely presenting raw data. Transform your findings into an fun, engaging, and designed experience.
+# Design a hybrid page that communicates and reflects something you care about:
 
 1.  Your design must work in both screen and print versions.
     The printed and digital versions should not be identical – though still remaining somewhat consistent in theme. Highlight the differences between them & reflect on how design changes between digital/interactive and physical formats.
