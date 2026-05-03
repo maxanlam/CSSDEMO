@@ -1,4 +1,4 @@
-# @media screen meets print Steckbrief {}
+# styling hybrid formats {}
 
 **Software-Anforderungen:** Visual Studio Code mit Live-Server Extension, Firefox oder Google Chrome
 
