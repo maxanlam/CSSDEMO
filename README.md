@@ -1,4 +1,4 @@
-# styling hybrid formats {}
+# styling in dual format {}
 
 **Software-Anforderungen:** Visual Studio Code mit Live-Server Extension, Firefox oder Google Chrome
 
