@@ -395,6 +395,29 @@ Sie bestimmen den Abstand zu einer Kante.
 
 ---
 
+## z-index
+
+z-index bestimmt quasi die Layer-Reihenfolge von Elementen.
+
+- höherer Wert = liegt weiter oben
+- funktioniert nur solande die Positionsart im CSS klar definiert wurde
+
+z.B.:
+
+```css
+.box1 {
+  position: absolute;
+  z-index: 1;
+}
+
+.box2 {
+  position: absolute;
+  z-index: 10;
+}
+```
+
+box2 liegt also über box1
+
 ## Breite & Höhe (`width` & `height`)
 
 Diese Eigenschaften definieren die Dimensionen eines HTML-Elements.  
@@ -417,6 +440,77 @@ Standardmäßig beziehen sie sich auf den **Inhaltsbereich** der Box.
 | `%`         | Relativ     | Anteil an der Größe des Eltern-Elements                         |
 | `vw` / `vh` | Relativ     | Prozent der Viewport-Breite bzw. -Höhe vom Browser-Fenster      |
 | `auto`      | Automatisch | Browser berechnet die Größe basierend auf dem Inhalt (Standard) |
+
+---
+
+## Overflow
+
+Die CSS-Eigenschaft `overflow` bestimmt, was passiert, wenn der Inhalt eines Elements größer ist als sein Container.
+
+Das ist besonders nützlich, wenn Inhalte nicht über das Layout hinausragen sollen oder wenn man Scrollbereiche (z. B. Galerien oder Boxen) erstellen möchte.
+
+typische Anwendungsfälle sind z.B.:
+
+- **a)** Ein Bild ist größer als sein Container und soll nicht sichtbar überstehen
+- **b)** Eine Galerie oder ein Container mit mehreren Elementen soll scrollbar sein
+
+Werte:
+`visible` – Inhalt ragt raus (Standard)
+`hidden` – Inhalt wird abgeschnitten
+`scroll` – Scrollleisten immer sichtbar
+`auto` – Scrollleisten nur wenn nötig
+
+z.B.
+
+Inhalt wird abgeschnitten (`hidden`):
+
+```css
+.box1 {
+  width: 200px;
+  height: 100px;
+  overflow: hidden;
+}
+```
+
+Scrollleisten immer sichtbar (`scroll`):
+
+```css
+.box2 {
+  width: 200px;
+  height: 100px;
+  overflow: scroll;
+}
+```
+
+Scroll nur wenn nötig (`auto`):
+
+```css
+.box3 {
+  width: 200px;
+  height: 100px;
+  overflow: auto;
+}
+```
+
+### overflow-x und overflow-y
+
+Mit diesen Eigenschaften kannst du den Überlauf getrennt/nur auf einer Achse steuern:
+
+- `overflow-x` - steuert den horizontalen Überlauf (links ↔ rechts), z. B. bei Carousels, Galerien oder Slidern
+- `overflow-y` - steuert den vertikalen Überlauf (oben ↕ unten), z. B. bei Dropdowns oder Accordion-Boxen
+
+---
+
+## Beispiel
+
+```css
+.box4 {
+  width: 200px;
+  height: 100px;
+  overflow-x: hidden; /* horizontal verstecken */
+  overflow-y: auto; /* vertikal scrollen wenn nötig */
+}
+```
 
 ---
 
@@ -453,30 +547,34 @@ Die Properties Opacity und Transfrom werden gerne mal für Animationen, Hover-Ef
 
 ## Typografie & Text
 
-- `font-family:` - Schriftart (z. B. Arial, sans-serif)
-  - **fonts verlinken**:
-    1. Schriftdateien (z. B. `.woff2`, `.woff`) in dein Projekt legen (z. B. `/fonts/` Ordner).
-    2. In deiner CSS-Datei `@font-face` definieren:
+- `font-family:` - steht für die Schriftart (z. B. Arial, sans-serif)
 
-    ```css
-    @font-face {
-      font-family: "MeineFont"; /* ausgedachter name mit dem du dann arbeitest*/
-      src:
-        url("/fonts/meinefont.woff2") format("woff2"),
-        url("/fonts/meinefont.woff") format("woff");
-      font-weight: normal;
-      font-style: normal;
-    }
-    ```
+### Fonts verlinken:
 
-    3. Schrift in deinem CSS verwenden:
+1. Schriftdateien (z. B. `.woff2`, `.woff`) in dein Projekt legen (z. B. `/fonts/` Ordner).
+2. In deiner CSS-Datei `@font-face` definieren:
 
-    ```css
-    p {
-      font-family:
-        "MeineFont", sans-serif; /* ausgedachter Name dann für bestimmte elemente via css "font-family:" zuschreiben um sie zu benutzen */
-    }
-    ```
+```css
+@font-face {
+  font-family: "MeineFont"; /* ausgedachter name mit dem du dann arbeitest*/
+  src:
+    url("/fonts/meinefont.woff2") format("woff2"),
+    url("/fonts/meinefont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+```
+
+3. Schrift in deinem CSS verwenden:
+
+```css
+p {
+  font-family:
+    "MeineFont", sans-serif; /* ausgedachter Name dann für bestimmte elemente via css "font-family:" zuschreiben um sie zu benutzen */
+}
+```
+
+### Font-Properties
 
 - `font-size:` - Schriftgröße (px, em, rem oder seltener vw für große, skalierende Headlines, die sich an die Fenstergröße anpassen)
 - `font-weight:` - Dicke (bold, 400, 700)
@@ -702,6 +800,8 @@ für gewisse Interaktionen Kann man den zustand des Elements verändern:
 
 Auch diese Zustände können gestylt werden und dadurch visuell vom Normalzustand abweichen.
 
+#### Transition
+
 Mit `transition:` lassen sich solche Änderungen weich animieren.
 Die Dauer wird in Sekunden (`s`) angegeben – z. B. bewirkt `transition: 1s`, dass alle Stiländerungen innerhalb von 1 Sekunde übergehen.
 Gibt man zusätzlich eine CSS-Property an, etwa `transition: opacity 1s`, gilt die Animation nur für diese Eigenschaft.
@@ -710,7 +810,7 @@ Mehrere Eigenschaften können mit Kommas getrennt werden.
 
 #### Easing
 
-Nach der Sekundenangabe kann man auch noch `easeing` Hinzufügen. Es beschreibt die zeitliche Veränderung einer Animation – also wie schnell oder langsam ein Übergang beginnt, verläuft und endet.
+Nach der Sekundenangabe kann man auch noch `easing` Hinzufügen. Es beschreibt die zeitliche Veränderung einer Animation – also wie schnell oder langsam ein Übergang beginnt, verläuft und endet.
 
 Nach der Dauer kann ein Easing-Wert angegeben werden, z. B. `transition: opacity 1s ease`.
 
@@ -723,7 +823,7 @@ Gängige Easing-Arten:
 - `ease-in-out` – langsam starten und enden, schnell in der Mitte
 - `cubic-bezier(...)` – individuelle Kurve definieren
 
-hier mal ein finales Beispiel wenn ich ein Element hover bzw. klicken würde bsp.:
+hier mal ein Beispiel wenn ich ein Element hover bzw. klicken würde:
 
 ```css
 /* originaler Zustand*/
@@ -737,8 +837,10 @@ a:hover,
 a:active {
   color: red;
   background-color: black;
-color 1s ease-in-out, /* startet langsam, wird schneller, endet wieder langsam */
-background-color 1s ease-in; /* startet langsam und beschleunigt dann */
+  transition:
+    color 1s ease-in-out,
+    /* startet langsam, wird schneller, endet wieder langsam */ background-color
+      1s ease-in; /* startet langsam und beschleunigt dann */
 }
 ```
 
@@ -770,31 +872,70 @@ Beim Klick auf „Mehr anzeigen“ wird das Element geöffnet und `:open` greift
 
 ## Animation
 
-CSS Animationen werden mit `@keyframes` erstellt. Damit kann ein Ablauf Schritt für Schritt definiert werden.
+Animationen gehen über einfache Hover-Transitions hinaus. Während [`transition`](#transform-verformung--bewegung) nur Zustandswechsel animiert (z. B. Normal → Hover), können echte CSS-Animationen frei definierte Abläufe unabhängig von User-Input abspielen.
 
-- `@keyframes name {}` – definiert den Verlauf der Animation
-  → kann mit `from / to` oder Prozentwerten (`0%`, `100%`, dazwischen z. B. `50%`) arbeiten
+Sie bestehen aus zwei Teilen:
 
-- `animation:` – aktiviert die Animation auf einem Element
-  → verbindet Name, Dauer und Verhalten
+`@keyframes` - wird unabhängig von den Declaration Blocks im CSS aufgebaut und beschreibt den Ablauf
+`animation` - wendet diesen Ablauf auf ein Element an
 
-```css id="k1"
-animation: name 2s ease;
+### 1. @keyframes – Animation benennen und Ablauf definieren
+
+Hier legst du fest, was wann passiert.
+
+- Den Namen nach `@keyframes` denkst du dir frei aus, um ihn dann im späteren Verlauf mit der property [`animation:`](#2-animation--anwenden-auf-ein-element) auf ein Element anzuwenden:
+
+```css
+@keyframes fadeMove {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
 ```
 
-- `duration` = wie lange die Animation läuft
-- `timing-function` = Verlauf der Geschwindigkeit (z. B. `linear`, `ease`)
+- Du kannst mit Prozenten arbeiten (`0%` → `100%`)
+- oder mit `from` / `to`
+
+### 2. animation – anwenden auf ein Element
+
+hier wendest du dann deine erdachte Animation mit der CSS-Property `animation` auf ein element an:
+
+```css
+.box {
+  animation: fadeMove 2s ease-in-out infinite;
+}
+```
+
+der Aufbau der Property gestaltet sich wie folgt:
+
+```css
+animation: [name] [duration] [timing-function] [iteration-count];
+```
+
+- `name` - ist hier dein ausgedachter Alias für die gebaute Animation
+- `duration` - ist wie lange diese Abfolge insgesamt in Sekunden spielen soll
+- `timing-function` - arbeitet genau mit den gleichen Timing-Begriffen wie wir sie aus [easing](#easing) kennen. Sie bestimmt die zeitliche Beschleunigung / Dynamik.
+- `iteration-count` - entscheidet die Wiederholung der Animation:
+  - `1` (default) - spielt genau einmal
+  - `2`, `3`, `5` … - spielt entsprechend oft
+  - `infinite` - läuft endlos weiter
 
 ---
 
-### 🧠 Kurz gesagt:
-
-- `@keyframes` = baut die Animation
-- `animation` = spielt sie am Element ab
-
 ## Media Queries
 
-### @media Screen
+### @media Screenå
 
 Für unterschiedliche Bildschirmgrößen.
 
