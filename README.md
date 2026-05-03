@@ -1008,17 +1008,17 @@ oder
 
 ## Nachschlage-Werke:
 
-**Glossare/Docs:**
+### Glossare/Docs:
 
 - **[MDN Web Docs](https://developer.mozilla.org/)** – Beste Referenz: verständlich, aktuell & mit Beispielen
 
 - **[W3C](https://www.w3.org/)** – Offizielle Standards
 
-**Kurse:**
+### Kurse:
 
 - **[freeCodeCamp](https://www.freecodecamp.org/)**
 
-**Beilspiele:**
+### Beilspiele:
 
 - **[CodePen](https://codepen.io/)** – Direkt im Browser ausprobieren
 
@@ -1026,7 +1026,7 @@ oder
 
 ---
 
-### Clip-Path
+#### Clip-Path
 
 `clip-path:` schneidet Elemente in beliebige Formen (z. B. Kreis, Dreieck, organische Shapes).  
 Wird oft für moderne UI-Designs, Bilder oder Buttons genutzt.
@@ -1038,13 +1038,11 @@ Statt Werte selbst zu schreiben, verwendet man häufig Generatoren:
 
 ---
 
-**Editoren**
-
-**Foren:**
+### Foren:
 
 - **[Stack Overflow](https://stackoverflow.com/)** – Hilfe bei konkreten Problemen
 
-**Spiele/Übungen**
+### Spiele/Übungen
 
 - **[CSS Battle](https://cssbattle.dev/)**
   Daily challenges aber auch CSS-Kurse
