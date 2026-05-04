@@ -1,0 +1,168 @@
+/* =========================
+   FONT SETUP (Platzhalter)
+   ========================= */
+
+@font-face {
+  font-family: "MeineFont";
+  src:
+    url("/fonts/meinefont.woff2") format("woff2"),
+    url("/fonts/meinefont.woff") format("woff");
+}
+
+/* =========================
+   RESET / BASIS
+   ========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Grundlegende Typografie */
+body {
+  font-family: "MeineFont", sans-serif;
+  line-height: 1.5;
+  padding: 20px;
+}
+
+/* =========================
+   LAYOUT
+   ========================= */
+
+header,
+footer {
+  margin-bottom: 40px;
+}
+
+h1,
+h2 {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  width: 100%;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+/* =========================
+   BOX MODELL DEMO
+   ========================= */
+
+.box {
+  width: 250px;
+  padding: 20px;
+  border: 5px solid black;
+  margin: 20px 0;
+  border-radius: 1rem;
+}
+
+/* =========================
+   FLEXBOX
+   ========================= */
+
+.flex-container {
+  display: flex;
+  gap: 10px;
+}
+
+.item {
+  padding: 20px;
+  border: 2px solid black;
+}
+
+/* =========================
+   GRID
+   ========================= */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+/* =========================
+   IMAGE
+   ========================= */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================
+   INTERAKTION (HOVER)
+   ========================= */
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  background: grey;
+  color: white;
+  cursor: pointer;
+
+  /* Transition für weiche Animation */
+  transition:
+    background 0.5s ease,
+    transform 0.5s ease;
+}
+
+.btn:hover {
+  background: black;
+  transform: scale(1.1);
+}
+
+/* =========================
+   ANIMATION
+   ========================= */
+
+/* Ablauf definieren */
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100px);
+  }
+}
+
+.animated-box {
+  width: 50px;
+  height: 50px;
+  background: black;
+
+  /* Animation anwenden */
+  animation: move 2s ease-in-out infinite alternate;
+}
+
+/* =========================
+   DETAILS / OPEN
+   ========================= */
+
+details {
+  margin-top: 10px;
+}
+
+details:open {
+  background: lightgrey;
+  padding: 10px;
+}
+
+/* =========================
+   PRINT STYLES
+   ========================= */
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .btn,
+  .animated-box {
+    display: none; /* Interaktive Elemente im Print ausblenden */
+  }
+}

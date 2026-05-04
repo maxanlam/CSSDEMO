@@ -188,79 +188,14 @@ Selektoren werden verwendet, um HTML-Elemente zu „finden“.
 
 ---
 
-## Einheiten
+### Wichtige Einheiten
 
-- `px` - Pixel (absolut)
-- `%` - Prozent relativ zum Eltern-Element
-- `em` - relativ zur Schriftgröße des Elements
-- `rem` - relativ zur Schriftgröße des Root-Elements (`<html>`)
-- `vw / vh` - Prozent der Viewport-Breite/-Höhe
-
-### calc()
-
-- Berechnungen mit `calc()` kombinieren verschiedene Einheiten (z. B. px, %, vh)
-- hilft bei flexiblen Layouts
-
-**Beispiel:**
-
-```css
-width: calc(100% - 40px);
-```
-
----
-
-## Farbe
-
-Farben bestimmen Text- und Hintergrundgestaltung.
-
-- `background-color:` – Hintergrundfarbe
-- `color:` – Textfarbe
-
----
-
-### Farbwerte in CSS
-
-#### Hex
-
-Rot als 6-stelliger Code:
-
-```css id="c1"
-color: #ff0000;
-```
-
-#### RGB
-
-Rot (Rot, Grün, Blau Werte 0–255):
-
-```css id="c2"
-color: rgb(255, 0, 0);
-```
-
-#### RGBA (mit Transparenz)
-
-halbtransparent:
-
-```css id="c3"
-color: rgba(255, 0, 0, 0.5);
-```
-
-#### HSL
-
-Farbe über Farbton, Sättigung, Helligkeit:
-
-```css id="c4"
-color: hsl(0, 100%, 50%);
-```
-
-#### Farbnamen
-
-Rot, ausgeschrieben;
-
-```css id="c5"
-color: red;
-```
-
----
+| Einheit     | Typ         | Beschreibung                                                    |
+| ----------- | ----------- | --------------------------------------------------------------- |
+| `px`        | Absolut     | Feste Größe (z. B. `300px`)                                     |
+| `%`         | Relativ     | Anteil an der Größe des Eltern-Elements                         |
+| `vw` / `vh` | Relativ     | Prozent der Viewport-Breite bzw. -Höhe vom Browser-Fenster      |
+| `auto`      | Automatisch | Browser berechnet die Größe basierend auf dem Inhalt (Standard) |
 
 ## Das CSS-Box-Modell
 
@@ -352,16 +287,60 @@ div {
 
 ---
 
+## Farbe
+
+Farben bestimmen Text- und Hintergrundgestaltung.
+
+- `background-color:` – Hintergrundfarbe
+- `color:` – Textfarbe
+
+---
+
+### Farbwerte in CSS
+
+#### Hex
+
+Rot als 6-stelliger Code:
+
+```css id="c1"
+color: #ff0000;
+```
+
+#### RGB
+
+Rot (Rot, Grün, Blau Werte 0–255):
+
+```css id="c2"
+color: rgb(255, 0, 0);
+```
+
+#### RGBA (mit Transparenz)
+
+halbtransparent:
+
+```css id="c3"
+color: rgba(255, 0, 0, 0.5);
+```
+
+#### HSL
+
+Farbe über Farbton, Sättigung, Helligkeit:
+
+```css id="c4"
+color: hsl(0, 100%, 50%);
+```
+
+#### Farbnamen
+
+Rot, ausgeschrieben;
+
+```css id="c5"
+color: red;
+```
+
+---
+
 ## Wichtige Layout-Eigenschaften
-
-### Display
-
-Definiert, wie ein Element dargestellt wird.
-
-- `display: block;` - Nimmt die gesamte Breite ein
-- `display: inline;` - Nur notwendige Breite, keine feste Höhe/Breite
-- `display: inline-block;` - Inline, aber mit Höhe/Breite steuerbar
-- `display: none;` - Element wird (visuell) aus dem Flow entfernt
 
 ### Positionierung
 
@@ -428,16 +407,46 @@ Standardmäßig beziehen sie sich auf den **Inhaltsbereich** der Box.
 
 - `min-width:` / `min-height:` - garantieren eine Mindestgröße, auch bei wenig Inhalt
 
-### Wichtige Einheiten
+---
 
-| Einheit     | Typ         | Beschreibung                                                    |
-| ----------- | ----------- | --------------------------------------------------------------- |
-| `px`        | Absolut     | Feste Größe (z. B. `300px`)                                     |
-| `%`         | Relativ     | Anteil an der Größe des Eltern-Elements                         |
-| `vw` / `vh` | Relativ     | Prozent der Viewport-Breite bzw. -Höhe vom Browser-Fenster      |
-| `auto`      | Automatisch | Browser berechnet die Größe basierend auf dem Inhalt (Standard) |
+## calc()
+
+- Berechnungen mit `calc()` kombinieren verschiedene Einheiten (z. B. px, %, vh)
+- hilft bei flexiblen Layouts
+
+**Beispiel:**
+
+```css
+width: calc(100% - 40px);
+```
 
 ---
+
+### Display
+
+Definiert, wie ein Element dargestellt wird.
+
+- `display: block;`
+  - nimmt die gesamte verfügbare Breite ein
+  - neue Elemente beginnen in der nächsten Zeile
+
+- `display: flex;`
+  - macht das Element zu einem Container, der seine Kinder automatisch anordnet
+  - Kinder stehen standardmäßig nebeneinander (in einer Reihe)
+  - ermöglicht einfaches Ausrichten (z. B. zentrieren, verteilen)
+  - bleibt im normalen Layout (nicht aus dem Flow entfernt)
+
+- `display: inline;`
+  - nimmt nur so viel Platz wie nötig
+  - Elemente stehen nebeneinander im Textfluss
+  - keine feste Breite oder Höhe möglich
+
+- `display: inline-block;`
+  - steht nebeneinander wie inline
+  - aber: Breite und Höhe können gesetzt werden
+
+- `display: none;`
+  - Element wird komplett entfernt (unsichtbar und nimmt keinen Platz im Layout ein)
 
 ## Overflow
 
@@ -931,13 +940,13 @@ animation: [name] [duration] [timing-function] [iteration-count];
 
 ## Media Queries
 
-### @media Screenå
+### @media Screen
 
 Für unterschiedliche Bildschirmgrößen.
 
 ```css
-/* Für Bildschirme ab 768px Breite */
-@media (min-width: 768px) {
+/* Für Bildschirme bis zu 768px Breite (z.B. Handy) */
+@media (max-width: 768px) {
   body {
     background-color: lightblue;
   }
