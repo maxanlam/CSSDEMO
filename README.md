@@ -340,9 +340,7 @@ color: red;
 
 ---
 
-## Wichtige Layout-Eigenschaften
-
-### Positionierung
+## Positionierung
 
 - `position: static;` - Standard (keine spezielle Positionierung)
 
@@ -422,7 +420,29 @@ width: calc(100% - 40px);
 
 ---
 
-### Display
+## Object Fit
+
+`object-fit:` steuert, wie Bilder und Videos innerhalb eines festen Containers dargestellt werden
+
+- `cover` – füllt den Container komplett, schneidet ggf. Teile ab
+- `contain` – passt vollständig in den Container, ohne Beschnitt
+- `fill` – verzerrt das Element, um den Container zu füllen
+- `none` – behält originale Größe bei
+- `scale-down` – nimmt die kleinere Variante aus `none` oder `contain`
+
+**Beispiel:**
+
+```css
+img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+```
+
+---
+
+## Display
 
 Definiert, wie ein Element dargestellt wird.
 
@@ -579,12 +599,17 @@ p {
 }
 ```
 
-### Font-Properties
+### Weitere Font-Properties
 
-- `font-size:` - Schriftgröße (px, em, rem oder seltener vw für große, skalierende Headlines, die sich an die Fenstergröße anpassen)
-- `font-weight:` - Dicke (bold, 400, 700)
+- `font-size:` - Schriftgröße (`px`, `em`, `rem` oder seltener `vw` für große, skalierende Headlines, die sich an die Fenstergröße anpassen)
+- `font-weight:` - Dicke (`bold`, `700`, `regular`, `400`)
 - `text-align:` - Ausrichtung (left, center, right, justify)
 - `line-height:` - Zeilenabstand
+- `letter-spacing:` - verändert den Abstand zwischen Buchstaben
+- `word-spacing:` - verändert den Abstand zwischen Worten
+- `text-decoration:` - fügt Linien hinzu oder entfernt sie (z. B. `underline`, `none` für Links)
+- `text-transform` - verändert die Groß-/Kleinschreibung  
+  (`uppercase`, `lowercase`, `capitalize`)
 - `webkit-text-stroke:` - Textkontur
   - `paint-order: stroke;` - die Kontur (stroke) wird zuerst gezeichnet (liegt “unten”) = Kontur außen
   - `paint-order: markers;` - Marker (z. B. Pfeile an Linienenden) werden zuerst gezeichnet = Kontur zentriert
