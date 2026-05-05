@@ -111,7 +111,7 @@ nav ul a:hover {
 
 .copy-btn:hover {
   zoom: 1.05;
-  filter: invert(1);
+  filter: invert(0.9);
 }
 
 .copy-btn:hover::before {
