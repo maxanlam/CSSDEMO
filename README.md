@@ -210,7 +210,7 @@ Jedes Element im Web wird als rechteckige Box betrachtet. Das Box-Modell ist ent
 
 ![](/screenshots/CSS-Box-Modell.png)
 
-- `padding:` -transparenter Bereich um den Inhalt (innerhalb des Rahmens)
+- `padding:` - transparenter Bereich um den Inhalt (innerhalb des Rahmens)
 - `border:` - Linie um Padding und Inhalt
 - `margin:` - transparenter Bereich außerhalb des
 - `width:` - bestimmt die Breite eines Elements
