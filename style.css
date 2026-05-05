@@ -68,6 +68,15 @@ nav::-webkit-scrollbar {
   letter-spacing: 0.1em;
 }
 
+#github {
+  font-weight: 700;
+  font-size: 1rem;
+  white-space: nowrap;
+  margin-right: 32px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
 nav ul {
   display: flex;
   list-style: none;
