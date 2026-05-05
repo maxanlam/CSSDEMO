@@ -170,12 +170,12 @@ Statt einer seperaten CSS-Dateikann aber auch (seltener) direkt in der html in d
 
 ## Aufbau einer CSS-Regel
 
+![](/screenshots/8240b8b44c51e10c7baef0329a8837073774854c84505a8303cff20a589fa96709bfff22de4986c35ff635e2e9e0510d1f5f07cd1fcac0c72ffcd784d358046b.png)
+
 - **Selektor (Selector):** Zeigt auf das HTML-Element, das du stylen möchtest, du kannst auch unterschiedliche Elemente zusammen auswählen, wenn du mit `,` trennst.
 - **Deklarationsblock (Declaration Block):** - folgt nach dem Selektor immer hinnerhab der `{}` . Enthält eine oder mehrere Deklarationen, getrennt durch `;`.
 - **Eigenschaft (Property):** Das Stil-Attribut, das du ändern möchtest (z. B. `color:`).
 - **Wert (Value):** Der Wert für diese Eigenschaft (z. B. `red`).
-
-![](/screenshots/8240b8b44c51e10c7baef0329a8837073774854c84505a8303cff20a589fa96709bfff22de4986c35ff635e2e9e0510d1f5f07cd1fcac0c72ffcd784d358046b.png)
 
 ---
 
