@@ -31,6 +31,7 @@ body {
   font-family: "MeineFont";
   font-size: 1rem;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* ============================================================
@@ -48,12 +49,18 @@ nav {
   overflow-x: auto;
   border-bottom: 1px solid rgb(26, 26, 26);
   gap: 0;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+nav::-webkit-scrollbar {
+  display: none;
 }
 
 #logo {
   color: rgb(0, 0, 0);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 1rem;
   white-space: nowrap;
   margin-right: 32px;
   text-transform: uppercase;
@@ -69,7 +76,7 @@ nav ul {
 
 nav ul a {
   color: grey;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   text-decoration: none;
   white-space: nowrap;
   transition: color 0.2s ease;
@@ -84,9 +91,22 @@ button {
   background-color: black;
   color: white;
   font-family: "MeineFont";
-  font-size: 1.2rem;
-  position: absolute;
-  right: 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+
+button:hover {
+  zoom: 1.05;
+  filter: invert(1);
+}
+
+button:hover::before {
+  content: "{";
+}
+
+button:hover::after {
+  content: "}";
 }
 
 /* ============================================================

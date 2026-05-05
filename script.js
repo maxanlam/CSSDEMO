@@ -41,3 +41,19 @@ document.querySelectorAll(".copy-btn").forEach((btn) => {
     setTimeout(() => (btn.textContent = "Code Kopieren"), 1500);
   });
 });
+
+const nav = document.querySelector("nav");
+
+nav.addEventListener("mousemove", (e) => {
+  const rect = nav.getBoundingClientRect();
+  const mouseX = e.clientX - rect.left; // mouse position inside nav
+  const width = rect.width;
+
+  const speed = 100; // adjust scroll speed
+
+  if (mouseX > width / 2) {
+    nav.scrollLeft += speed; // scroll right
+  } else {
+    nav.scrollLeft -= speed; // scroll left
+  }
+});
