@@ -61,6 +61,7 @@ const nav = document.querySelector("nav");
 nav.addEventListener("mousemove", (e) => {
   const rect = nav.getBoundingClientRect();
   const mouseX = e.clientX - rect.left;
+  const width = rect.width;
 
   const speed = 100;
 
