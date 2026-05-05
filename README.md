@@ -294,12 +294,27 @@ div {
 
 ---
 
-## Farbe
+## Farbe & Backgrounds
 
 Farben bestimmen Text- und Hintergrundgestaltung.
 
-- `background-color:` - Hintergrundfarbe
 - `color:` - Textfarbe
+- `background-color:` - Hintergrundfarbe
+  - hier geht es aber auch mit `background`, wobei dort auch theoretisch Bilder eingefügt werden könnten:
+
+  ### exkurs: Hintergrundbild mit Background: url()
+
+  background: url(): setzt ein Bild als Hintergrund eines Elements.
+
+Beispiel:
+
+```css
+body {
+  background: url("bild.jpg");
+  background-size: cover;
+  background-position: center;
+}
+```
 
 ---
 
@@ -869,7 +884,7 @@ Auch diese Zustände können gestylt werden und dadurch visuell vom Normalzustan
 #### Transition
 
 Mit `transition:` lassen sich solche Änderungen weich animieren.
-Die Dauer wird in Sekunden (`s`) angegeben - z. B. bewirkt `transition: 1s;`, dass alle Stiländerungen innerhalb von 1 Sekunde übergehen.
+Die Dauer wird in Sekunden (`s`) angegeben - z. B. bewirkt `transition: 1s;`, dass alle Stiländerungen innerhalb von 1 Sekunde übergehen
 Gibt man zusätzlich eine CSS-Property an, etwa `transition: opacity 1s;`, gilt die Animation nur für diese Eigenschaft.
 
 Mehrere Eigenschaften können mit Kommas getrennt werden.
@@ -907,6 +922,23 @@ a:active {
     color 1s ease-in-out,
     /* startet langsam, wird schneller, endet wieder langsam */ background-color
       1s ease-in; /* startet langsam und beschleunigt dann */
+}
+```
+
+### transiton-delay
+
+`transition-delay` bestimmt, wie lange gewartet wird, bevor eine CSS-Transition startet.
+
+z.B.:
+
+```css
+button {
+  transition: background-color 0.5s;
+  transition-delay: 0.3s;
+}
+
+button:hover {
+  background-color: red;
 }
 ```
 
@@ -996,6 +1028,30 @@ animation: [name] [duration] [timing-function] [iteration-count];
   - `1` (default) - spielt genau einmal
   - `2`, `3`, `5` … - spielt entsprechend oft
   - `infinite` - läuft endlos weiter
+
+### animation-delay
+
+genau wie bei [transiton-delay](#transiton-delay)
+
+`animation-delay` bestimmt, wie lange gewartet wird, bevor eine CSS-Animation beginnt.
+
+z.B.:
+
+```css
+.box {
+  animation: fadeIn 2s ease;
+  animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+```
 
 ---
 
