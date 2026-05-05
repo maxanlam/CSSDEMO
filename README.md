@@ -310,9 +310,9 @@ Beispiel:
 
 ```css
 body {
-  background: url("bild.jpg");
-  background-size: cover;
-  background-position: center;
+  background: url("bild.jpg"); /* setzt das Hintergrundbild */
+  background-size: cover; /* Bild füllt den gesamten Bereich, wird ggf. zugeschnitten */
+  background-position: center; /* Bild wird zentriert angezeigt */
 }
 ```
 
@@ -1150,7 +1150,7 @@ oder
 
 ---
 
-#### Clip-Path
+#### Geometrische Freiformen mit Clip-Path
 
 `clip-path:` schneidet Elemente in beliebige Formen (z. B. Kreis, Dreieck, organische Shapes).  
 Wird gerne UI-Designs, Bilder oder Buttons genutzt.
