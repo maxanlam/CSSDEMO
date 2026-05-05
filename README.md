@@ -4,7 +4,7 @@
 
 ---
 
-# Gather Texts and Visual Assets
+# Gather texts and visual assets
 
 # Design a hybrid page that communicates and reflects something you care about:
 
@@ -515,10 +515,11 @@ typische Anwendungsfälle sind z.B.:
 - **b)** Eine Galerie oder ein Container mit mehreren Elementen soll scrollbar sein
 
 Werte:
-`visible` - Inhalt ragt raus (Standard)
-`hidden` - Inhalt wird abgeschnitten
-`scroll` - Scrollleisten immer sichtbar
-`auto` - Scrollleisten nur wenn nötig
+
+- `visible` - Inhalt ragt raus (Standard)
+- `hidden` - Inhalt wird abgeschnitten
+- `scroll` - Scrollleisten immer sichtbar
+- `auto` - Scrollleisten nur wenn nötig
 
 z.B.
 
