@@ -2,7 +2,6 @@ document.querySelectorAll(".copy-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
     const section = btn.closest("section");
 
-    // clone section so we can modify it safely
     const clone = section.cloneNode(true);
 
     // remove UI elements from clone
@@ -26,7 +25,6 @@ document.querySelectorAll(".copy-btn").forEach((btn) => {
       .filter((rule) => {
         const selector = rule.selectorText.trim();
 
-        // remove copy button styles + global reset
         if (selector.includes("copy-btn")) return false;
         if (selector.includes("h3")) return false;
         if (selector === "*") return false;
