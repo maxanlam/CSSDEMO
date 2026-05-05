@@ -1096,9 +1096,9 @@ oder
 #### Clip-Path
 
 `clip-path:` schneidet Elemente in beliebige Formen (z. B. Kreis, Dreieck, organische Shapes).  
-Wird oft für moderne UI-Designs, Bilder oder Buttons genutzt.
+Wird gerne UI-Designs, Bilder oder Buttons genutzt.
 
-Statt Werte selbst zu schreiben, verwendet man häufig Generatoren:
+Statt immer Werte selbst zu schreiben, verwendet man häufig Generatoren:
 
 - **[Clip-Path-Generator](https://unused-css.com/tools/clip-path-generator)** -
   ein Clip-Path-Editor um vorgefertigte geometrische Formen als Clip-Paths zu benutzen oder um selber welche vorzuzeichen und sie dann per copy paste im CSS auf ein Element einzufügen
