@@ -452,6 +452,7 @@ Standardmäßig beziehen sie sich auf den **Inhaltsbereich** der Box.
 - `height:` - legt die Höhe des Elements fest
 
 - `max-width:` / `max-height:` - verhindern, dass ein Element größer als ein bestimmter Wert wird
+  - wenn man mit Text-Blöcken arbeitet kann man bei `max-widt:` also Einheit auc `ch` verwenden, was für Wort ("character") steht (ergo `max-widht: 20vh` = maximal **20** Worte pro zeile )
 
 - `min-width:` / `min-height:` - garantieren eine Mindestgröße, auch bei wenig Inhalt
 
@@ -654,16 +655,39 @@ p {
 
 - `font-size:` - Schriftgröße (`px`, `em`, `rem` oder seltener `vw` für große, skalierende Headlines, die sich an die Fenstergröße anpassen)
 - `font-weight:` - Dicke (`bold`, `700`, `regular`, `400`)
-- `text-align:` - Ausrichtung (left, center, right, justify)
+- `text-align:` - Ausrichtung (`left`, `center`, `right`, `justify`)
 - `line-height:` - Zeilenabstand
 - `letter-spacing:` - verändert den Abstand zwischen Buchstaben
 - `word-spacing:` - verändert den Abstand zwischen Worten
-- `text-decoration:` - fügt Linien hinzu oder entfernt sie (z. B. `underline`, `none` für Links)
+- `text-decoration:` - fügt Linien hinzu oder entfernt sie (z. B.
+  `underline`, `none` für Links)
 - `text-transform` - verändert die Groß-/Kleinschreibung  
   (`uppercase`, `lowercase`, `capitalize`)
 - `webkit-text-stroke:` - Textkontur
   - `paint-order: stroke;` - die Kontur (stroke) wird zuerst gezeichnet (liegt “unten”) = **Kontur außen**
   - `paint-order: markers;` - Marker (z. B. Pfeile an Linienenden) werden zuerst gezeichnet = **Kontur zentriert**
+- `hyphens:` - erlaubt mit `auto` silbentrennugnen.
+- **Wichtig:** Funktioniert nur korrekt, wenn die Sprache am Anfang der HTML gesetzt ist:
+
+```html
+<html lang="de"></html>
+```
+
+#### Whitespace & Umbrüche
+
+Diese Eigenschaften steuern, wie Text umbricht:
+
+```css
+p {
+  overflow-wrap: break-word;
+  word-break: normal;
+  white-space: normal;
+}
+```
+
+- `overflow-wrap: break-word` - verhindert Überlaufen bei langen Wörtern/URLs
+- `word-break: normal`- natürliche Worttrennung statt aggressivem Splitten
+- `white-space: normal` -Standard: Zeilen umbrechen automatisch
 
 ---
 
