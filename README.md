@@ -20,10 +20,10 @@
 Damit Seiten in HTML gerendered werden benötigen sie immer die Endung `.html`,
 die erste Startseite nennt man i.d.R. `index.html`;
 
-sobald dich in der HTML-Datei in VS Code befindest auf hast drücke `!` und klicke im popup auf das erste in der liste (`Emmet Abbreviation`); Somit erstellt du direkt ein Grundskellet für das Korrekte formatieren einer HTML-Seite, mit den wichtigsten Klarifikationen im `<head>` bzw. `<meta>`. Das ist wichtig weil Seiten sonst im Quirks mode landen = sieht komisch ungeplant und sehr inkonsisent auf endgeräten aus.
+sobald dich in der HTML-Datei in VS Code befindest auf hast drücke `!` und klicke im Popup auf das erste in der Liste (`Emmet Abbreviation`); Somit erstellt du direkt ein Grundskellet für das Korrekte formatieren einer HTML-Seite, mit den wichtigsten Klarifikationen im `<head>` bzw. `<meta>`. Das ist wichtig weil Seiten sonst im Quirks mode landen = sieht komisch ungeplant und sehr inkonsisent auf Endgeräten aus.
 
 **wichtig:**
-Alle HTML ELemente die über inhalt verfügen müssen immer geschlossen werden
+Alle HTML ELemente die über Inhalt verfügen müssen immer geschlossen werden
 z.B. bei `<p>` mit `</p>`
 die einzigen Ausnahmen sind:
 `<img>`
@@ -57,7 +57,7 @@ Das, was Nutzer tatsächlich lesen.
 
 - `<h1>`, `<h2>` → `<h6>` – Überschriften, gut für Struktur
 - `<p>` – Absätze
-- `<span>` – Inline-Container, kann html inhalte komplett unformatiert verpacken
+- `<span>` – Inline-Container, kann HTML-Inhalte komplett unformatiert verpacken
 - `<br>` – Zeilenumbruch
 - `<strong>` / `<em>` – semantische Hervorhebung (besser als `<b>` / `<i>`)
 
@@ -66,14 +66,14 @@ Das, was Nutzer tatsächlich lesen.
 ## Links
 
 - `<a>` – Hyperlinks
-  - innerhalb es tags kann der link in `src=""` geschrieben werden. Du kannst hier auf eine andere Seite/Url verlinken die auf klick geöffnet/aktiviert wird, mit `target="_blank"` wird diese in einem neuen tab geöffnet. Man kann aber auch auf eine bestimmte [id] (#id) innerhalb der eigenen Seite verlinken, z.B: `src="#beispiel"`.
+  - innerhalb es tags kann der link in `src=""` geschrieben werden. Du kannst hier auf eine andere Seite/Url verlinken die auf Klick geöffnet/aktiviert wird. Mit `target="_blank"` wird diese in einem neuen Tab geöffnet. Man kann aber auch auf eine bestimmte [id] (#id) innerhalb der eigenen Seite verlinken, z.B: `src="#beispiel"`.
 
 ## Medien
 
 - `<img>` – Bilder
-  - hier kannst du auch einfach mit `src=""` auf ein bild verlinken. Entweder auf eins in deinen eigenen ordnern oder mit einer externen url auf irgend ein anderes im internet
-  - mit `alt=""` kannst du auch einen alt text hinzufügen, was hilft das bild zu umschreiben sollte es mal nicht irchtig laden aber auch vorallem für menschen mit Sehbehinderung, die oft screenreader benutzen.
-  - mit `loading="lazy` werden bilder erst reingeladen, wenn sie sichtbar werden, statt direkt auf einmal beim Seitenladen. was bei perfomance helfen kann
+  - hier kannst du auch einfach mit `src=""` auf ein bild verlinken. Entweder auf eins in deinen eigenen Ordnern oder mit einer externen url auf ein anderes im Internet
+  - mit `alt=""` kannst du auch einen alt text hinzufügen, was hilft das Bild zu umschreiben, sollte es mal nicht richtig laden, aber auch vor allem für Mrnschen mit Sehbehinderung, die oft Screenreader benutzen.
+  - mit `loading="lazy` werden Bilder erst reingeladen, wenn sie sichtbar werden, statt direkt alle auf einmal beim Seitenladen. Das kann bei der Perfomance helfen und unangenehme ladephasen verringern.
 
 - `<video>` / `<audio>` – Medienplayer für inhalte die du selber bei dir hostest
 
@@ -128,20 +128,25 @@ Diese Attribute sind hilfreich für weitere Katoegoriserung im **Styling und Int
 ## ID
 
 - `id="..."` – eindeutiger Identifikator für ein bestimmtes Element
-  - Eine ID darf **nur einmal pro HTML-Dokument vorkommen**
+  - wenn man ein Element mit einer ID verseht, darf diese bestimmte ID **nur einmal pro HTML-Dokument vorkommen**
   - Sie darf nur **einem einzigen Element** zugewiesen werden
-  - Wird im CSS mit `#` angesprochen (z. B. `#beispiel`)
+  - Wird im CSS mit `#` angesprochen (z. B. `#beispielNr1`)
   - Wird im JavaScript über `document.getElementById()` angesprochen
-  - Hat im Vergleich zu `class` eine **höhere Priorität (Spezifität)** im CSS
+    (z.B.: `document.getElementById("beispielNr1")` )
+  - Hat im Vergleich zu `class` eine **höhere Priorität (Spezifität)** als [Selektor](#die-häufigsten-selektoren) im CSS
+
+  ```html
+  <div id="beispielNr1"></div>
+  ```
 
 ## Klassen
 
 - `class="..."` – wiederverwendbare CSS-Gruppen die bei Kategorisierungen helfen
 - ein Element kann mehrere Klassen haben
 - mehre Elemente können die gleiche Klasse haben
-  - wichtig wenn man Elemente geich bzw. nach einem Schema stylen will oder aber statements / modi im Javascript bestimmen will (via ClassList Toggle/Add/Remove/Contain/Replace)
-- werden im CSS mit `.` angesprochen (bsp. `.beisiel`)
-- können im JS über `document.querySelector` (bei nur einem Element) oder aber für meher elemente `document.querySelectorAll` angesprochen (bsp. `document.queryselecotrAll(".BeistpienlKlasse"`));
+  - wichtig wenn man Elemente geich bzw. nach einem Schema stylen will oder aber Statements / Modi im Javascript bestimmen will (via ClassList Toggle/Add/Remove/Contain/Replace)
+- werden im CSS mit `.` angesprochen (z.B.: `.beispiel`)
+- können im JS über `document.querySelector()` (bei nur einem Element) oder aber für meher elemente `document.querySelectorAll()` angesprochen (z.B.: `document.queryselecotrAll(".beispiel")`);
 
 ```html
 <div class="beispiel"></div>
@@ -153,13 +158,15 @@ hier nutze ich das klassensystem um zusätzlich ein modus/statement auszuführen
 <div class="beispiel active"></div>
 ```
 
-ich habe mir hier z.B. die klasse `active` ausgedacht um sie später im CSS stylen und Javascript nutzen/ggf. umschalten zu können
+ich habe mir hier z.B. die klasse `active` ausgedacht um sie später im CSS stylen oder im Javascript nutzen/ggf. umschalten zu können
 
 ---
 
 # CSS
 
-CSS bestimmt das Aussehen deiner HTML-Struktur. Damit Browser deine Styles erkennen, müssen diese Dateien immer die Endung `.css` haben. Traditionell wird die erste Hauptdatei `style.css` gennant. Es wird in der HTML im `<head>` verlkinkt, z.B. als `<link rel="stylesheet" href="style.css">`. Statt einer seperaten CSS-Dateikann aber auch (seltener) direkt in der html in den `<style>`-Tag geschrieben, oder innerhalb eines html-elements mit `style="..."`;
+CSS bestimmt das Aussehen deiner HTML-Struktur. Damit Browser deine Styles erkennen, müssen diese Dateien immer die Endung `.css` haben. Traditionell wird die erste Hauptdatei `style.css` gennant. Es wird in der HTML im `<head>` verlinkt, z.B. als `<link rel="stylesheet" href="style.css">`.
+
+Statt einer seperaten CSS-Dateikann aber auch (seltener) direkt in der html in den `<style>`-Tag geschrieben, oder innerhalb eines html-elements mit `style="..."`;
 
 ## Aufbau einer CSS-Regel
 
@@ -199,13 +206,13 @@ Selektoren werden verwendet, um HTML-Elemente zu „finden“.
 
 ## Das CSS-Box-Modell
 
-Jedes Element im Web wird als rechteckige Box betrachtet. Das Box-Modell ist entscheidend für Layouts.
+Jedes Element im Web wird als rechteckige Box betrachtet. Das Box-Modell ist entscheidend für Layout-Denke im Web.
 
 ![](/screenshots/CSS-Box-Modell.png)
 
-- `padding:` Transparenter Bereich um den Inhalt (innerhalb des Rahmens)
-- `border`: Linie um Padding und Inhalt
-- `margin`: Transparenter Bereich außerhalb des
+- `padding:` -transparenter Bereich um den Inhalt (innerhalb des Rahmens)
+- `border:` -Linie um Padding und Inhalt
+- `margin:` - transparenter Bereich außerhalb des
 - `width:` - bestimmt die Breite eines Elements
 - `height:` - bestimmt die Höhe eines Elements
 - `border-radius` - Rundung der Box-Ecken
@@ -221,7 +228,7 @@ Padding ist der **transparente Bereich innerhalb des Rahmens**, der den Inhalt u
 
 ### Border (Rahmen/Kontur)
 
-Der Border ist die **Kontur um Padding und Inhalt**. Hierbei nennt man erstmal die dicke, den Border Stil und dann die Farbe.
+Der Border ist die **Kontur um Padding und Inhalt**. Hierbei nennt man erstmal die Dicke, den Border-Stil und dann die Farbe.
 
 **Beispiele für Border-Stile:**
 
@@ -264,7 +271,7 @@ Margin ist der **transparente Bereich außerhalb des Rahmens**, also der Abstand
 
 Border-Radius ermöglicht Kurven an den Ecken der Boxen zu erzeugen.
 
-- kleinere fixen werte wie z.B. `border-radius: 2rem;` erzeugt runde Ecken
+- kleinere feste werte wie z.B. `border-radius: 2rem;` erzeugen runde Ecken
 - `border-radius: 100%;` macht die Box zum Kreis
 - `border-radius: 3rem 2rem 0rem 1rem;` erzeugt unterschiedliche Rundungen für jede Ecke.
   Einzelne Ecken können auch direkt angesprochen werden, z. B. mit `border-top-right-radius: 1rem;`
@@ -346,9 +353,9 @@ color: red;
 
 - `position: relative;` - Verschiebung relativ zur ursprünglichen Position
 
-- `position: absolute;` - Positioniert relativ zum nächsten **positionierten** Eltern-Element (nicht `static`)
+- `position: absolute;` - positioniert relativ zum nächsten **positionierten** Eltern-Element (nicht `static`)
 
-- `position: fixed;` - Fixiert relativ zum **Viewport** (bleibt beim Scrollen stehen)
+- `position: fixed;` - fixiert relativ zum **Viewport** (bleibt beim Scrollen stehen)
 
 - `position: sticky;` - Mischung aus `relative` und `fixed` (bleibt beim Scrollen „kleben“)
 
@@ -373,7 +380,7 @@ Sie bestimmen den Abstand zu einer Kante.
 z-index bestimmt quasi die Layer-Reihenfolge von Elementen.
 
 - höherer Wert = liegt weiter oben
-- funktioniert nur solande die Positionsart im CSS klar definiert wurde
+- funktioniert nur wenn die Positionsart(`position:`) vorher im CSS definiert wurde
 
 z.B.:
 
@@ -409,7 +416,7 @@ Standardmäßig beziehen sie sich auf den **Inhaltsbereich** der Box.
 
 ## calc()
 
-- Berechnungen mit `calc()` kombinieren verschiedene Einheiten (z. B. px, %, vh)
+- Berechnungen mit `calc()` kombinieren verschiedene Einheiten (z. B. `px`, `%`, `vh`)
 - hilft bei flexiblen Layouts
 
 **Beispiel:**
@@ -448,25 +455,25 @@ Definiert, wie ein Element dargestellt wird.
 
 - `display: block;`
   - nimmt die gesamte verfügbare Breite ein
-  - neue Elemente beginnen in der nächsten Zeile
+  - **neue Elemente beginnen in der nächsten Zeile**
 
-- `display: flex;`
+- `display: flex;` (siehe mehr hierzu beim Thema: [Flexbox](#flexbox-eindimensional))
   - macht das Element zu einem Container, der seine Kinder automatisch anordnet
-  - Kinder stehen standardmäßig nebeneinander (in einer Reihe)
+  - Kinder stehen **strikt nebeneinander (in einer Reihe)**
   - ermöglicht einfaches Ausrichten (z. B. zentrieren, verteilen)
   - bleibt im normalen Layout (nicht aus dem Flow entfernt)
 
 - `display: inline;`
-  - nimmt nur so viel Platz wie nötig
-  - Elemente stehen nebeneinander im Textfluss
-  - keine feste Breite oder Höhe möglich
+  - Elemente stehen quasi **"organisch" nebeneinander** im Fluss
+  - nimmt seitlich **nur so viel Platz wie nötig/möglich**
+  - **keine feste Breite oder Höhe möglich**
 
 - `display: inline-block;`
   - steht nebeneinander wie inline
-  - aber: Breite und Höhe können gesetzt werden
+  - aber: **Breite und Höhe können weiterhin gesetzt werden**
 
 - `display: none;`
-  - Element wird komplett entfernt (unsichtbar und nimmt keinen Platz im Layout ein)
+  - Element wird komplett **entfernt** (unsichtbar und nimmt keinen Platz im Layout ein)
 
 ## Overflow
 
@@ -611,8 +618,8 @@ p {
 - `text-transform` - verändert die Groß-/Kleinschreibung  
   (`uppercase`, `lowercase`, `capitalize`)
 - `webkit-text-stroke:` - Textkontur
-  - `paint-order: stroke;` - die Kontur (stroke) wird zuerst gezeichnet (liegt “unten”) = Kontur außen
-  - `paint-order: markers;` - Marker (z. B. Pfeile an Linienenden) werden zuerst gezeichnet = Kontur zentriert
+  - `paint-order: stroke;` - die Kontur (stroke) wird zuerst gezeichnet (liegt “unten”) = **Kontur außen**
+  - `paint-order: markers;` - Marker (z. B. Pfeile an Linienenden) werden zuerst gezeichnet = **Kontur zentriert**
 
 ---
 
@@ -629,10 +636,11 @@ column-gap: 20px; /* Abstand zwischen Spalten */
 
 ### Grid (Zweidimensional) Für Reihen UND Spalten.
 
-css
+```css
 display: grid;
-grid-template-columns: 1fr 1fr 1fr; /_ drei gleich große Spalten _/
-gap: 10px; /_ Abstand zwischen Elementen _/
+grid-template-columns: 1fr 1fr 1fr; /* drei gleich große Spalten */
+gap: 10px; /*Abstand zwischen Elementen */
+```
 
 ### Flexbox (Eindimensional)
 
@@ -642,7 +650,6 @@ Für Reihen ODER Spalten.
 display: flex;
 justify-content: center; /* horizontale Ausrichtung */
 align-items: center; /* vertikale Ausrichtung */
-flex-direction: column;
 ```
 
 ### Grid (Zweidimensional)
@@ -880,7 +887,7 @@ a:active {
 - wird bei `<details>` verwendet
   - `<details>` ist ein HTML-Element für ausklappbare Inhalte
     es ist standardmäßig geschlossen
-    mit einem Klick auf <summary> wird es geöffnet oder geschlossen
+    mit einem Klick auf `<summary>` wird es geöffnet oder geschlossen
   - greift, wenn das Element das `open`-Attribut hat
 
 **Beispiel:**

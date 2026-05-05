@@ -28,31 +28,23 @@
       <p>A blog about whatever.</p>
     </section>
 
-    <article id="post1" class="post">
+    <div id="post1" class="post">
       <span class="badge">New</span>
       <img src="images/image1.jpg" alt="description" />
       <div class="post-content">
         <h2>First Post Title</h2>
         <p>Some longer text here.</p>
-        <details>
-          <summary>Read More</summary>
-          <p>Hidden content revealed on click.</p>
-        </details>
       </div>
-    </article>
+    </div>
 
-    <article id="post2" class="post">
+    <div id="post2" class="post">
       <span class="badge">New</span>
       <img src="images/image2.jpg" alt="description" />
       <div class="post-content">
         <h2>Second Post Title</h2>
         <p>Some longer text here.</p>
-        <details>
-          <summary>Read More</summary>
-          <p>Hidden content revealed on click.</p>
-        </details>
       </div>
-    </article>
+    </div>
   </main>
 
   <footer>
@@ -61,29 +53,22 @@
 </body>
 ```
 
-Point out semantic tags. Show nav anchor links jumping to posts before any CSS exists.
+Point out semantic tags & divs with . Show nav anchor links jumping to posts before any CSS exists.
 
 ---
 
 ## Block 1 — Selectors & First Styles (15 min)
 
-- Universal reset first, explain browsers have default styles that get in the way
 - Show element, class, ID selector on the same element
 - Explain specificity in one sentence: ID beats class beats element
 
 ```css
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
   background-color: #f5f0eb;
   color: #1a1a1a;
 }
 
-article {
+div {
   background-color: white;
 } /* element */
 .post {

@@ -3,112 +3,1821 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Publishing – CSS Demo</title>
+    <title>CSS Eigenschaften Demo</title>
+    <style>
+      /* ============================================================
+       FONT-FACE — selbst gehostete Schrift
+       (ersetze src mit deinen eigenen Dateien)
+    ============================================================ */
+      @font-face {
+        font-family: "MeineSerif";
+        src: url("/fonts/serif.woff2") format("woff2");
+        font-weight: 400;
+      }
 
-    <!-- CSS einbinden -->
-    <link rel="stylesheet" href="style.css" />
+      /* ============================================================
+       UNIVERSELLER RESET + BOX MODEL
+    ============================================================ */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* ============================================================
+       CSS VARIABLEN
+    ============================================================ */
+      :root {
+        --schwarz: #1a1a1a;
+        --weiss: #f5f0eb;
+        --akzent: #e63946;
+        --grau: #888;
+        --rahmen: 2px solid var(--schwarz);
+      }
+
+      /* ============================================================
+       BODY
+    ============================================================ */
+      body {
+        background-color: var(--weiss);
+        color: var(--schwarz);
+        font-family: sans-serif;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      /* ============================================================
+       ALLGEMEINES LAYOUT
+    ============================================================ */
+      section {
+        padding: 60px 40px;
+        border-bottom: var(--rahmen);
+      }
+
+      h3.kapitel {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--grau);
+        margin-bottom: 32px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .reihe {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        align-items: flex-start;
+        margin-top: 20px;
+      }
+
+      .beschriftung {
+        font-size: 0.72rem;
+        color: var(--grau);
+        margin-top: 8px;
+        font-family: monospace;
+      }
+
+      /* ============================================================
+       1. TYPOGRAFIE
+    ============================================================ */
+
+      #typografie .gross {
+        font-size: 4rem;
+        font-weight: 700;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+      }
+
+      #typografie .gesperrt {
+        font-size: 1.2rem;
+        font-weight: 400;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+
+      #typografie .kontur {
+        font-size: 3rem;
+        font-weight: 700;
+        -webkit-text-stroke: 2px var(--schwarz);
+        color: transparent;
+      }
+
+      #typografie .unterstrichen {
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+        text-underline-offset: 5px;
+        font-size: 1.2rem;
+      }
+
+      #typografie .durchgestrichen {
+        text-decoration: line-through;
+        font-size: 1.2rem;
+      }
+
+      #typografie .wortabstand {
+        word-spacing: 0.5em;
+        letter-spacing: 0.05em;
+        font-size: 1.1rem;
+      }
+
+      #typografie .zentriert {
+        text-align: center;
+        font-size: 1.1rem;
+      }
+      #typografie .rechts {
+        text-align: right;
+        font-size: 1.1rem;
+      }
+
+      #typografie .fliesstext {
+        max-width: 60ch;
+        font-size: 1.1rem;
+        line-height: 1.9;
+        margin-top: 8px;
+      }
+
+      /* ============================================================
+       2. FARBEN
+    ============================================================ */
+
+      .farb-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 12px;
+      }
+
+      .farbfeld {
+        height: 90px;
+        border-radius: 8px;
+        display: flex;
+        align-items: flex-end;
+        padding: 10px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        font-family: monospace;
+      }
+
+      .c-hex {
+        background-color: #e63946;
+        color: white;
+      }
+      .c-rgb {
+        background-color: rgb(42, 157, 143);
+        color: white;
+      }
+      .c-rgba {
+        background-color: rgba(231, 111, 81, 0.6);
+        color: white;
+      }
+      .c-hsl {
+        background-color: hsl(45, 90%, 55%);
+        color: #1a1a1a;
+      }
+      .c-name {
+        background-color: steelblue;
+        color: white;
+      }
+
+      /* ============================================================
+       3. BOX MODEL
+    ============================================================ */
+
+      .box-demo {
+        width: 280px;
+        min-height: 100px;
+        max-width: 100%;
+        background-color: white;
+        padding: 10px 20px 30px 40px;
+        border: var(--rahmen);
+        border-radius: 16px;
+        margin: 0 auto;
+        box-shadow: 4px 8px 24px rgba(0, 0, 0, 0.12);
+      }
+
+      .box-inset {
+        width: 200px;
+        height: 80px;
+        background-color: #ddd;
+        border-radius: 8px;
+        box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+      }
+
+      .box-glow {
+        width: 160px;
+        height: 70px;
+        background-color: var(--akzent);
+        border-radius: 8px;
+        box-shadow: 0 0 28px rgba(230, 57, 70, 0.65);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 0.8rem;
+      }
+
+      .mini-box {
+        width: 80px;
+        height: 80px;
+        background-color: var(--schwarz);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 0.65rem;
+        text-align: center;
+        padding: 6px;
+      }
+
+      /* ============================================================
+       4. BILDER
+    ============================================================ */
+
+      .bild-cover {
+        width: 300px;
+        height: 180px;
+        overflow: hidden;
+        border-radius: 8px;
+        border: var(--rahmen);
+      }
+
+      .bild-cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+      }
+
+      .bild-contain {
+        width: 300px;
+        height: 180px;
+        overflow: hidden;
+        border-radius: 8px;
+        border: var(--rahmen);
+        background-color: #eee;
+      }
+
+      .bild-contain img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+
+      /* ============================================================
+       5. DISPLAY
+    ============================================================ */
+
+      .display-block span {
+        display: block;
+        background-color: #ddd;
+        padding: 6px 10px;
+        margin-bottom: 4px;
+        font-size: 0.85rem;
+      }
+
+      .display-inline span {
+        display: inline;
+        background-color: #ddd;
+        padding: 4px 8px;
+        font-size: 0.85rem;
+      }
+
+      .display-inline-block span {
+        display: inline-block;
+        background-color: #ddd;
+        padding: 8px 16px;
+        width: 120px;
+        text-align: center;
+        font-size: 0.85rem;
+      }
+
+      .versteckt {
+        display: none;
+      }
+
+      /* ============================================================
+       6. FLEXBOX
+    ============================================================ */
+
+      .flex-demo {
+        background-color: #eee;
+        padding: 16px;
+        border-radius: 8px;
+        border: var(--rahmen);
+        margin-bottom: 16px;
+      }
+
+      .flex-demo span {
+        background-color: var(--schwarz);
+        color: white;
+        padding: 10px 16px;
+        font-size: 0.8rem;
+        border-radius: 4px;
+      }
+
+      .f-space-between {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .f-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+      }
+      .f-column {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .f-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      /* ============================================================
+       7. GRID
+    ============================================================ */
+
+      .grid-demo {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 12px;
+      }
+
+      .grid-demo div {
+        background-color: var(--schwarz);
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 0.8rem;
+        border-radius: 4px;
+      }
+
+      .grid-asymmetrisch {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 12px;
+      }
+
+      .grid-asymmetrisch div {
+        background-color: var(--schwarz);
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 0.8rem;
+        border-radius: 4px;
+      }
+
+      /* ============================================================
+       8. POSITION
+    ============================================================ */
+
+      .position-container {
+        position: relative;
+        height: 160px;
+        background-color: #eee;
+        border: var(--rahmen);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .pos-absolute {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background-color: var(--akzent);
+        color: white;
+        padding: 6px 12px;
+        font-size: 0.75rem;
+        border-radius: 99px;
+      }
+
+      .pos-absolute-unten {
+        position: absolute;
+        bottom: 16px;
+        left: 16px;
+        background-color: var(--schwarz);
+        color: white;
+        padding: 6px 12px;
+        font-size: 0.75rem;
+        border-radius: 4px;
+      }
+
+      .z-index-demo {
+        position: relative;
+        height: 120px;
+      }
+
+      .z-box {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.7rem;
+        color: white;
+        font-weight: 700;
+      }
+
+      .z1 {
+        background-color: var(--schwarz);
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+      .z2 {
+        background-color: var(--akzent);
+        top: 20px;
+        left: 20px;
+        z-index: 2;
+      }
+      .z3 {
+        background-color: #2a9d8f;
+        top: 40px;
+        left: 40px;
+        z-index: 3;
+      }
+
+      /* ============================================================
+       9. OVERFLOW
+    ============================================================ */
+
+      .overflow-box {
+        width: 200px;
+        height: 80px;
+        background-color: #eee;
+        border: var(--rahmen);
+        border-radius: 4px;
+        padding: 8px;
+        font-size: 0.78rem;
+      }
+
+      .o-visible {
+        overflow: visible;
+      }
+      .o-hidden {
+        overflow: hidden;
+      }
+      .o-scroll {
+        overflow: scroll;
+      }
+      .o-auto {
+        overflow: auto;
+      }
+      .o-x {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+      }
+
+      /* ============================================================
+       10. OPACITY & TRANSFORM
+    ============================================================ */
+
+      .transform-box {
+        width: 80px;
+        height: 80px;
+        background-color: var(--schwarz);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 0.7rem;
+        text-align: center;
+        border-radius: 4px;
+      }
+
+      .t-opacity {
+        opacity: 0.3;
+      }
+      .t-translate {
+        transform: translate(12px, -12px);
+      }
+      .t-scale {
+        transform: scale(1.3);
+      }
+      .t-rotate {
+        transform: rotate(25deg);
+      }
+      .t-skew {
+        transform: skew(10deg, 5deg);
+      }
+
+      /* ============================================================
+       11. FILTER & BACKDROP-FILTER
+    ============================================================ */
+
+      .filter-box {
+        width: 120px;
+        height: 90px;
+        background-color: var(--akzent);
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 0.7rem;
+        text-align: center;
+        padding: 8px;
+      }
+
+      .f-blur {
+        filter: blur(3px);
+      }
+      .f-brightness {
+        filter: brightness(150%);
+      }
+      .f-contrast {
+        filter: contrast(200%);
+      }
+      .f-grayscale {
+        filter: grayscale(100%);
+      }
+      .f-sepia {
+        filter: sepia(80%);
+      }
+      .f-invert {
+        filter: invert(100%);
+      }
+      .f-saturate {
+        filter: saturate(250%);
+      }
+      .f-hue {
+        filter: hue-rotate(120deg);
+      }
+
+      .glas-container {
+        position: relative;
+        height: 120px;
+        border-radius: 12px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #e63946, #2a9d8f, #e9c46a);
+        max-width: 360px;
+      }
+
+      .glas-overlay {
+        position: absolute;
+        inset: 20px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      /* ============================================================
+       12. TEXT-SHADOW
+    ============================================================ */
+
+      .text-schatten-demo h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+
+      .ts-normal {
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      }
+      .ts-hart {
+        text-shadow: 4px 4px 0px var(--akzent);
+      }
+      .ts-glow {
+        text-shadow: 0 0 20px rgba(230, 57, 70, 0.8);
+        color: var(--akzent);
+      }
+      .ts-mehrere {
+        text-shadow:
+          2px 2px 0 #e63946,
+          4px 4px 0 #2a9d8f;
+      }
+
+      /* ============================================================
+       13. BLEND MODES
+    ============================================================ */
+
+      .blend-container {
+        width: 160px;
+        height: 120px;
+        background: linear-gradient(135deg, #e63946, #e9c46a);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .blend-text {
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: white;
+      }
+
+      .bm-multiply {
+        mix-blend-mode: multiply;
+      }
+      .bm-difference {
+        mix-blend-mode: difference;
+      }
+      .bm-overlay {
+        mix-blend-mode: overlay;
+      }
+
+      /* ============================================================
+       14. HOVER, ACTIVE & TRANSITION
+    ============================================================ */
+
+      .hover-link {
+        display: inline-block;
+        text-decoration: none;
+        color: var(--schwarz);
+        font-weight: 600;
+        font-size: 1.1rem;
+        padding: 4px 0;
+        border-bottom: 2px solid var(--schwarz);
+        transition:
+          color 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .hover-link:hover {
+        color: var(--akzent);
+        border-color: var(--akzent);
+      }
+
+      .hover-karte {
+        width: 200px;
+        padding: 24px;
+        background-color: white;
+        border: var(--rahmen);
+        border-radius: 12px;
+        cursor: pointer;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .hover-karte:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+      }
+
+      .hover-karte:active {
+        transform: scale(0.97);
+      }
+
+      .hover-button {
+        display: inline-block;
+        background-color: var(--schwarz);
+        color: white;
+        padding: 12px 28px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition:
+          background-color 0.2s ease-in-out,
+          transform 0.15s ease;
+      }
+
+      .hover-button:hover {
+        background-color: var(--akzent);
+      }
+      .hover-button:active {
+        transform: scale(0.96);
+      }
+
+      .easing-demo div {
+        height: 48px;
+        background-color: var(--schwarz);
+        color: white;
+        display: flex;
+        align-items: center;
+        padding: 0 16px;
+        font-size: 0.75rem;
+        border-radius: 4px;
+        margin-bottom: 8px;
+        width: 200px;
+        transition: width 0.6s;
+        cursor: pointer;
+      }
+
+      .easing-demo div:hover {
+        width: 100%;
+      }
+      .e-linear {
+        transition-timing-function: linear;
+      }
+      .e-ease {
+        transition-timing-function: ease;
+      }
+      .e-ease-in {
+        transition-timing-function: ease-in;
+      }
+      .e-ease-out {
+        transition-timing-function: ease-out;
+      }
+      .e-ease-inout {
+        transition-timing-function: ease-in-out;
+      }
+
+      /* ============================================================
+       15. PSEUDO-ELEMENTE & PSEUDO-KLASSEN
+    ============================================================ */
+
+      .pseudo-demo p {
+        position: relative;
+        padding-left: 20px;
+        font-size: 1rem;
+        margin-bottom: 8px;
+      }
+
+      .pseudo-demo p::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--akzent);
+      }
+
+      .pseudo-after {
+        display: inline-block;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+
+      .pseudo-after::after {
+        content: " ✦";
+        color: var(--akzent);
+        font-size: 0.8em;
+      }
+
+      .liste-demo li {
+        padding: 8px 12px;
+        list-style: none;
+        font-size: 0.9rem;
+        border-radius: 4px;
+      }
+
+      .liste-demo li:nth-child(odd) {
+        background-color: #eee;
+      }
+      .liste-demo li:nth-child(even) {
+        background-color: #ddd;
+      }
+      .liste-demo li:not(:last-child) {
+        border-bottom: 1px solid #ccc;
+      }
+
+      /* ============================================================
+       16. ANIMATION
+    ============================================================ */
+
+      @keyframes reinFaden {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes pulsieren {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.15);
+        }
+      }
+
+      @keyframes drehen {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes gleiten {
+        0% {
+          transform: translateX(-20px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      .anim-rein {
+        animation: reinFaden 0.8s ease-out forwards;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+
+      .anim-puls {
+        width: 60px;
+        height: 60px;
+        background-color: var(--akzent);
+        border-radius: 50%;
+        animation: pulsieren 1.5s ease-in-out infinite;
+      }
+
+      .anim-drehen {
+        width: 60px;
+        height: 60px;
+        border: 4px solid var(--schwarz);
+        border-top-color: var(--akzent);
+        border-radius: 50%;
+        animation: drehen 1s linear infinite;
+      }
+
+      .staffel-liste li {
+        list-style: none;
+        font-size: 1rem;
+        padding: 6px 0;
+        opacity: 0;
+        animation: gleiten 0.5s ease-out forwards;
+      }
+
+      .staffel-liste li:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .staffel-liste li:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .staffel-liste li:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      .staffel-liste li:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+
+      /* ============================================================
+       17. DETAILS & SUMMARY
+    ============================================================ */
+
+      .details-demo details {
+        border: var(--rahmen);
+        border-radius: 8px;
+        margin-bottom: 12px;
+        padding: 0 16px;
+      }
+
+      .details-demo summary {
+        cursor: pointer;
+        font-weight: 600;
+        padding: 14px 0;
+        list-style: none;
+        font-size: 1rem;
+        transition: color 0.2s ease;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .details-demo summary::after {
+        content: "+";
+        font-size: 1.4rem;
+        color: var(--grau);
+        transition: transform 0.2s ease;
+      }
+
+      .details-demo summary:hover {
+        color: var(--akzent);
+      }
+
+      .details-demo details:open {
+        background-color: #fafafa;
+      }
+
+      .details-demo details:open summary {
+        color: var(--akzent);
+        border-bottom: 1px solid #eee;
+        margin-bottom: 12px;
+      }
+
+      .details-demo details:open summary::after {
+        transform: rotate(45deg);
+      }
+
+      .details-demo details p {
+        padding-bottom: 16px;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: #444;
+      }
+
+      /* ============================================================
+       18. COLUMNS & CALC
+    ============================================================ */
+
+      .spalten-demo {
+        column-count: 3;
+        column-gap: 24px;
+        font-size: 0.9rem;
+        line-height: 1.7;
+      }
+
+      .calc-box {
+        width: calc(100% - 80px);
+        background-color: var(--schwarz);
+        color: white;
+        padding: 16px 24px;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        font-family: monospace;
+      }
+
+      /* ============================================================
+       MEDIA QUERY — Druck
+    ============================================================ */
+      @media print {
+        nav,
+        footer {
+          display: none;
+        }
+
+        body {
+          background-color: white;
+          color: black;
+          font-size: 12pt;
+        }
+
+        section {
+          break-inside: avoid;
+          padding: 20px 0;
+        }
+
+        .anim-puls,
+        .anim-drehen {
+          animation: none;
+        }
+      }
+    </style>
   </head>
-
   <body>
-    <header>
-      <h1>Publishing</h1>
-      <p>
-        Publishing is the process of making information, literature, music,
-        software, and other content, whether in physical or digital form,
-        available to the public for sale or free of charge.[1] Traditionally,
-        the term publishing refers to the creation and distribution of printed
-        works, such as books, comic books, newspapers, and magazines, to the
-        public. The advent of digital information systems has led to an
-        expansion of its scope to include digital publishing, such as e-books,
-        digital magazines, websites, social media, music, and video game
-        publishing. The commercial publishing industry ranges from large
-        multinational conglomerates such as News Corp, Pearson, Penguin Random
-        House, and Thomson Reuters[2] to major retail brands and thousands of
-        small independent publishers. It has various divisions such as
-        trade/retail publishing of fiction and non-fiction, educational
-        publishing, and academic and scientific publishing.[3] Publishing is
-        also undertaken by governments, civil society, and private companies for
-        administrative or compliance requirements, business, research, advocacy,
-        or public interest objectives.[4] This can include annual reports,
-        research reports, market research, policy briefings, and technical
-        reports. Self-publishing has become very common. Publishing has evolved
-        from a small, ancient form limited by law or religion to a modern,
-        large-scale industry disseminating all types of information.[5]
-        "Publisher" can refer to a publishing company, organization, or an
-        individual who leads a publishing company, imprint, periodical, or
-        newspaper.
+    <!-- NAV -->
+    <nav
+      style="
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        padding: 14px 40px;
+        background-color: #1a1a1a;
+        border-bottom: 2px solid #333;
+        overflow-x: auto;
+      "
+    >
+      <a
+        href="#typografie"
+        style="
+          color: #888;
+          font-size: 0.75rem;
+          text-decoration: none;
+          white-space: nowrap;
+        "
+        >Typografie</a
+      >
+      <a
+        href="#farben"
+        style="
+          color: #888;
+          font-size: 0.75rem;
+          text-decoration: none;
+          white-space: nowrap;
+        "
+        >Farben</a
+      >
+      <a
+        href="#boxmodell"
+        style="
+          color: #888;
+          font-size: 0.75rem;
+          text-decoration: none;
+          white-space: nowrap;
+        "
+        >Box Model</a
+      >
+      <a
+        href="#bilder"
+        style="
+          color: #888;
+          font-size: 0.75rem;
+          text-decoration: none;
+          white-space: nowrap;
+        "
+        >Bilder</a
+      >
+      <a
+        href="#display"
+        style="
+          color: #888;
+          font-size: 0.75rem;
+          text-decoration: none;
+          white-space: nowrap;
+        "
+        >Display</a
+      >
+      <a
+        href="#flexbox"
+        style="
+          color: #888;
+          font-size: 0.75rem;
+          text-decoration: none;
+          white-space: nowrap;
+        "
+        >Flexbox</a
+      >
+      <a
+        href="#grid"
+        style="
+          color: #888;
+          font-size: 0.75rem;
+          text-decoration: none;
+          white-space: nowrap;
+        "
+        >Grid</a
+      >
+      <a
+        href="#position"
+        style="
+          color: #888;
+          font-size: 0.75rem;
+          text-decoration: none;
+          white-space: nowrap;
+        "
+        >Position</a
+      >
+      <a
+        href="#overflow"
+        style="
+          color: #888;
+          font-size: 0.75rem;
+          text-decoration: none;
+          white-space: nowrap;
+        "
+        >Overflow</a
+      >
+      <a
+        href="#transform"
+        style="
+          color: #888;
+          font-size: 0.75rem;
+          text-decoration: none;
+          white-space: nowrap;
+        "
+        >Transform</a
+      >
+      <a
+        href="#filter"
+        style="
+          color: #888;
+          font-size: 0.75rem;
+          text-decoration: none;
+          white-space: nowrap;
+        "
+        >Filter</a
+      >
+      <a
+        href="#schatten"
+        style="
+          color: #888;
+          font-size: 0.75rem;
+          text-decoration: none;
+          white-space: nowrap;
+        "
+        >Schatten</a
+      >
+      <a
+        href="#blend"
+        style="
+          color: #888;
+          font-size: 0.75rem;
+          text-decoration: none;
+          white-space: nowrap;
+        "
+        >Blend Modes</a
+      >
+      <a
+        href="#interaktion"
+        style="
+          color: #888;
+          font-size: 0.75rem;
+          text-decoration: none;
+          white-space: nowrap;
+        "
+        >Hover &amp; Transition</a
+      >
+      <a
+        href="#pseudo"
+        style="
+          color: #888;
+          font-size: 0.75rem;
+          text-decoration: none;
+          white-space: nowrap;
+        "
+        >Pseudo</a
+      >
+      <a
+        href="#animation"
+        style="
+          color: #888;
+          font-size: 0.75rem;
+          text-decoration: none;
+          white-space: nowrap;
+        "
+        >Animation</a
+      >
+      <a
+        href="#details"
+        style="
+          color: #888;
+          font-size: 0.75rem;
+          text-decoration: none;
+          white-space: nowrap;
+        "
+        >Details/Summary</a
+      >
+      <a
+        href="#sonstiges"
+        style="
+          color: #888;
+          font-size: 0.75rem;
+          text-decoration: none;
+          white-space: nowrap;
+        "
+        >Sonstiges</a
+      >
+    </nav>
+
+    <!-- 1. TYPOGRAFIE -->
+    <section id="typografie">
+      <h3 class="kapitel">01 — Typografie</h3>
+
+      <p class="gross">Große Überschrift</p>
+      <p class="beschriftung">
+        font-size: 4rem; font-weight: 700; line-height: 1.05; letter-spacing:
+        -0.03em;
       </p>
-    </header>
 
-    <main>
-      <!-- TEXT / TYPO -->
-      <section class="section">
-        <h2>Text & Typografie</h2>
-        <p>
-          Publishing beschreibt den Prozess der Veröffentlichung von Inhalten,
-          z. B. Bücher, Zeitungen oder digitale Medien.
+      <br />
+      <p class="gesperrt">Gesperrter Text in Versalien</p>
+      <p class="beschriftung">
+        letter-spacing: 0.2em; text-transform: uppercase;
+      </p>
+
+      <br />
+      <p class="kontur">Kontur-Text</p>
+      <p class="beschriftung">
+        -webkit-text-stroke: 2px black; color: transparent;
+      </p>
+
+      <br />
+      <div class="reihe">
+        <div>
+          <p class="unterstrichen">Unterstrichen</p>
+          <p class="beschriftung">text-decoration: underline;</p>
+        </div>
+        <div>
+          <p class="durchgestrichen">Durchgestrichen</p>
+          <p class="beschriftung">text-decoration: line-through;</p>
+        </div>
+        <div>
+          <p class="wortabstand">Wort Abstand</p>
+          <p class="beschriftung">word-spacing: 0.5em;</p>
+        </div>
+      </div>
+
+      <br />
+      <div class="reihe">
+        <div
+          style="
+            flex: 1;
+            min-width: 200px;
+            border: 1px solid #ddd;
+            padding: 12px;
+            border-radius: 6px;
+          "
+        >
+          <p class="zentriert">text-align: center</p>
+        </div>
+        <div
+          style="
+            flex: 1;
+            min-width: 200px;
+            border: 1px solid #ddd;
+            padding: 12px;
+            border-radius: 6px;
+          "
+        >
+          <p class="rechts">text-align: right</p>
+        </div>
+      </div>
+
+      <br />
+      <p class="fliesstext">
+        Das ist ein Fließtext-Absatz mit <code>max-width: 60ch</code> — ungefähr
+        60 Zeichen pro Zeile ist ideal zum Lesen. Der Zeilenabstand beträgt hier
+        1.9.
+      </p>
+    </section>
+
+    <!-- 2. FARBEN -->
+    <section id="farben">
+      <h3 class="kapitel">02 — Farben</h3>
+      <div class="farb-grid">
+        <div class="farbfeld c-hex">#e63946<br />hex</div>
+        <div class="farbfeld c-rgb">rgb(42,157,143)<br />rgb</div>
+        <div class="farbfeld c-rgba">rgba(231,111,81,0.6)<br />rgba</div>
+        <div class="farbfeld c-hsl">hsl(45,90%,55%)<br />hsl</div>
+        <div class="farbfeld c-name">steelblue<br />name</div>
+      </div>
+    </section>
+
+    <!-- 3. BOX MODEL -->
+    <section id="boxmodell">
+      <h3 class="kapitel">03 — Box Model</h3>
+
+      <div class="box-demo">
+        <p style="font-size: 0.85rem">
+          padding: 10px 20px 30px 40px<br />
+          border: 2px solid<br />
+          border-radius: 16px<br />
+          box-shadow: 4px 8px 24px
         </p>
-      </section>
+      </div>
 
-      <!-- BOX MODELL -->
-      <section class="section box-demo">
-        <h2>Box Modell</h2>
-        <div class="box">Box mit Padding, Border und Margin</div>
-      </section>
-
-      <!-- FLEX -->
-      <section class="section">
-        <h2>Flexbox</h2>
-        <div class="flex-container">
-          <div class="item">1</div>
-          <div class="item">2</div>
-          <div class="item">3</div>
+      <div class="reihe" style="margin-top: 32px">
+        <div>
+          <div class="box-inset">inset box-shadow</div>
+          <p class="beschriftung">box-shadow: inset 0 4px 12px</p>
         </div>
-      </section>
-
-      <!-- GRID -->
-      <section class="section">
-        <h2>Grid</h2>
-        <div class="grid-container">
-          <div class="item">A</div>
-          <div class="item">B</div>
-          <div class="item">C</div>
+        <div>
+          <div class="box-glow">glow</div>
+          <p class="beschriftung">box-shadow: 0 0 28px rgba(akzent)</p>
         </div>
-      </section>
+        <div>
+          <div class="mini-box" style="border-radius: 50%">Kreis</div>
+          <p class="beschriftung">border-radius: 50%</p>
+        </div>
+        <div>
+          <div class="mini-box" style="border-radius: 99px; width: 120px">
+            Pille
+          </div>
+          <p class="beschriftung">border-radius: 99px</p>
+        </div>
+      </div>
+    </section>
 
-      <!-- IMAGE -->
-      <section class="section">
-        <h2>Bild</h2>
-        <img src="images/publishing.jpg" alt="Publishing Beispiel" />
-      </section>
+    <!-- 4. BILDER -->
+    <section id="bilder">
+      <h3 class="kapitel">04 — Bilder</h3>
+      <p style="font-size: 0.85rem; color: var(--grau); margin-bottom: 20px">
+        Füge deine eigenen Bilder ein: ersetze den Platzhalter-div durch<br />
+        <code>&lt;img src="images/dein-bild.jpg" alt="Beschreibung"&gt;</code>
+      </p>
+      <div class="reihe">
+        <div>
+          <div class="bild-cover">
+            <!-- BILD HIER: <img src="images/dein-bild.jpg" alt=""> -->
+            <div
+              style="
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, #e63946, #2a9d8f);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 0.8rem;
+              "
+            >
+              ← Bild hier einfügen →
+            </div>
+          </div>
+          <p class="beschriftung">object-fit: cover — füllt und schneidet</p>
+        </div>
+        <div>
+          <div class="bild-contain">
+            <!-- BILD HIER: <img src="images/dein-bild.jpg" alt=""> -->
+            <div
+              style="
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, #e9c46a, #f4a261);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 0.8rem;
+              "
+            >
+              ← Bild hier einfügen →
+            </div>
+          </div>
+          <p class="beschriftung">
+            object-fit: contain — passt rein, lässt Lücken
+          </p>
+        </div>
+      </div>
+      <br />
+      <p style="font-size: 0.85rem; color: var(--grau)">
+        Basis für alle Bilder:
+        <code>img { max-width: 100%; display: block; }</code>
+      </p>
+    </section>
 
-      <!-- HOVER -->
-      <section class="section">
-        <h2>Interaktion (Hover)</h2>
-        <button class="btn">Hover mich</button>
-      </section>
+    <!-- 5. DISPLAY -->
+    <section id="display">
+      <h3 class="kapitel">05 — Display</h3>
+      <div class="reihe">
+        <div>
+          <div class="display-block">
+            <span>Block 1</span>
+            <span>Block 2</span>
+            <span>Block 3</span>
+          </div>
+          <p class="beschriftung">display: block</p>
+        </div>
 
-      <!-- ANIMATION -->
-      <section class="section">
-        <h2>Animation</h2>
-        <div class="animated-box"></div>
-      </section>
+        <div>
+          <div class="display-inline">
+            <span>Inline 1</span>
+            <span>Inline 2</span>
+            <span>Inline 3</span>
+          </div>
+          <p class="beschriftung">display: inline</p>
+        </div>
 
-      <!-- DETAILS -->
-      <section class="section">
-        <h2>Details / Open</h2>
+        <div>
+          <div class="display-inline-block">
+            <span>IB 1</span>
+            <span>IB 2</span>
+          </div>
+          <p class="beschriftung">display: inline-block</p>
+        </div>
+
+        <div>
+          <p style="font-size: 0.85rem">Sichtbar</p>
+          <p class="versteckt">Unsichtbar (display: none)</p>
+          <p style="font-size: 0.85rem">Auch sichtbar</p>
+          <p class="beschriftung">
+            display: none — Element existiert nicht im Layout
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FLEXBOX -->
+    <section id="flexbox">
+      <h3 class="kapitel">06 — Flexbox</h3>
+
+      <div class="flex-demo f-space-between">
+        <span>Links</span><span>Mitte</span><span>Rechts</span>
+      </div>
+      <p class="beschriftung">
+        justify-content: space-between; align-items: center;
+      </p>
+
+      <div class="flex-demo f-center">
+        <span>Zentriert</span>
+      </div>
+      <p class="beschriftung">justify-content: center; align-items: center;</p>
+
+      <div class="flex-demo f-column" style="max-width: 200px">
+        <span>Oben</span><span>Mitte</span><span>Unten</span>
+      </div>
+      <p class="beschriftung">flex-direction: column; gap: 8px;</p>
+
+      <div class="flex-demo f-wrap" style="max-width: 300px">
+        <span>A</span><span>B</span><span>C</span> <span>D</span><span>E</span
+        ><span>F</span>
+      </div>
+      <p class="beschriftung">flex-wrap: wrap; gap: 8px;</p>
+    </section>
+
+    <!-- 7. GRID -->
+    <section id="grid">
+      <h3 class="kapitel">07 — Grid</h3>
+
+      <div class="grid-demo">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+      </div>
+      <p class="beschriftung">grid-template-columns: 1fr 1fr 1fr; gap: 12px;</p>
+
+      <br />
+      <div class="grid-asymmetrisch">
+        <div>Breit (2fr)</div>
+        <div>Schmal (1fr)</div>
+      </div>
+      <p class="beschriftung">grid-template-columns: 2fr 1fr;</p>
+    </section>
+
+    <!-- 8. POSITION -->
+    <section id="position">
+      <h3 class="kapitel">08 — Position</h3>
+
+      <div class="position-container">
+        <p style="padding: 16px; font-size: 0.85rem">
+          position: relative (Elternelement — Anker für absolute Kinder)
+        </p>
+        <div class="pos-absolute">absolute: top right</div>
+        <div class="pos-absolute-unten">absolute: bottom left</div>
+      </div>
+      <p class="beschriftung">
+        position: absolute; top / right / bottom / left
+      </p>
+
+      <br />
+      <p style="font-size: 0.85rem; margin-bottom: 12px">
+        z-index — höherer Wert liegt oben:
+      </p>
+      <div class="z-index-demo">
+        <div class="z-box z1">z: 1</div>
+        <div class="z-box z2">z: 2</div>
+        <div class="z-box z3">z: 3</div>
+      </div>
+
+      <br />
+      <p style="font-size: 0.85rem; color: var(--grau); line-height: 1.8">
+        <strong>position: fixed</strong> → klebt am Viewport (z.B. die
+        Navigation oben auf dieser Seite)<br />
+        <strong>position: sticky</strong> → scrollt mit, bleibt dann kleben —
+        probiere: <code>h2 { position: sticky; top: 80px; }</code>
+      </p>
+    </section>
+
+    <!-- 9. OVERFLOW -->
+    <section id="overflow">
+      <h3 class="kapitel">09 — Overflow</h3>
+      <div class="reihe">
+        <div>
+          <div class="overflow-box o-visible">
+            overflow: visible — Inhalt ragt aus der Box heraus wenn er nicht
+            passt und das ist genau das
+          </div>
+          <p class="beschriftung">overflow: visible</p>
+        </div>
+        <div>
+          <div class="overflow-box o-hidden">
+            overflow: hidden — Inhalt wird abgeschnitten wenn er zu lang ist
+          </div>
+          <p class="beschriftung">overflow: hidden</p>
+        </div>
+        <div>
+          <div class="overflow-box o-scroll">
+            overflow: scroll — Scrollleisten immer sichtbar
+          </div>
+          <p class="beschriftung">overflow: scroll</p>
+        </div>
+        <div>
+          <div class="overflow-box o-auto">
+            overflow: auto — Scrollleisten nur wenn der Inhalt wirklich zu lang
+            ist und überläuft
+          </div>
+          <p class="beschriftung">overflow: auto</p>
+        </div>
+        <div>
+          <div class="overflow-box o-x">
+            overflow-x: scroll — nur horizontal, kein Zeilenumbruch, langer Text
+            in einer Zeile
+          </div>
+          <p class="beschriftung">overflow-x: scroll; overflow-y: hidden;</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. OPACITY & TRANSFORM -->
+    <section id="transform">
+      <h3 class="kapitel">10 — Opacity &amp; Transform</h3>
+      <div class="reihe">
+        <div>
+          <div class="transform-box t-opacity">opacity</div>
+          <p class="beschriftung">opacity: 0.3</p>
+        </div>
+        <div>
+          <div class="transform-box t-translate">translate</div>
+          <p class="beschriftung">translate(12px, -12px)</p>
+        </div>
+        <div>
+          <div class="transform-box t-scale">scale</div>
+          <p class="beschriftung">scale(1.3)</p>
+        </div>
+        <div>
+          <div class="transform-box t-rotate">rotate</div>
+          <p class="beschriftung">rotate(25deg)</p>
+        </div>
+        <div>
+          <div class="transform-box t-skew">skew</div>
+          <p class="beschriftung">skew(10deg, 5deg)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. FILTER & BACKDROP-FILTER -->
+    <section id="filter">
+      <h3 class="kapitel">11 — Filter &amp; Backdrop-Filter</h3>
+      <div class="reihe">
+        <div>
+          <div class="filter-box">normal</div>
+          <p class="beschriftung">kein Filter</p>
+        </div>
+        <div>
+          <div class="filter-box f-blur">blur</div>
+          <p class="beschriftung">blur(3px)</p>
+        </div>
+        <div>
+          <div class="filter-box f-brightness">brightness</div>
+          <p class="beschriftung">brightness(150%)</p>
+        </div>
+        <div>
+          <div class="filter-box f-contrast">contrast</div>
+          <p class="beschriftung">contrast(200%)</p>
+        </div>
+        <div>
+          <div class="filter-box f-grayscale">grayscale</div>
+          <p class="beschriftung">grayscale(100%)</p>
+        </div>
+        <div>
+          <div class="filter-box f-sepia">sepia</div>
+          <p class="beschriftung">sepia(80%)</p>
+        </div>
+        <div>
+          <div class="filter-box f-invert">invert</div>
+          <p class="beschriftung">invert(100%)</p>
+        </div>
+        <div>
+          <div class="filter-box f-saturate">saturate</div>
+          <p class="beschriftung">saturate(250%)</p>
+        </div>
+        <div>
+          <div class="filter-box f-hue">hue-rotate</div>
+          <p class="beschriftung">hue-rotate(120deg)</p>
+        </div>
+      </div>
+
+      <br />
+      <p style="font-size: 0.85rem; margin-bottom: 12px">
+        backdrop-filter — Glas-Effekt hinter dem Element:
+      </p>
+      <div class="glas-container">
+        <div class="glas-overlay">backdrop-filter: blur(10px)</div>
+      </div>
+    </section>
+
+    <!-- 12. SCHATTEN -->
+    <section id="schatten">
+      <h3 class="kapitel">12 — Schatten</h3>
+      <div class="text-schatten-demo">
+        <h2 class="ts-normal">Weicher Schatten</h2>
+        <p class="beschriftung">text-shadow: 2px 2px 5px rgba(0,0,0,0.3)</p>
+        <br />
+        <h2 class="ts-hart">Harter Schatten</h2>
+        <p class="beschriftung">text-shadow: 4px 4px 0px #e63946</p>
+        <br />
+        <h2 class="ts-glow">Glow Effekt</h2>
+        <p class="beschriftung">text-shadow: 0 0 20px rgba(230,57,70,0.8)</p>
+        <br />
+        <h2 class="ts-mehrere">Mehrere Schatten</h2>
+        <p class="beschriftung">
+          text-shadow: 2px 2px 0 #e63946, 4px 4px 0 #2a9d8f
+        </p>
+      </div>
+    </section>
+
+    <!-- 13. BLEND MODES -->
+    <section id="blend">
+      <h3 class="kapitel">13 — Blend Modes</h3>
+      <div class="reihe">
+        <div>
+          <div class="blend-container">
+            <div class="blend-text bm-multiply">TEXT</div>
+          </div>
+          <p class="beschriftung">mix-blend-mode: multiply</p>
+        </div>
+        <div>
+          <div class="blend-container">
+            <div class="blend-text bm-difference">TEXT</div>
+          </div>
+          <p class="beschriftung">mix-blend-mode: difference</p>
+        </div>
+        <div>
+          <div class="blend-container">
+            <div class="blend-text bm-overlay">TEXT</div>
+          </div>
+          <p class="beschriftung">mix-blend-mode: overlay</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. HOVER, ACTIVE & TRANSITION -->
+    <section id="interaktion">
+      <h3 class="kapitel">14 — Hover, Active &amp; Transition</h3>
+      <p style="font-size: 0.9rem; margin-bottom: 20px; color: var(--grau)">
+        Fahre mit der Maus über die Elemente:
+      </p>
+
+      <div class="reihe" style="align-items: center">
+        <div>
+          <a href="#" class="hover-link">Hover-Link</a>
+          <p class="beschriftung">:hover → color + border-color</p>
+        </div>
+        <div>
+          <div class="hover-karte">
+            <p style="font-size: 0.85rem; font-weight: 600">Hover-Karte</p>
+            <p style="font-size: 0.8rem; color: var(--grau); margin-top: 6px">
+              Auch mal klicken
+            </p>
+          </div>
+          <p class="beschriftung">
+            :hover → translateY + shadow<br />:active → scale(0.97)
+          </p>
+        </div>
+        <div>
+          <button class="hover-button">Hover-Button</button>
+          <p class="beschriftung">
+            :hover → background<br />:active → scale(0.96)
+          </p>
+        </div>
+      </div>
+
+      <br />
+      <p style="font-size: 0.9rem; margin-bottom: 12px; color: var(--grau)">
+        Easing vergleichen — hover über die Balken:
+      </p>
+      <div class="easing-demo">
+        <div class="e-linear">linear</div>
+        <div class="e-ease">ease (Standard)</div>
+        <div class="e-ease-in">ease-in</div>
+        <div class="e-ease-out">ease-out</div>
+        <div class="e-ease-inout">ease-in-out</div>
+      </div>
+    </section>
+
+    <!-- 15. PSEUDO -->
+    <section id="pseudo">
+      <h3 class="kapitel">15 — Pseudo-Elemente &amp; Pseudo-Klassen</h3>
+      <div class="reihe">
+        <div>
+          <div class="pseudo-demo">
+            <p>::before als Pfeil</p>
+            <p>Zweite Zeile</p>
+            <p>Dritte Zeile</p>
+          </div>
+          <p class="beschriftung">p::before { content: '→' }</p>
+        </div>
+
+        <div>
+          <p class="pseudo-after">Stern nach dem Text</p>
+          <p class="beschriftung">p::after { content: ' ✦' }</p>
+        </div>
+
+        <div>
+          <ul class="liste-demo">
+            <li>:nth-child(odd) — hell</li>
+            <li>:nth-child(even) — dunkel</li>
+            <li>Drittes Element</li>
+            <li>:not(:last-child) hat Linie</li>
+          </ul>
+          <p class="beschriftung">
+            :nth-child(odd/even)<br />:not(:last-child)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 16. ANIMATION -->
+    <section id="animation">
+      <h3 class="kapitel">16 — Animation</h3>
+      <div class="reihe" style="align-items: center">
+        <div>
+          <p class="anim-rein">Einblenden</p>
+          <p class="beschriftung">
+            @keyframes fadeUp<br />animation: ... forwards
+          </p>
+        </div>
+        <div>
+          <div class="anim-puls"></div>
+          <p class="beschriftung">
+            @keyframes pulsieren<br />animation: ... infinite
+          </p>
+        </div>
+        <div>
+          <div class="anim-drehen"></div>
+          <p class="beschriftung">@keyframes drehen<br />linear infinite</p>
+        </div>
+        <div>
+          <ul class="staffel-liste">
+            <li>Staffel — delay: 0s</li>
+            <li>Staffel — delay: 0.1s</li>
+            <li>Staffel — delay: 0.2s</li>
+            <li>Staffel — delay: 0.3s</li>
+          </ul>
+          <p class="beschriftung">
+            animation-delay gestaffelt<br />über :nth-child
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 17. DETAILS & SUMMARY -->
+    <section id="details">
+      <h3 class="kapitel">17 — Details &amp; Summary (CSS-only Interaktion)</h3>
+      <p style="font-size: 0.85rem; color: var(--grau); margin-bottom: 20px">
+        Der Browser setzt <code>open</code> automatisch beim Klick.<br />
+        CSS reagiert mit <code>details:open { ... }</code> — kein JavaScript
+        nötig.
+      </p>
+
+      <div class="details-demo" style="max-width: 500px">
         <details>
-          <summary>Mehr über Publishing</summary>
+          <summary>Was ist CSS?</summary>
           <p>
-            Publishing umfasst sowohl traditionelle Druckverfahren als auch
-            digitale Distribution.
+            CSS (Cascading Style Sheets) bestimmt das Aussehen von
+            HTML-Elementen — Farben, Abstände, Schriften, Layouts und vieles
+            mehr.
           </p>
         </details>
-      </section>
-    </main>
+        <details>
+          <summary>Was ist das Box Model?</summary>
+          <p>
+            Jedes HTML-Element ist eine rechteckige Box aus Inhalt, Padding,
+            Border und Margin.
+          </p>
+        </details>
+        <details open>
+          <summary>Dieses ist bereits geöffnet</summary>
+          <p>
+            Mit dem Attribut <code>open</code> direkt im HTML startet es
+            geöffnet. CSS reagiert mit <code>details:open { ... }</code> — das +
+            dreht sich zum ×.
+          </p>
+        </details>
+      </div>
+    </section>
 
-    <footer>
-      <p>Demo Projekt</p>
+    <!-- 18. SONSTIGES -->
+    <section id="sonstiges">
+      <h3 class="kapitel">18 — Sonstiges: calc() &amp; columns</h3>
+
+      <p style="font-size: 0.85rem; margin-bottom: 12px">
+        calc() — verschiedene Einheiten kombinieren:
+      </p>
+      <div class="calc-box">width: calc(100% - 80px)</div>
+
+      <br />
+      <p style="font-size: 0.85rem; margin-bottom: 12px">
+        columns — Fließtext automatisch in Spalten aufteilen:
+      </p>
+      <div class="spalten-demo">
+        <p>
+          Das ist ein längerer Text der automatisch in drei Spalten aufgeteilt
+          wird. CSS übernimmt den Umbruch komplett selbstständig. Man muss sich
+          nur um column-count und column-gap kümmern. Das ist besonders
+          praktisch für Zeitungs- oder Magazin-Layouts wo viel Text vorhanden
+          ist und schön verteilt werden soll.
+        </p>
+      </div>
+      <p class="beschriftung">column-count: 3; column-gap: 24px;</p>
+    </section>
+
+    <footer
+      style="
+        padding: 40px;
+        text-align: center;
+        font-size: 0.8rem;
+        color: var(--grau);
+      "
+    >
+      CSS Demo — alle wichtigen Eigenschaften auf einen Blick
     </footer>
   </body>
 </html>

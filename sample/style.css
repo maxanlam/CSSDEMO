@@ -43,6 +43,10 @@ h2 {
   width: 100%;
 }
 
+.content {
+  column-count: 2;
+}
+
 .section {
   margin-bottom: 40px;
 }
