@@ -1,0 +1,98 @@
+Grundlagen 
+
+Wie CSS funktioniert (Selektoren, Eigenschaften, Werte)
+Inline, Internal, External CSS
+Selektoren: Element, Klasse, ID (+ Attribut-Selektoren kurz erwähnen)
+Spezifität & Kaskade verstehen
+DevTools zur Fehlersuche
+
+
+Das Box-Model 
+
+Content, Padding, Margin visuell erklären
+Display-Eigenschaft (block, inline, none)
+width / height mit verschiedenen Einheiten zeigen (px, %, vw, auto)
+
+        ┌─────────────────────────────────────────┐
+        │ Browser-Fenster   │
+        ├─────────────────────────────────────────┤
+        │                                         │
+        │ ┌──────┐ ┌──────┐ ┌──────┐ ┌────────––┐ │
+        │ │ 300px│ │ 50%  │ │ 50vw │ │ auto     │ │
+        │ │      │ │      │ │      │ │          │ │
+        │ └──────┘ └──────┘ └──────┘ └───────––─┘ │
+        │                                         │
+        └─────────────────────────────────────────┘
+
+        Was ändern während Tutorial:
+
+        Browser-Fenster vergrößern/verkleinern mit Resize-Griff
+
+        px - bleibt gleich
+        % - bleibt gleich (Parent ändert sich nicht)
+        vw - ändert sich sofort mit!
+        auto - bleibt gleich
+
+        Parent-Container-Breite ändern
+
+        px - bleibt gleich
+        % - ändert sich mit! ✓
+        vw - ändert sich nicht (Fenster ändert sich ja nicht)
+        auto - passt sich an
+
+
+overflow anhand langer text box demonstieren (visible, hidden, auto, scroll)
+border & border-styles zeigen
+wirkung von box-sizing: border-box; hier sichtbar machen (300px statt 300px + border)
+
+
+Position
+
+Position (relative, absolute, fixed, vllt. sticky?)
+top, bottom, left, right
+z-index für Layering
+
+
+Komplexere Layout-Systeme 
+
+Flexbox (flex-direction, justify-content, align-items, gap, und vllt noch flexbox:wrap aber vllt auch unnötig) 
+Grid (echt nur grid-template-columns, grid-template-rows mit fr-Einheit und gap)
+columns kurz erwähnen (für Fließtext)
+
+
+Typografie & Farben
+
+Farbformate (HEX, RGB, RGBA, HSL)
+Font-Eigenschaften (font-family, font-size, font-weight, line-height)
+Text-Ausrichtung & Abstände (text-align, letter-spacing, word-spacing)
+Web Fonts (Google Fonts oder @font-face)
+overflow-wrap, word-break, Hyphenation kurz
+
+Responsive Design
+
+Media Queries (@media screen, @media print)
+Breakpoints sinnvoll setzen
+Mobile-First-Ansatz
+Print-Version simulieren & zeigen (wichtig für die Aufgabe!)
+
+Pseudo-Klassen & Interaktionen 
+
+:hover, :active, :open (für <details>)
+:nth-child(), :not() kurz
+Transitions (duration, easing: ease-in-out, etc.)
+Animations (@keyframes, animation-property, kurz!)
+Opacity & Transform (translate, scale, rotate)
+
+Effekte 
+
+box-shadow, text-shadow
+filter (blur, brightness, grayscale, etc.)
+backdrop-filter (für Glass-UI Effekte)
+mix-blend-mode kurz erwähnen
+
+Praxis & Abschluss 
+
+Brief vorstellen (die Aufgabe)
+README durchgehen (was die soll)
+Nachschlagewerke vorstellen
+CSS Demo-Seite zeigen
