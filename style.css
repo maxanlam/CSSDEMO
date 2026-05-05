@@ -1103,8 +1103,9 @@ footer {
     ============================================================ */
 @media print {
   nav,
-  footer {
-    display: none;
+  footer,
+  .copy-btn {
+    display: none !important;
   }
 
   body {
