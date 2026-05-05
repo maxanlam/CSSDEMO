@@ -50,7 +50,7 @@ document.querySelectorAll(".copy-btn").forEach((btn) => {
     navigator.clipboard.writeText(output);
 
     btn.textContent = "✔ kopiert";
-    setTimeout(() => (btn.textContent = "Snippet Kopieren"), 1500);
+    setTimeout(() => (btn.textContent = "Snippet kopieren"), 1500);
   });
 });
 
