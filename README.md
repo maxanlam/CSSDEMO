@@ -9,7 +9,7 @@
 # Design a hybrid page that communicates and reflects something you care about:
 
 1.  Your design must work in both screen and print versions.
-    The printed and digital versions should not be identical – though still remaining somewhat consistent in theme. Highlight the differences between them & reflect on how design changes between digital/interactive and physical formats.
+    The printed and digital versions should not be identical - though still remaining somewhat consistent in theme. Highlight the differences between them & reflect on how design changes between digital/interactive and physical formats.
 
 2.  Include at least one interaction on the website.
 
@@ -41,13 +41,13 @@ die einzigen Ausnahmen sind:
 
 Diese definieren den Aufbau und die Bedeutung deines Dokuments.
 
-- `<html>` – umschließt alles
-- `<head>` – Metadaten, Skripte, Styles
-- `<body>` – sichtbarer Inhalt
-- `<header>`, `<main>`, `<footer>` – Hauptbereiche
-- `<section>`, `<article>` – gruppieren zusammengehörige Inhalte
-- `<nav>` – Navigationslinks
-- `<div>` – generischer Container (wird oft verwendet, aber nicht übertreiben)
+- `<html>` - umschließt alles
+- `<head>` - Metadaten, Skripte, Styles
+- `<body>` - sichtbarer Inhalt
+- `<header>`, `<main>`, `<footer>` - Hauptbereiche
+- `<section>`, `<article>` - gruppieren zusammengehörige Inhalte
+- `<nav>` - Navigationslinks
+- `<div>` - generischer Container (wird oft verwendet, aber nicht übertreiben)
 
 ---
 
@@ -55,27 +55,27 @@ Diese definieren den Aufbau und die Bedeutung deines Dokuments.
 
 Das, was Nutzer tatsächlich lesen.
 
-- `<h1>`, `<h2>` → `<h6>` – Überschriften, gut für Struktur
-- `<p>` – Absätze
-- `<span>` – Inline-Container, kann HTML-Inhalte komplett unformatiert verpacken
-- `<br>` – Zeilenumbruch
-- `<strong>` / `<em>` – semantische Hervorhebung (besser als `<b>` / `<i>`)
+- `<h1>`, `<h2>` → `<h6>` - Überschriften, gut für Struktur
+- `<p>` - Absätze
+- `<span>` - Inline-Container, kann HTML-Inhalte komplett unformatiert verpacken
+- `<br>` - Zeilenumbruch
+- `<strong>` / `<em>` - semantische Hervorhebung (besser als `<b>` / `<i>`)
 
 ---
 
 ## Links
 
-- `<a>` – Hyperlinks
+- `<a>` - Hyperlinks
   - innerhalb es tags kann der link in `src=""` geschrieben werden. Du kannst hier auf eine andere Seite/Url verlinken die auf Klick geöffnet/aktiviert wird. Mit `target="_blank"` wird diese in einem neuen Tab geöffnet. Man kann aber auch auf eine bestimmte [id] (#id) innerhalb der eigenen Seite verlinken, z.B: `src="#beispiel"`.
 
 ## Medien
 
-- `<img>` – Bilder
+- `<img>` - Bilder
   - hier kannst du auch einfach mit `src=""` auf ein bild verlinken. Entweder auf eins in deinen eigenen Ordnern oder mit einer externen url auf ein anderes im Internet
   - mit `alt=""` kannst du auch einen alt text hinzufügen, was hilft das Bild zu umschreiben, sollte es mal nicht richtig laden, aber auch vor allem für Mrnschen mit Sehbehinderung, die oft Screenreader benutzen.
   - mit `loading="lazy` werden Bilder erst reingeladen, wenn sie sichtbar werden, statt direkt alle auf einmal beim Seitenladen. Das kann bei der Perfomance helfen und unangenehme ladephasen verringern.
 
-- `<video>` / `<audio>` – Medienplayer für inhalte die du selber bei dir hostest
+- `<video>` / `<audio>` - Medienplayer für inhalte die du selber bei dir hostest
 
   bsp:
 
@@ -87,7 +87,7 @@ Das, was Nutzer tatsächlich lesen.
 </video>
 ```
 
-- `<iframe>` – Einbettung externer Inhalte (z. B. YouTube, Google Maps, ganze Webseiten)
+- `<iframe>` - Einbettung externer Inhalte (z. B. YouTube, Google Maps, ganze Webseiten)
 
 ---
 
@@ -95,19 +95,19 @@ Das, was Nutzer tatsächlich lesen.
 
 Werden ständig für Navigation, Menüs usw. verwendet.
 
-- `<ul>` – ungeordnete Liste
-- `<ol>` – geordnete Liste
-- `<li>` – Listenelement
+- `<ul>` - ungeordnete Liste
+- `<ol>` - geordnete Liste
+- `<li>` - Listenelement
 
 ---
 
 ## Formulare (Benutzereingaben)
 
-- `<form>` – umschließt Eingabefelder
-- `<input>` – Textfelder, Checkboxen usw.
-- `<textarea>` – mehrzeiliger Text
-- `<button>` – klickbarer Button
-- `<label>` – verbessert die Barrierefreiheit
+- `<form>` - umschließt Eingabefelder
+- `<input>` - Textfelder, Checkboxen usw.
+- `<textarea>` - mehrzeiliger Text
+- `<button>` - klickbarer Button
+- `<label>` - verbessert die Barrierefreiheit
 
 ---
 
@@ -127,7 +127,7 @@ Diese Attribute sind hilfreich für weitere Katoegoriserung im **Styling und Int
 
 ## ID
 
-- `id="..."` – eindeutiger Identifikator für ein bestimmtes Element
+- `id="..."` - eindeutiger Identifikator für ein bestimmtes Element
   - wenn man ein Element mit einer ID verseht, darf diese bestimmte ID **nur einmal pro HTML-Dokument vorkommen**
   - Sie darf nur **einem einzigen Element** zugewiesen werden
   - Wird im CSS mit `#` angesprochen (z. B. `#beispielNr1`)
@@ -141,7 +141,7 @@ Diese Attribute sind hilfreich für weitere Katoegoriserung im **Styling und Int
 
 ## Klassen
 
-- `class="..."` – wiederverwendbare CSS-Gruppen die bei Kategorisierungen helfen
+- `class="..."` - wiederverwendbare CSS-Gruppen die bei Kategorisierungen helfen
 - ein Element kann mehrere Klassen haben
 - mehre Elemente können die gleiche Klasse haben
   - wichtig wenn man Elemente geich bzw. nach einem Schema stylen will oder aber Statements / Modi im Javascript bestimmen will (via ClassList Toggle/Add/Remove/Contain/Replace)
@@ -211,7 +211,7 @@ Jedes Element im Web wird als rechteckige Box betrachtet. Das Box-Modell ist ent
 ![](/screenshots/CSS-Box-Modell.png)
 
 - `padding:` -transparenter Bereich um den Inhalt (innerhalb des Rahmens)
-- `border:` -Linie um Padding und Inhalt
+- `border:` - Linie um Padding und Inhalt
 - `margin:` - transparenter Bereich außerhalb des
 - `width:` - bestimmt die Breite eines Elements
 - `height:` - bestimmt die Höhe eines Elements
@@ -221,10 +221,10 @@ Jedes Element im Web wird als rechteckige Box betrachtet. Das Box-Modell ist ent
 
 Padding ist der **transparente Bereich innerhalb des Rahmens**, der den Inhalt umgibt.
 
-- `padding-top:` – Abstand oben innerhalb des Elements
-- `padding-right:` – Abstand rechts innerhalb des Elements
-- `padding-bottom:` – Abstand unten innerhalb des Elements
-- `padding-left:` – Abstand links innerhalb des Elements
+- `padding-top:` - Abstand oben innerhalb des Elements
+- `padding-right:` - Abstand rechts innerhalb des Elements
+- `padding-bottom:` - Abstand unten innerhalb des Elements
+- `padding-left:` - Abstand links innerhalb des Elements
 
 ### Border (Rahmen/Kontur)
 
@@ -253,19 +253,19 @@ div {
 }
 ```
 
-- `border-top:` – Kontur oben
-- `border-right:` – Kontur rechts
-- `border-bottom:` – Kontur unten
-- `border-left:` – Kontur links
+- `border-top:` - Kontur oben
+- `border-right:` - Kontur rechts
+- `border-bottom:` - Kontur unten
+- `border-left:` - Kontur links
 
 ### Margin (Außenabstand)
 
 Margin ist der **transparente Bereich außerhalb des Rahmens**, also der Abstand zu anderen Elementen.
 
-- `margin-top:` – Abstand nach oben
-- `margin-right:` – Abstand nach rechts
-- `margin-bottom:` – Abstand nach unten
-- `margin-left:` – Abstand nach links
+- `margin-top:` - Abstand nach oben
+- `margin-right:` - Abstand nach rechts
+- `margin-bottom:` - Abstand nach unten
+- `margin-left:` - Abstand nach links
 
 ### Border-Radius
 
@@ -298,8 +298,8 @@ div {
 
 Farben bestimmen Text- und Hintergrundgestaltung.
 
-- `background-color:` – Hintergrundfarbe
-- `color:` – Textfarbe
+- `background-color:` - Hintergrundfarbe
+- `color:` - Textfarbe
 
 ---
 
@@ -315,7 +315,7 @@ color: #ff0000;
 
 #### RGB
 
-Rot (Rot, Grün, Blau Werte 0–255):
+Rot (Rot, Grün, Blau Werte 0-255):
 
 ```css id="c2"
 color: rgb(255, 0, 0);
@@ -349,7 +349,7 @@ color: red;
 
 ## CSS Variablen
 
-CSS Variablen (auch **Custom Properties**) erlauben es dir, Werte zentral zu definieren und mehrfach zu verwenden. Das macht dein Styling übersichtlicher und leichter anpassbar – besonders bei Farben, Abständen oder Themes.
+CSS Variablen (auch **Custom Properties**) erlauben es dir, Werte zentral zu definieren und mehrfach zu verwenden. Das macht dein Styling übersichtlicher und leichter anpassbar - besonders bei Farben, Abständen oder Themes.
 
 Variablen werden meist im `:root` definiert (global verfügbar):
 
@@ -433,8 +433,8 @@ Standardmäßig beziehen sie sich auf den **Inhaltsbereich** der Box.
 
 ### Basiseigenschaften
 
-- `width:` – legt die Breite des Elements fest
-- `height:` – legt die Höhe des Elements fest
+- `width:` - legt die Breite des Elements fest
+- `height:` - legt die Höhe des Elements fest
 
 - `max-width:` / `max-height:` - verhindern, dass ein Element größer als ein bestimmter Wert wird
 
@@ -459,11 +459,11 @@ width: calc(100% - 40px);
 
 `object-fit:` steuert, wie Bilder und Videos innerhalb eines festen Containers dargestellt werden
 
-- `cover` – füllt den Container komplett, schneidet ggf. Teile ab
-- `contain` – passt vollständig in den Container, ohne Beschnitt
-- `fill` – verzerrt das Element, um den Container zu füllen
-- `none` – behält originale Größe bei
-- `scale-down` – nimmt die kleinere Variante aus `none` oder `contain`
+- `cover` - füllt den Container komplett, schneidet ggf. Teile ab
+- `contain` - passt vollständig in den Container, ohne Beschnitt
+- `fill` - verzerrt das Element, um den Container zu füllen
+- `none` - behält originale Größe bei
+- `scale-down` - nimmt die kleinere Variante aus `none` oder `contain`
 
 **Beispiel:**
 
@@ -515,10 +515,10 @@ typische Anwendungsfälle sind z.B.:
 - **b)** Eine Galerie oder ein Container mit mehreren Elementen soll scrollbar sein
 
 Werte:
-`visible` – Inhalt ragt raus (Standard)
-`hidden` – Inhalt wird abgeschnitten
-`scroll` – Scrollleisten immer sichtbar
-`auto` – Scrollleisten nur wenn nötig
+`visible` - Inhalt ragt raus (Standard)
+`hidden` - Inhalt wird abgeschnitten
+`scroll` - Scrollleisten immer sichtbar
+`auto` - Scrollleisten nur wenn nötig
 
 z.B.
 
@@ -829,30 +829,30 @@ mix-blend-mode: overlay;
 
 ## Pseudo-Klassen & Pseudo-Elemente
 
-Pseudo-Klassen und Pseudo-Elemente werden genutzt, um **Zustände von Elementen** oder **bestimmte Teile eines Elements** direkt in CSS anzusprechen – ohne zusätzliche Klassen im HTML.
+Pseudo-Klassen und Pseudo-Elemente werden genutzt, um **Zustände von Elementen** oder **bestimmte Teile eines Elements** direkt in CSS anzusprechen - ohne zusätzliche Klassen im HTML.
 
 ### Pseudo-Klassen
 
 Pseudo-Klassen beschreiben den **Zustand eines Elements**.
 
-- `:hover` – aktiv, wenn die Maus über einem Element ist, z. B. für visuelle Effekte beim Darüberfahren
-- `:active` – aktiv, während ein Element gedrückt wird, z. B. beim Klicken eines Buttons
-- `:not(selector)` – schließt bestimmte Elemente aus, `selector` beschreibt, was ausgeschlossen werden soll
-- `:nth-child(n)` – wählt ein Element nach seiner Position im Eltern-Element
+- `:hover` - aktiv, wenn die Maus über einem Element ist, z. B. für visuelle Effekte beim Darüberfahren
+- `:active` - aktiv, während ein Element gedrückt wird, z. B. beim Klicken eines Buttons
+- `:not(selector)` - schließt bestimmte Elemente aus, `selector` beschreibt, was ausgeschlossen werden soll
+- `:nth-child(n)` - wählt ein Element nach seiner Position im Eltern-Element
   der wert `n` kann z.B. sein:
   - Zahl (`1`, `2`, `3` …)
   - `odd` (ungerade Positionen)
   - `even` (gerade Positionen)
-- `:nth-of-type(n)` – wie `nth-child`, aber nur für denselben Elementtyp, ignoriert andere HTML-Tags im gleichen Container
-- `:has(selector)` – wählt ein Element, das ein bestimmtes Kind enthäl, `selector` beschreibt das Kind-Element
-- `:is(selector, selector, ...)` – fasst mehrere Selektoren zusammen, statt `h1, h2, h3` kann man `:is(h1, h2, h3)` schreiben
+- `:nth-of-type(n)` - wie `nth-child`, aber nur für denselben Elementtyp, ignoriert andere HTML-Tags im gleichen Container
+- `:has(selector)` - wählt ein Element, das ein bestimmtes Kind enthäl, `selector` beschreibt das Kind-Element
+- `:is(selector, selector, ...)` - fasst mehrere Selektoren zusammen, statt `h1, h2, h3` kann man `:is(h1, h2, h3)` schreiben
 
 ### Pseudo-Elemente
 
 Pseudo-Elemente sprechen Teile eines Elements an.
 
-- `::before` – erzeugt Inhalt **vor dem eigentlichen Inhalt** eines Elements
-- `::after` – erzeugt Inhalt **nach dem eigentlichen Inhalt**
+- `::before` - erzeugt Inhalt **vor dem eigentlichen Inhalt** eines Elements
+- `::after` - erzeugt Inhalt **nach dem eigentlichen Inhalt**
 
 ## Interaktionen
 
@@ -860,33 +860,33 @@ Pseudo-Elemente sprechen Teile eines Elements an.
 
 für gewisse Interaktionen Kann man den zustand des Elements verändern:
 
-- `:hover` – Zustand beim Überfahren mit der Maus
-- `:active` – Zustand solange man klickt bzw. das klicken hält
+- `:hover` - Zustand beim Überfahren mit der Maus
+- `:active` - Zustand solange man klickt bzw. das klicken hält
 
 Auch diese Zustände können gestylt werden und dadurch visuell vom Normalzustand abweichen.
 
 #### Transition
 
 Mit `transition:` lassen sich solche Änderungen weich animieren.
-Die Dauer wird in Sekunden (`s`) angegeben – z. B. bewirkt `transition: 1s;`, dass alle Stiländerungen innerhalb von 1 Sekunde übergehen.
+Die Dauer wird in Sekunden (`s`) angegeben - z. B. bewirkt `transition: 1s;`, dass alle Stiländerungen innerhalb von 1 Sekunde übergehen.
 Gibt man zusätzlich eine CSS-Property an, etwa `transition: opacity 1s;`, gilt die Animation nur für diese Eigenschaft.
 
 Mehrere Eigenschaften können mit Kommas getrennt werden.
 
 #### Easing
 
-Nach der Sekundenangabe kann man auch noch `easing` Hinzufügen. Es beschreibt die zeitliche Veränderung einer Animation – also wie schnell oder langsam ein Übergang beginnt, verläuft und endet.
+Nach der Sekundenangabe kann man auch noch `easing` Hinzufügen. Es beschreibt die zeitliche Veränderung einer Animation - also wie schnell oder langsam ein Übergang beginnt, verläuft und endet.
 
 Nach der Dauer kann ein Easing-Wert angegeben werden, z. B. `transition: opacity 1s ease`.
 
 Gängige Easing-Arten:
 
-- `linear` – gleichmäßige Geschwindigkeit
-- `ease` – langsam starten und enden (Standard)
-- `ease-in` – langsam starten, dann schneller werden
-- `ease-out` – schnell starten, dann langsamer werden
-- `ease-in-out` – langsam starten und enden, schnell in der Mitte
-- `cubic-bezier(...)` – individuelle Kurve definieren
+- `linear` - gleichmäßige Geschwindigkeit
+- `ease` - langsam starten und enden (Standard)
+- `ease-in` - langsam starten, dann schneller werden
+- `ease-out` - schnell starten, dann langsamer werden
+- `ease-in-out` - langsam starten und enden, schnell in der Mitte
+- `cubic-bezier(...)` - individuelle Kurve definieren
 
 hier mal ein Beispiel wenn ich ein Element hover bzw. klicken würde:
 
@@ -911,7 +911,7 @@ a:active {
 
 ### Open
 
-- `:open` – beschreibt Elemente im geöffneten Zustand
+- `:open` - beschreibt Elemente im geöffneten Zustand
 - wird bei `<details>` verwendet
   - `<details>` ist ein HTML-Element für ausklappbare Inhalte
     es ist standardmäßig geschlossen
@@ -944,7 +944,7 @@ Sie bestehen aus zwei Teilen:
 `@keyframes` - wird unabhängig von den Declaration Blocks im CSS aufgebaut und beschreibt den Ablauf
 `animation` - wendet diesen Ablauf auf ein Element an
 
-### 1. @keyframes – Animation benennen und Ablauf definieren
+### 1. @keyframes - Animation benennen und Ablauf definieren
 
 Hier legst du fest, was wann passiert.
 
@@ -972,7 +972,7 @@ Hier legst du fest, was wann passiert.
 - Du kannst mit Prozenten arbeiten (`0%` → `100%`)
 - oder mit `from` / `to`
 
-### 2. animation – anwenden auf ein Element
+### 2. animation - anwenden auf ein Element
 
 hier wendest du dann deine erdachte Animation mit der CSS-Property `animation` auf ein element an:
 
@@ -1077,9 +1077,9 @@ oder
 
 ### Glossare/Docs:
 
-- **[MDN Web Docs](https://developer.mozilla.org/)** – Beste Referenz: verständlich, aktuell & mit Beispielen
+- **[MDN Web Docs](https://developer.mozilla.org/)** - Beste Referenz: verständlich, aktuell & mit Beispielen
 
-- **[W3C](https://www.w3.org/)** – Offizielle Standards
+- **[W3C](https://www.w3.org/)** - Offizielle Standards
 
 ### Kurse:
 
@@ -1087,9 +1087,9 @@ oder
 
 ### Beilspiele:
 
-- **[CodePen](https://codepen.io/)** – Direkt im Browser ausprobieren
+- **[CodePen](https://codepen.io/)** - Direkt im Browser ausprobieren
 
-- **[CSS-Tricks](https://css-tricks.com/)** – Praxisnahe Erklärungen & Guides
+- **[CSS-Tricks](https://css-tricks.com/)** - Praxisnahe Erklärungen & Guides
 
 ---
 
@@ -1107,7 +1107,7 @@ Statt Werte selbst zu schreiben, verwendet man häufig Generatoren:
 
 ### Foren:
 
-- **[Stack Overflow](https://stackoverflow.com/)** – Hilfe bei konkreten Problemen
+- **[Stack Overflow](https://stackoverflow.com/)** - Hilfe bei konkreten Problemen
 
 ### Spiele/Übungen
 
