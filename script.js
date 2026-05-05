@@ -2,7 +2,14 @@ document.querySelectorAll(".copy-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
     const section = btn.closest("section");
 
-    const html = section.outerHTML;
+    // clone section so we can modify it safely
+    const clone = section.cloneNode(true);
+
+    // remove UI elements from clone
+    clone.querySelectorAll(".copy-btn").forEach((el) => el.remove());
+    clone.querySelectorAll("h3").forEach((el) => el.remove());
+
+    const html = clone.outerHTML;
 
     const rules = [...document.styleSheets].flatMap((sheet) => {
       try {
@@ -17,7 +24,14 @@ document.querySelectorAll(".copy-btn").forEach((btn) => {
     const css = rules
       .filter((rule) => rule.selectorText)
       .filter((rule) => {
-        return rule.selectorText.split(",").some((sel) => {
+        const selector = rule.selectorText.trim();
+
+        // remove copy button styles + global reset
+        if (selector.includes("copy-btn")) return false;
+        if (selector.includes("h3")) return false;
+        if (selector === "*") return false;
+
+        return selector.split(",").some((sel) => {
           try {
             return section.querySelector(sel.trim()) !== null;
           } catch {
@@ -33,12 +47,12 @@ document.querySelectorAll(".copy-btn").forEach((btn) => {
       .map((r) => r.cssText)
       .join("\n");
 
-    const output = `<!-- HTML -->\n${html}\n\n<style>\n${css}\n</style>`;
+    const output = `<!-- HTML -->\n${html}\n\n<style>\n${css}</style>`;
 
     navigator.clipboard.writeText(output);
 
     btn.textContent = "✔ kopiert";
-    setTimeout(() => (btn.textContent = "Code Kopieren"), 1500);
+    setTimeout(() => (btn.textContent = "Snippet Kopieren"), 1500);
   });
 });
 
@@ -46,14 +60,13 @@ const nav = document.querySelector("nav");
 
 nav.addEventListener("mousemove", (e) => {
   const rect = nav.getBoundingClientRect();
-  const mouseX = e.clientX - rect.left; // mouse position inside nav
-  const width = rect.width;
+  const mouseX = e.clientX - rect.left;
 
-  const speed = 100; // adjust scroll speed
+  const speed = 100;
 
   if (mouseX > width / 2) {
-    nav.scrollLeft += speed; // scroll right
+    nav.scrollLeft += speed;
   } else {
-    nav.scrollLeft -= speed; // scroll left
+    nav.scrollLeft -= speed;
   }
 });

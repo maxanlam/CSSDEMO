@@ -86,8 +86,11 @@ nav ul a:hover {
   color: rgb(0, 0, 0);
 }
 
-button {
+.copy-btn {
   border: none;
+  position: absolute;
+  bottom: 1rem;
+  left: 2%;
   background-color: black;
   color: white;
   font-family: "MeineFont";
@@ -96,16 +99,16 @@ button {
   transition: 0.1s ease-in-out;
 }
 
-button:hover {
+.copy-btn:hover {
   zoom: 1.05;
   filter: invert(1);
 }
 
-button:hover::before {
+.copy-btn:hover::before {
   content: "{";
 }
 
-button:hover::after {
+.copy-btn:hover::after {
   content: "}";
 }
 
@@ -114,7 +117,8 @@ button:hover::after {
     ============================================================ */
 section {
   padding: 60px 40px;
-  border-bottom: 2px dashed rgb(26, 26, 26);
+  border-bottom: 1px dashed rgb(26, 26, 26);
+  position: relative;
 }
 
 h3.kapitel {
@@ -122,6 +126,9 @@ h3.kapitel {
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin-bottom: 32px;
+  position: absolute;
+  top: 1rem;
+  left: 2%;
   padding-bottom: 8px;
   border-bottom: 1px solid rgb(0, 0, 0);
 }
