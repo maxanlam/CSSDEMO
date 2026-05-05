@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Eigenschaften Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAVIGATION -->
+    <nav>
+      <ul>
+        <li><a id="logo" href="/">CSS Demo</a></li>
+        <li><a href="#typografie">Typografie</a></li>
+        <li><a href="#farben">Farben</a></li>
+        <li><a href="#boxmodell">Box Model</a></li>
+        <li><a href="#bilder">Bilder</a></li>
+        <li><a href="#display">Display</a></li>
+        <li><a href="#flexbox">Flexbox</a></li>
+        <li><a href="#grid">Grid</a></li>
+        <li><a href="#position">Position</a></li>
+        <li><a href="#overflow">Overflow</a></li>
+        <li><a href="#transform">Transform</a></li>
+        <li><a href="#filter">Filter</a></li>
+        <li><a href="#schatten">Schatten</a></li>
+        <li><a href="#blend">Blend Modes</a></li>
+        <li><a href="#interaktion">Hover &amp; Transition</a></li>
+        <li><a href="#pseudo">Pseudo</a></li>
+        <li><a href="#animation">Animation</a></li>
+        <li><a href="#details">Details</a></li>
+        <li><a href="#sonstiges">Sonstiges</a></li>
+      </ul>
+    </nav>
+
+    <!-- 01 TYPOGRAFIE -->
+    <section id="typografie">
+      <h3 class="kapitel">01 — Typografie</h3>
+
+      <p class="typ-gross">Große Überschrift</p>
+      <p class="beschriftung">
+        font-size: 4rem; font-weight: 700; line-height: 1.05; letter-spacing:
+        -0.03em;
+      </p>
+
+      <p class="typ-gesperrt">Gesperrter Text in Versalien</p>
+      <p class="beschriftung">
+        letter-spacing: 0.2em; text-transform: uppercase;
+      </p>
+
+      <p class="typ-kontur">Kontur-Text</p>
+      <p class="beschriftung">
+        -webkit-text-stroke: 2px black; color: transparent;
+      </p>
+
+      <div class="reihe">
+        <div>
+          <p class="typ-unterstrichen">Unterstrichen</p>
+          <p class="beschriftung">text-decoration: underline;</p>
+        </div>
+        <div>
+          <p class="typ-durchgestrichen">Durchgestrichen</p>
+          <p class="beschriftung">text-decoration: line-through;</p>
+        </div>
+        <div>
+          <p class="typ-wortabstand">Wort Abstand</p>
+          <p class="beschriftung">word-spacing: 0.5em;</p>
+        </div>
+      </div>
+
+      <div class="reihe">
+        <div class="ausrichtung-box">
+          <p class="typ-zentriert">text-align: center</p>
+        </div>
+        <div class="ausrichtung-box">
+          <p class="typ-rechts">text-align: right</p>
+        </div>
+      </div>
+
+      <p class="typ-fliesstext">
+        Das ist ein Fließtext-Absatz mit max-width: 60ch — ungefähr 60 Zeichen
+        pro Zeile ist ideal zum Lesen. Der Zeilenabstand beträgt hier 1.9 und
+        macht längere Texte deutlich angenehmer.
+      </p>
+    </section>
+
+    <!-- 02 FARBEN -->
+    <section id="farben">
+      <h3 class="kapitel">02 — Farben</h3>
+      <div class="farb-grid">
+        <div class="farbfeld c-hex">
+          <span>hex<br />#e63946</span>
+        </div>
+        <div class="farbfeld c-rgb">
+          <span>rgb<br />rgb(42,157,143)</span>
+        </div>
+        <div class="farbfeld c-rgba">
+          <span>rgba<br />rgba(231,111,81,0.6)</span>
+        </div>
+        <div class="farbfeld c-hsl">
+          <span>hsl<br />hsl(45,90%,55%)</span>
+        </div>
+        <div class="farbfeld c-name">
+          <span>name<br />steelblue</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 BOX MODEL -->
+    <section id="boxmodell">
+      <h3 class="kapitel">03 — Box Model</h3>
+
+      <div class="box-haupt">
+        <p>
+          padding: 10px 20px 30px 40px<br />
+          border: 2px solid<br />
+          border-radius: 16px<br />
+          box-shadow: 4px 8px 24px
+        </p>
+      </div>
+
+      <div class="reihe">
+        <div>
+          <div class="box-inset">inset box-shadow</div>
+          <p class="beschriftung">box-shadow: inset 0 4px 12px</p>
+        </div>
+        <div>
+          <div class="box-glow">glow</div>
+          <p class="beschriftung">box-shadow: 0 0 28px rgba(akzent)</p>
+        </div>
+        <div>
+          <div class="box-kreis">Kreis</div>
+          <p class="beschriftung">border-radius: 50%</p>
+        </div>
+        <div>
+          <div class="box-pille">Pille</div>
+          <p class="beschriftung">border-radius: 99px</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 BILDER -->
+    <section id="bilder">
+      <h3 class="kapitel">04 — Bilder &amp; object-fit</h3>
+      <p class="beschriftung">
+        Alle Bilder haben dieselbe Größe (200×400px). Nur object-fit
+        unterscheidet sich.
+      </p>
+
+      <div class="reihe">
+        <div>
+          <div class="bild-rahmen">
+            <img
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+              alt="Berge"
+            />
+          </div>
+          <p class="beschriftung">
+            object-fit: cover<br />füllt den Rahmen, schneidet ab
+          </p>
+        </div>
+
+        <div>
+          <div class="bild-rahmen bild-contain">
+            <img
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+              alt="Berge"
+            />
+          </div>
+          <p class="beschriftung">
+            object-fit: contain<br />passt rein, lässt Lücken
+          </p>
+        </div>
+
+        <div>
+          <div class="bild-rahmen bild-fill">
+            <img
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+              alt="Berge"
+            />
+          </div>
+          <p class="beschriftung">
+            object-fit: fill<br />streckt das Bild (verzerrt)
+          </p>
+        </div>
+
+        <div>
+          <div class="bild-rahmen bild-none">
+            <img
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+              alt="Berge"
+            />
+          </div>
+          <p class="beschriftung">
+            object-fit: none<br />originalgröße, wird abgeschnitten
+          </p>
+        </div>
+
+        <div>
+          <div class="bild-rahmen bild-scale-down">
+            <img
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+              alt="Berge"
+            />
+          </div>
+          <p class="beschriftung">
+            object-fit: scale-down<br />wie contain, aber nie größer als
+            original
+          </p>
+        </div>
+      </div>
+
+      <p class="beschriftung tipp">
+        Basis für alle Bilder: img { max-width: 100%; display: block; }
+      </p>
+    </section>
+
+    <!-- 05 DISPLAY -->
+    <section id="display">
+      <h3 class="kapitel">05 — Display</h3>
+      <div class="reihe">
+        <div>
+          <div class="display-block-demo">
+            <span>Block 1</span>
+            <span>Block 2</span>
+            <span>Block 3</span>
+          </div>
+          <p class="beschriftung">display: block</p>
+        </div>
+
+        <div>
+          <div class="display-inline-demo">
+            <span>Inline 1</span>
+            <span>Inline 2</span>
+            <span>Inline 3</span>
+          </div>
+          <p class="beschriftung">display: inline</p>
+        </div>
+
+        <div>
+          <div class="display-ib-demo">
+            <span>IB 1</span>
+            <span>IB 2</span>
+            <span>IB 3</span>
+          </div>
+          <p class="beschriftung">display: inline-block</p>
+        </div>
+
+        <div>
+          <p class="sichtbar">Sichtbar</p>
+          <p class="versteckt">Versteckt (display: none)</p>
+          <p class="sichtbar">Auch sichtbar</p>
+          <p class="beschriftung">display: none</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 FLEXBOX -->
+    <section id="flexbox">
+      <h3 class="kapitel">06 — Flexbox</h3>
+
+      <div class="flex-demo flex-space-between">
+        <span>Links</span>
+        <span>Mitte</span>
+        <span>Rechts</span>
+      </div>
+      <p class="beschriftung">
+        justify-content: space-between; align-items: center;
+      </p>
+
+      <div class="flex-demo flex-center">
+        <span>Zentriert</span>
+      </div>
+      <p class="beschriftung">justify-content: center; align-items: center;</p>
+
+      <div class="flex-demo flex-column">
+        <span>Oben</span>
+        <span>Mitte</span>
+        <span>Unten</span>
+      </div>
+      <p class="beschriftung">flex-direction: column; gap: 8px;</p>
+
+      <div class="flex-demo flex-wrap-demo">
+        <span>A</span><span>B</span><span>C</span> <span>D</span><span>E</span
+        ><span>F</span>
+      </div>
+      <p class="beschriftung">flex-wrap: wrap; gap: 8px;</p>
+    </section>
+
+    <!-- 07 GRID -->
+    <section id="grid">
+      <h3 class="kapitel">07 — Grid</h3>
+
+      <div class="grid-gleich">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+      </div>
+      <p class="beschriftung">grid-template-columns: 1fr 1fr 1fr; gap: 12px;</p>
+
+      <div class="grid-asymmetrisch">
+        <div>Breit (2fr)</div>
+        <div>Schmal (1fr)</div>
+      </div>
+      <p class="beschriftung">grid-template-columns: 2fr 1fr;</p>
+    </section>
+
+    <!-- 08 POSITION -->
+    <section id="position">
+      <h3 class="kapitel">08 — Position</h3>
+
+      <div class="pos-container">
+        <p class="pos-text">position: relative (Elternelement)</p>
+        <div class="pos-abs-oben">absolute: top right</div>
+        <div class="pos-abs-unten">absolute: bottom left</div>
+      </div>
+      <p class="beschriftung">
+        position: absolute; top / right / bottom / left
+      </p>
+
+      <p class="beschriftung abstand-oben">
+        z-index — höherer Wert liegt oben:
+      </p>
+      <div class="z-container">
+        <div class="z-box z1">z: 1</div>
+        <div class="z-box z2">z: 2</div>
+        <div class="z-box z3">z: 3</div>
+      </div>
+
+      <p class="beschriftung tipp">
+        position: fixed → klebt am Viewport (wie die Nav oben auf dieser
+        Seite)<br />
+        position: sticky → scrollt mit, bleibt dann kleben
+      </p>
+    </section>
+
+    <!-- 09 OVERFLOW -->
+    <section id="overflow">
+      <h3 class="kapitel">09 — Overflow</h3>
+      <div class="reihe">
+        <div>
+          <div class="overflow-box o-visible">
+            overflow: visible — Inhalt ragt aus der Box heraus wenn er zu lang
+            ist und das ist genau das Verhalten das passiert
+          </div>
+          <p class="beschriftung">overflow: visible</p>
+        </div>
+        <div>
+          <div class="overflow-box o-hidden">
+            overflow: hidden — Inhalt wird abgeschnitten wenn er zu lang ist
+          </div>
+          <p class="beschriftung">overflow: hidden</p>
+        </div>
+        <div>
+          <div class="overflow-box o-scroll">
+            overflow: scroll — Scrollleisten immer sichtbar auch wenn der Inhalt
+            passt
+          </div>
+          <p class="beschriftung">overflow: scroll</p>
+        </div>
+        <div>
+          <div class="overflow-box o-auto">
+            overflow: auto — Scrollleisten nur wenn der Inhalt wirklich
+            überläuft und nicht passt
+          </div>
+          <p class="beschriftung">overflow: auto</p>
+        </div>
+        <div>
+          <div class="overflow-box o-x">
+            overflow-x: scroll — nur horizontal, kein Umbruch, langer Text in
+            einer Zeile bleibt so
+          </div>
+          <p class="beschriftung">
+            overflow-x: scroll;<br />overflow-y: hidden;
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 OPACITY & TRANSFORM -->
+    <section id="transform">
+      <h3 class="kapitel">10 — Opacity &amp; Transform</h3>
+      <div class="reihe">
+        <div>
+          <div class="t-box t-opacity">opacity</div>
+          <p class="beschriftung">opacity: 0.3</p>
+        </div>
+        <div>
+          <div class="t-box t-translate">translate</div>
+          <p class="beschriftung">translate(12px, -12px)</p>
+        </div>
+        <div>
+          <div class="t-box t-scale">scale</div>
+          <p class="beschriftung">scale(1.3)</p>
+        </div>
+        <div>
+          <div class="t-box t-rotate">rotate</div>
+          <p class="beschriftung">rotate(25deg)</p>
+        </div>
+        <div>
+          <div class="t-box t-skew">skew</div>
+          <p class="beschriftung">skew(10deg, 5deg)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 FILTER & BACKDROP-FILTER -->
+    <section id="filter">
+      <h3 class="kapitel">11 — Filter &amp; Backdrop-Filter</h3>
+
+      <div class="reihe">
+        <div>
+          <div class="filter-img">
+            <img
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+              alt="Natur"
+            />
+          </div>
+          <p class="beschriftung">kein Filter</p>
+        </div>
+
+        <div>
+          <div class="filter-img f-blur">
+            <img
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+              alt="Natur"
+            />
+          </div>
+          <p class="beschriftung">blur(3px)</p>
+        </div>
+
+        <div>
+          <div class="filter-img f-brightness">
+            <img
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+              alt="Natur"
+            />
+          </div>
+          <p class="beschriftung">brightness(150%)</p>
+        </div>
+
+        <div>
+          <div class="filter-img f-contrast">
+            <img
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+              alt="Natur"
+            />
+          </div>
+          <p class="beschriftung">contrast(200%)</p>
+        </div>
+
+        <div>
+          <div class="filter-img f-grayscale">
+            <img
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+              alt="Natur"
+            />
+          </div>
+          <p class="beschriftung">grayscale(100%)</p>
+        </div>
+
+        <div>
+          <div class="filter-img f-sepia">
+            <img
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+              alt="Natur"
+            />
+          </div>
+          <p class="beschriftung">sepia(80%)</p>
+        </div>
+
+        <div>
+          <div class="filter-img f-invert">
+            <img
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+              alt="Natur"
+            />
+          </div>
+          <p class="beschriftung">invert(100%)</p>
+        </div>
+
+        <div>
+          <div class="filter-img f-saturate">
+            <img
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+              alt="Natur"
+            />
+          </div>
+          <p class="beschriftung">saturate(250%)</p>
+        </div>
+
+        <div>
+          <div class="filter-img f-hue">
+            <img
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+              alt="Natur"
+            />
+          </div>
+          <p class="beschriftung">hue-rotate(120deg)</p>
+        </div>
+      </div>
+
+      <p class="beschriftung abstand-oben">
+        backdrop-filter — Glas-Effekt hinter dem Element:
+      </p>
+      <div class="glas-container">
+        <div class="glas-overlay">backdrop-filter: blur(10px)</div>
+      </div>
+    </section>
+
+    <!-- 12 SCHATTEN -->
+    <section id="schatten">
+      <h3 class="kapitel">12 — Schatten</h3>
+
+      <h2 class="ts-normal">Weicher Text-Schatten</h2>
+      <p class="beschriftung">text-shadow: 2px 2px 5px rgba(0,0,0,0.3)</p>
+
+      <h2 class="ts-hart">Harter Text-Schatten</h2>
+      <p class="beschriftung">text-shadow: 4px 4px 0px #e63946</p>
+
+      <h2 class="ts-glow">Glow Effekt</h2>
+      <p class="beschriftung">text-shadow: 0 0 20px rgba(230,57,70,0.8)</p>
+
+      <h2 class="ts-mehrere">Mehrere Schatten</h2>
+      <p class="beschriftung">
+        text-shadow: 2px 2px 0 #e63946, 4px 4px 0 #2a9d8f
+      </p>
+    </section>
+
+    <!-- 13 BLEND MODES -->
+    <section id="blend">
+      <h3 class="kapitel">13 — Blend Modes</h3>
+      <div class="reihe">
+        <div>
+          <div class="blend-container">
+            <p class="blend-text bm-multiply">TEXT</p>
+          </div>
+          <p class="beschriftung">mix-blend-mode: multiply</p>
+        </div>
+        <div>
+          <div class="blend-container">
+            <p class="blend-text bm-difference">TEXT</p>
+          </div>
+          <p class="beschriftung">mix-blend-mode: difference</p>
+        </div>
+        <div>
+          <div class="blend-container">
+            <p class="blend-text bm-overlay">TEXT</p>
+          </div>
+          <p class="beschriftung">mix-blend-mode: overlay</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14 HOVER, ACTIVE & TRANSITION -->
+    <section id="interaktion">
+      <h3 class="kapitel">14 — Hover, Active &amp; Transition</h3>
+      <p class="beschriftung">Fahre mit der Maus über die Elemente:</p>
+
+      <div class="reihe">
+        <div>
+          <a href="#" class="hover-link">Hover-Link</a>
+          <p class="beschriftung">:hover → color + border-color</p>
+        </div>
+        <div>
+          <div class="hover-karte">
+            <p class="hover-karte-titel">Hover-Karte</p>
+            <p class="hover-karte-sub">Auch mal klicken</p>
+          </div>
+          <p class="beschriftung">
+            :hover → translateY + shadow<br />:active → scale(0.97)
+          </p>
+        </div>
+        <div>
+          <button class="hover-button">Hover-Button</button>
+          <p class="beschriftung">
+            :hover → background<br />:active → scale(0.96)
+          </p>
+        </div>
+      </div>
+
+      <p class="beschriftung abstand-oben">
+        Easing vergleichen — hover über die Balken:
+      </p>
+      <div class="easing-demo">
+        <div class="e-linear">linear</div>
+        <div class="e-ease">ease (Standard)</div>
+        <div class="e-ease-in">ease-in</div>
+        <div class="e-ease-out">ease-out</div>
+        <div class="e-ease-inout">ease-in-out</div>
+      </div>
+    </section>
+
+    <!-- 15 PSEUDO -->
+    <section id="pseudo">
+      <h3 class="kapitel">15 — Pseudo-Elemente &amp; Pseudo-Klassen</h3>
+      <div class="reihe">
+        <div>
+          <div class="pseudo-pfeil-demo">
+            <p>::before als Pfeil</p>
+            <p>Zweite Zeile</p>
+            <p>Dritte Zeile</p>
+          </div>
+          <p class="beschriftung">p::before { content: '→' }</p>
+        </div>
+
+        <div>
+          <p class="pseudo-stern">Stern nach dem Text</p>
+          <p class="beschriftung">p::after { content: ' ✦' }</p>
+        </div>
+
+        <div>
+          <ul class="nth-liste">
+            <li>:nth-child(odd) — hell</li>
+            <li>:nth-child(even) — dunkel</li>
+            <li>Drittes Element</li>
+            <li>:not(:last-child) hat Linie</li>
+          </ul>
+          <p class="beschriftung">
+            :nth-child(odd/even)<br />:not(:last-child)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 16 ANIMATION -->
+    <section id="animation">
+      <h3 class="kapitel">16 — Animation</h3>
+      <div class="reihe">
+        <div>
+          <p class="anim-rein">Einblenden</p>
+          <p class="beschriftung">@keyframes fadeUp<br />forwards</p>
+        </div>
+        <div>
+          <div class="anim-puls"></div>
+          <p class="beschriftung">@keyframes pulsieren<br />infinite</p>
+        </div>
+        <div>
+          <div class="anim-drehen"></div>
+          <p class="beschriftung">@keyframes drehen<br />linear infinite</p>
+        </div>
+        <div>
+          <ul class="staffel-liste">
+            <li>Staffel — delay: 0s</li>
+            <li>Staffel — delay: 0.1s</li>
+            <li>Staffel — delay: 0.2s</li>
+            <li>Staffel — delay: 0.3s</li>
+          </ul>
+          <p class="beschriftung">
+            animation-delay gestaffelt<br />via :nth-child
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 17 DETAILS & SUMMARY -->
+    <section id="details">
+      <h3 class="kapitel">17 — Details &amp; Summary (CSS-only Interaktion)</h3>
+      <p class="beschriftung">
+        Der Browser setzt open automatisch beim Klick. CSS reagiert mit
+        details:open — kein JavaScript nötig.
+      </p>
+
+      <div class="details-gruppe">
+        <details>
+          <summary>Was ist CSS?</summary>
+          <p>
+            CSS (Cascading Style Sheets) bestimmt das Aussehen von
+            HTML-Elementen — Farben, Abstände, Schriften, Layouts und vieles
+            mehr.
+          </p>
+        </details>
+        <details>
+          <summary>Was ist das Box Model?</summary>
+          <p>
+            Jedes HTML-Element ist eine rechteckige Box aus Inhalt, Padding,
+            Border und Margin.
+          </p>
+        </details>
+        <details open>
+          <summary>Der hier ist bereits geöffnet</summary>
+          <p>
+            Mit dem Attribut open direkt im HTML startet es geöffnet. CSS
+            reagiert mit details:open — das + dreht sich zum ×.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- 18 SONSTIGES -->
+    <section id="sonstiges">
+      <h3 class="kapitel">18 — Sonstiges: calc() &amp; columns</h3>
+
+      <p class="beschriftung">calc() — verschiedene Einheiten kombinieren:</p>
+      <div class="calc-box">width: calc(100% - 80px)</div>
+
+      <p class="beschriftung abstand-oben">
+        columns — Fließtext automatisch aufteilen:
+      </p>
+      <div class="spalten-demo">
+        <p>
+          Das ist ein längerer Text der automatisch in drei Spalten aufgeteilt
+          wird. CSS übernimmt den Umbruch komplett selbstständig. Man muss sich
+          nur um column-count und column-gap kümmern. Das ist besonders
+          praktisch für Zeitungs- oder Magazin-Layouts wo viel Text vorhanden
+          ist und schön verteilt werden soll.
+        </p>
+      </div>
+      <p class="beschriftung">column-count: 3; column-gap: 24px;</p>
+    </section>
+
+    <footer>
+      <p>
+        CSS Demo — alle wichtigen Eigenschaften auf einen Blick<br /><br />
+        Font: Degheest by Ange Degheest, Camille Depalle, Eugénie Bidaut, Luna
+        Delabre, Mandy Elbé, May Jolivet, Oriane Charvieux, Benjamin Gomez,
+        Justine Herbel. Distributed by velvetyne.fr.Degheest by Ange Degheest,
+        Camille Depalle, Eugénie Bidaut, Luna Delabre, Mandy Elbé, May Jolivet,
+        Oriane Charvieux, Benjamin Gomez, Justine Herbel. Distributed by
+        velvetyne.fr.
+      </p>
+    </footer>
+  </body>
+</html>

@@ -7,7 +7,7 @@
 - Create `index.html`, `style.css`, `/images`, `/fonts`
 - Emmet `!` in the html file
 - Link CSS in `<head>`: `<link rel="stylesheet" href="style.css">`
-- Download a serif and sans-serif from fonts.google.com, put `.woff2` files in `/fonts`, link with `@font-face` in CSS
+- Download a serif and sans-serif from either velvetyne, usemodify.com, typotheque.genderfluid.space or , put `.woff2` files in `/fonts`, link with `@font-face` in CSS
 - Build the HTML skeleton together:
 
 ```html

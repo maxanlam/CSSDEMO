@@ -347,6 +347,34 @@ color: red;
 
 ---
 
+## CSS Variablen
+
+CSS Variablen (auch **Custom Properties**) erlauben es dir, Werte zentral zu definieren und mehrfach zu verwenden. Das macht dein Styling übersichtlicher und leichter anpassbar – besonders bei Farben, Abständen oder Themes.
+
+Variablen werden meist im `:root` definiert (global verfügbar):
+
+```css
+:root {
+  --main-color: #ff0000;
+  --spacing: 16px;
+}
+```
+
+Mit var() kannst du die Variable einsetzen:
+
+```css
+p {
+  color: var(--main-color);
+  margin: var(--spacing);
+}
+```
+
+**Vorteile:**
+
+- zentrale Kontrolle (z. B. Farben schnell ändern)
+- konsistentes Design
+- gut für Light/Dark Mode oder Print/Screen Unterschiede
+
 ## Positionierung
 
 - `position: static;` - Standard (keine spezielle Positionierung)
@@ -1083,5 +1111,6 @@ Statt Werte selbst zu schreiben, verwendet man häufig Generatoren:
 
 ### Spiele/Übungen
 
-- **[CSS Battle](https://cssbattle.dev/)**
-  Daily challenges aber auch CSS-Kurse
+- **[CSS Battle](https://cssbattle.dev/)** - daily Challenges aber auch CSS-Kurse
+
+- **[Cards Decleration Style](https://cards.declarations.style/)** - Lerntool für CSS
