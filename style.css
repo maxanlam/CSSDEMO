@@ -96,30 +96,44 @@ nav ul a:hover {
   color: rgb(0, 0, 0);
 }
 
-.copy-btn {
-  border: none;
+.button-container {
+  display: flex;
   position: absolute;
   bottom: 1rem;
   left: 2%;
+}
+
+.css-copy-btn,
+.html-copy-btn {
+  border: none;
   background-color: black;
   color: white;
+  margin-right: 1rem;
   font-family: "MeineFont";
   font-size: 0.9rem;
   cursor: pointer;
   transition: 0.1s ease-in-out;
 }
 
-.copy-btn:hover {
-  zoom: 1.05;
+.css-copy-btn:hover,
+.html-copy-btn:hover {
   filter: invert(0.9);
 }
 
-.copy-btn:hover::before {
+.css-copy-btn:hover::before {
   content: "{";
 }
 
-.copy-btn:hover::after {
+.css-copy-btn:hover::after {
   content: "}";
+}
+
+.html-copy-btn:hover::before {
+  content: "<";
+}
+
+.html-copy-btn:hover::after {
+  content: "/>";
 }
 
 /* ============================================================
