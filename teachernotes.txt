@@ -1,6 +1,10 @@
+vorab vorab: vllt erstmal eine seite zeigen, web-inspektor öffnen 
+sachen random umstylen , vllt auch auch die studis dazu ermutigen für ein paar minuten 
+
+
 Vorab
 
-Wikipedia Artikel Raussuchen, 3 biler runteraden
+Wikipedia Artikel Raussuchen, 3 bilder runteraden
 Web ordner erstellen, index.html & Asset ordner (biler da rein)
 HTML-Struktur (absolutes Minimum)
   -  <header> mit Titel + Teaser-Bild
@@ -15,7 +19,7 @@ Inline, Internal, External CSS
 Wie CSS funktioniert (CSS Declaration Diagram, Selektoren, Eigenschaften, Werte)
 Selektoren: Element, Klasse, id
 Spezifität & Kaskade verstehen
-    - demonsttieren indem du den studis backgroubd-color & color zeigst.
+    - demonsttieren indem du den studis background-color & color zeigst. (allle klassen gleich stylen 1 klasse andere farbe)
     - da kurt Farbformate erklären (HEX, RGB, RGBA, HSL)
 DevTools zur Fehlersuche
 
@@ -49,13 +53,13 @@ width / height mit verschiedenen Einheiten zeigen (px, %, vw, auto)
         Parent-Container-Breite ändern
 
         px - bleibt gleich
-        % - ändert sich mit! ✓
+        % - ändert sich mit! 
         vw - ändert sich nicht (Fenster ändert sich ja nicht)
         auto - passt sich an
 
 
-overflow anhand langer text box demonstieren (visible, hidden, auto, scroll)
 border & border-styles zeigen
+box-shadow 
 wirkung von box-sizing: border-box; hier sichtbar machen (300px statt 300px + border)
 
 
@@ -64,13 +68,6 @@ Position
 Position (relative, absolute, fixed, vllt. sticky?)
 top, bottom, left, right
 z-index für Layering
-
-
-Komplexere Layout-Systeme 
-
-Flexbox (flex-direction, justify-content, align-items, gap, und vllt noch flexbox:wrap aber vllt auch unnötig) 
-Grid (echt nur grid-template-columns, grid-template-rows mit fr-Einheit und gap)
-columns kurz erwähnen (für Fließtext)
 
 
 Typografie 
@@ -82,24 +79,13 @@ Web Fonts (libre font libaries zeigen, runterladen und mit installieren (vllt be
     - usemodify
     - velvetyne 
     - typotheque.genderfluid.space
-overflow-wrap, word-break, Hyphenation kurz
+
+columns kurz erwähnen (für Fließtext)
 
 
 Pseudo-Klassen & Interaktionen 
+:hover
 
-:hover, :active, :open (für <details>)
-:nth-child(), :not() kurz
-Transitions (duration, easing: ease-in-out, etc.)
-Animations (@keyframes, animation-property, kurz!)
-Opacity & Transform (translate, scale, rotate)
-
-
-Effekte 
-
-box-shadow, text-shadow
-filter (blur, brightness, grayscale, etc.)
-backdrop-filter (für Glass-UI Effekte)
-mix-blend-mode kurz erwähnen
 
 
 Responsive Design

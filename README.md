@@ -1,20 +1,3 @@
-# Styling for Dual Formats {}
-
-**Software-Anforderungen:** Visual Studio Code mit Live-Server Extension, Firefox oder Google Chrome
-
----
-
-# Gather texts and visual assets
-
-# Design a hybrid page that communicates and reflects something you care about:
-
-1.  Your design must work in both screen and print versions.
-    The printed and digital versions should not be identical - though still remaining somewhat consistent in theme. Highlight the differences between them & reflect on how design changes between digital/interactive and physical formats.
-
-2.  Include at least one interaction on the website.
-
----
-
 # HTML
 
 Damit Seiten in HTML gerendered werden benötigen sie immer die Endung `.html`,
