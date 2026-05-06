@@ -1,9 +1,22 @@
-Grundlagen 
+Vorab
 
-Wie CSS funktioniert (Selektoren, Eigenschaften, Werte)
+Wikipedia Artikel Raussuchen, 3 biler runteraden
+Web ordner erstellen, index.html & Asset ordner (biler da rein)
+HTML-Struktur (absolutes Minimum)
+  -  <header> mit Titel + Teaser-Bild
+  -  <nav> mit Inhaltsverzeichnis (Links zu Sections)
+  -  <main> mit 2-3 Key-Sections (h2 + p + Bilder, wrapped als div mit id)
+  -  <footer> mit Quelle/Wikipedia-Link
+
+
+CSS Setup
+
 Inline, Internal, External CSS
-Selektoren: Element, Klasse, ID (+ Attribut-Selektoren kurz erwähnen)
+Wie CSS funktioniert (CSS Declaration Diagram, Selektoren, Eigenschaften, Werte)
+Selektoren: Element, Klasse, id
 Spezifität & Kaskade verstehen
+    - demonsttieren indem du den studis backgroubd-color & color zeigst.
+    - da kurt Farbformate erklären (HEX, RGB, RGBA, HSL)
 DevTools zur Fehlersuche
 
 
@@ -60,20 +73,17 @@ Grid (echt nur grid-template-columns, grid-template-rows mit fr-Einheit und gap)
 columns kurz erwähnen (für Fließtext)
 
 
-Typografie & Farben
+Typografie 
 
-Farbformate (HEX, RGB, RGBA, HSL)
 Font-Eigenschaften (font-family, font-size, font-weight, line-height)
+- webkit text stroke mit paint order: stroke bzw. markers
 Text-Ausrichtung & Abstände (text-align, letter-spacing, word-spacing)
-Web Fonts (Google Fonts oder @font-face)
+Web Fonts (libre font libaries zeigen, runterladen und mit installieren (vllt bei mir 2 fonts zeigen um font weight zu demonstieren) @font-face)
+    - usemodify
+    - velvetyne 
+    - typotheque.genderfluid.space
 overflow-wrap, word-break, Hyphenation kurz
 
-Responsive Design
-
-Media Queries (@media screen, @media print)
-Breakpoints sinnvoll setzen
-Mobile-First-Ansatz
-Print-Version simulieren & zeigen (wichtig für die Aufgabe!)
 
 Pseudo-Klassen & Interaktionen 
 
@@ -83,12 +93,22 @@ Transitions (duration, easing: ease-in-out, etc.)
 Animations (@keyframes, animation-property, kurz!)
 Opacity & Transform (translate, scale, rotate)
 
+
 Effekte 
 
 box-shadow, text-shadow
 filter (blur, brightness, grayscale, etc.)
 backdrop-filter (für Glass-UI Effekte)
 mix-blend-mode kurz erwähnen
+
+
+Responsive Design
+
+Media Queries (@media screen, @media print)
+Breakpoints sinnvoll setzen
+Mobile-First-Ansatz
+Print-Version simulieren & zeigen (wichtig für die Aufgabe!)
+
 
 Praxis & Abschluss 
 
