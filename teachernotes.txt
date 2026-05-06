@@ -4,12 +4,12 @@ sachen random umstylen , vllt auch auch die studis dazu ermutigen für ein paar 
 
 Vorab
 
-Wikipedia Artikel Raussuchen, 3 bilder runteraden
+Wikipedia Artikel Raussuchen, 3 biler runteraden
 Web ordner erstellen, index.html & Asset ordner (biler da rein)
 HTML-Struktur (absolutes Minimum)
   -  <header> mit Titel + Teaser-Bild
   -  <nav> mit Inhaltsverzeichnis (Links zu Sections)
-  -  <main> mit 2-3 Key-Sections (h2 + p + Bilder, wrapped als div mit id)
+  -  <main> mit 2-3 Key-Sections (h2 + p + Bilder, wrapped als div mit clas und id)
   -  <footer> mit Quelle/Wikipedia-Link
 
 
@@ -19,7 +19,7 @@ Inline, Internal, External CSS
 Wie CSS funktioniert (CSS Declaration Diagram, Selektoren, Eigenschaften, Werte)
 Selektoren: Element, Klasse, id
 Spezifität & Kaskade verstehen
-    - demonsttieren indem du den studis background-color & color zeigst. (allle klassen gleich stylen 1 klasse andere farbe)
+    - demonsttieren indem du den studis backgroubd-color & color zeigst.
     - da kurt Farbformate erklären (HEX, RGB, RGBA, HSL)
 DevTools zur Fehlersuche
 
