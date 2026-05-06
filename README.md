@@ -37,7 +37,7 @@ die einzigen Ausnahmen sind:
 
 ---
 
-## Struktur (das Grundgerüst jeder Webseite)
+## Struktur (das Gerüst einer Webseite)
 
 Diese definieren den Aufbau und die Bedeutung deines Dokuments.
 
@@ -418,7 +418,7 @@ Sie bestimmen den Abstand zu einer Kante.
 
 ---
 
-## z-index
+## Z-index
 
 z-index bestimmt quasi die Layer-Reihenfolge von Elementen.
 
