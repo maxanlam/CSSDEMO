@@ -4,7 +4,7 @@ sachen random umstylen , vllt auch auch die studis dazu ermutigen für ein paar 
 
 Vorab
 
-Wikipedia Artikel Raussuchen, 3 biler runteraden
+Wikipedia Artikel Raussuchen, 3 bilder runteraden
 Web ordner erstellen, index.html & Asset ordner (biler da rein)
 HTML-Struktur (absolutes Minimum)
   -  <header> mit Titel + Teaser-Bild
