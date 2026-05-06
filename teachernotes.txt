@@ -1,6 +1,6 @@
 Vorab
 
-Wikipedia Artikel Raussuchen, 3 biler runteraden
+Wikipedia Artikel Raussuchen, 3 Bilder runteraden
 Web ordner erstellen, index.html & Asset ordner (biler da rein)
 HTML-Struktur (absolutes Minimum)
   -  <header> mit Titel + Teaser-Bild
