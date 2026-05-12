@@ -1,3 +1,5 @@
+css
+
 vorab vorab: vllt erstmal eine seite zeigen, web-inspektor öffnen 
 sachen random umstylen , vllt auch auch die studis dazu ermutigen für ein paar minuten 
 
@@ -92,8 +94,7 @@ Responsive Design
 
 Media Queries (@media screen, @media print)
 Breakpoints sinnvoll setzen
-Mobile-First-Ansatz
-Print-Version simulieren & zeigen (wichtig für die Aufgabe!)
+Print-Version simulieren & zeigen 
 
 
 Praxis & Abschluss 
